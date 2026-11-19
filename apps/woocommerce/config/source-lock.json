@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "repository": "woocommerce/woocommerce",
+  "ref": "11.3.0",
+  "url": "https://github.com/woocommerce/woocommerce/releases/download/11.3.0/woocommerce.zip",
+  "sha256": "8fa4965ca8b42d3dcebad771c1e70792e8b0c685b5a9187438c0dfda9cfdf9bb",
+  "wordpress": "wordpress:7.1.4-php8.3-apache"
+}

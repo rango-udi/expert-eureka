@@ -1,0 +1,87 @@
+{# Native front_content defaults adapted from Shuup 3.1.0 Classic Gray; Copyright 2012-2021 Shuup Commerce Inc., OSL-3.0. #}
+{% extends "shuup/front/base.jinja" %}
+{% block title %}Find your signature{% endblock %}
+{% block content %}
+<section class="fc-hero">
+    <div class="hero-copy">
+<span class="eyebrow">{% if xtheme.get("show_welcome_text", False) %}{{ _("Welcome to %(shop_name)s!", shop_name=request.shop.public_name) }}{% else %}THE ART OF FEELING LIKE YOU{% endif %}</span>
+<h1>Some things<br>stay with you.<br>
+<em>Make it a scent.</em>
+</h1>
+<p>A quiet morning. An unexpected evening.<br>Find a fragrance that feels like your story.</p>
+<a class="fc-button" href="#collection">Find your signature <svg class="fc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg>
+</a>
+<div class="hero-footnote">01 / A NEW CHAPTER IN FRAGRANCE</div>
+</div>
+    <div class="hero-visual">
+<img src="{{ static('fuzcake/products/rose-nocturne.png') }}" alt="Rose Nocturne fragrance among rose petals" fetchpriority="high" decoding="async" width="1280" height="1280">
+<span class="hero-caption">Rose Nocturne <small>FLORAL / AMBER / 50 ML</small>
+</span>
+</div>
+</section>
+<div class="fc-ribbon">
+<span>Scents with a point of view</span>
+<span class="fc-ribbon-divider" aria-hidden="true"></span>
+<span>Find a little everyday magic</span>
+<span class="fc-ribbon-divider" aria-hidden="true"></span>
+<span>Make room for something beautiful</span>
+</div>
+<section id="collection" class="fc-collection">
+<div class="section-heading">
+<div>
+<span class="eyebrow">THE FRAGRANCE WARDROBE</span>
+<h2>Your next <em>signature.</em>
+</h2>
+</div>
+<a class="text-link" href="{{ url('shuup:all-categories') }}">Explore all fragrances<svg class="fc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
+</div>
+<nav class="category-pills" aria-label="Fragrance families">{% for category in fuzcake_categories %}<a href="{{ url('shuup:category', pk=category.pk, slug=category.slug) }}">{{ category.name }}</a>{% endfor %}</nav>
+<div class="fc-native-products">
+{# Keep the native editable placeholder and product plugins, including preview and pricing rules. #}
+{% placeholder "front_content" %}
+    {% row %}
+        {% column {"md": 12} %}
+            {% plugin "product_highlight" %}
+                type = "newest"
+                title = ""
+            {% endplugin %}
+        {% endcolumn %}
+    {% endrow %}
+    {% row %}
+        {% column {"md": 12} %}
+            {% plugin "product_highlight" %}type = "best_selling"{% endplugin %}
+        {% endcolumn %}
+    {% endrow %}
+{% endplaceholder %}
+</div>
+</section>
+<section class="fc-story">
+<img src="{{ static('fuzcake/products/golden-hour.png') }}" alt="Golden Hour fragrance in warm afternoon light" loading="lazy" decoding="async" width="849" height="1200">
+<div>
+<span class="eyebrow">A NOTE FROM OUR HOUSE</span>
+<h2>Not just a fragrance.<br>
+<em>A feeling.</em>
+</h2>
+<p>We believe a fragrance belongs to the person who wears it. Explore bright citrus, soft florals and comforting woods, and find the notes you want to carry with you.</p>
+<a class="text-link" href="{{ url('fuzcake-house') }}">Get to know fuzcake<svg class="fc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
+</div>
+</section>
+<section class="fc-promises">
+<div>
+<span>01</span>
+<h3>A scent for your rhythm</h3>
+<p>Explore fragrances by family, mood and occasion.</p>
+</div>
+<div>
+<span>02</span>
+<h3>A thoughtful finishing touch</h3>
+<p>Discover gift collections and everyday signatures.</p>
+</div>
+<div>
+<span>03</span>
+<h3>From our house to yours</h3>
+<p>Choose a delivery service that suits your plans.</p>
+<a href="{{ url('fuzcake-delivery') }}">Delivery options<svg class="fc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
+</div>
+</section>
+{% endblock %}

@@ -1,0 +1,65 @@
+{
+  "description": "Declared checkout model for Rose Nocturne at its initial stock. Generated rows are reviewable data, not executed UI tests.",
+  "fields": {
+    "quantity": {
+      "min": 1,
+      "max": 25,
+      "nominal": 2,
+      "valid_representatives": [
+        1,
+        12,
+        25
+      ],
+      "invalid_representatives": [
+        0,
+        26,
+        "abc"
+      ]
+    },
+    "payment_method": {
+      "nominal": "cash_on_delivery",
+      "valid_representatives": [
+        "cash_on_delivery"
+      ],
+      "invalid_representatives": [
+        "UNKNOWN"
+      ]
+    }
+  },
+  "decision_table": {
+    "conditions": [
+      "has_stock",
+      "payment_method_available"
+    ],
+    "rules": [
+      {
+        "when": [
+          true,
+          true
+        ],
+        "expected": "allow_checkout"
+      },
+      {
+        "when": [
+          true,
+          false
+        ],
+        "expected": "reject_payment_method"
+      },
+      {
+        "when": [
+          false,
+          true
+        ],
+        "expected": "reject_stock"
+      },
+      {
+        "when": [
+          false,
+          false
+        ],
+        "expected": "reject_stock_and_payment_method"
+      }
+    ]
+  }
+}

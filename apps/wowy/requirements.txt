@@ -1,0 +1,11 @@
+# Local COD runtime; external payment gateway packages are intentionally omitted.
+Django==5.2.19
+asgiref==3.13.0
+sqlparse==0.6.1
+django-extensions==3.2.3
+djangorestframework==3.16.1
+pillow==13.0.0
+reportlab==4.2.5
+chardet==5.2.0
+waitress==3.0.2
+whitenoise==6.12.0

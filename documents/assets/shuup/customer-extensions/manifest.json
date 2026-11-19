@@ -1,0 +1,185 @@
+{
+  "figures": 18,
+  "files": [
+    {
+      "file": "bva_extension_1.png",
+      "sha256": "0e87e0c55fb1afbfe2669f39dfcc0ae2f558fd5462520e868dcf4440e2f36570",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "bva_extension_1.svg",
+      "sha256": "c0e700aaad6c2a6d003d6a0f50c76707b693a3ff8913384f9f3932b148e6aa6b",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "bva_extension_2.png",
+      "sha256": "6bb3d6a4115faa7786a141007d577d2d2aee0e41b8fd9e2accb70df24929b721",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "bva_extension_2.svg",
+      "sha256": "692444000e6058e4c9f3163a9881ab6a81694b68e05cf5e5bd3ef8da16d58d08",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "bva_quantity.png",
+      "sha256": "c1894c963ab1e7be913630d6acb0825f4edbd35444cc7d0777654b46daba2cf6",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "bva_quantity.svg",
+      "sha256": "379b08042f29d7871140a99980a2524f3d5aa59c3fe471a7e0a3dd1ca8ddd2d5",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "decision_1.png",
+      "sha256": "2e041ecaa7da371ce5e4443029e3ccc7b6e30b67a37cfdbb94163922a7a05ffa",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "decision_1.svg",
+      "sha256": "138eb660d83cddcdda55f03e9b21cc4cdf11c8e1ab0912480675069627dd99e8",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "decision_2.png",
+      "sha256": "df151212f1769a2a8d5ae9673207f7770eed858be52f503b019a21dabc58523a",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "decision_2.svg",
+      "sha256": "fffc165d85501a66ebb10528f57d762259fe1143373d6704f4112e798eee4ae2",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "decision_3.png",
+      "sha256": "2670a75deefcf4548e24e7baace2c76243ce120089533065b701b0aa7ef7ab93",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "decision_3.svg",
+      "sha256": "961e0c9714a1ceeed948222c09a6aceba8d2da735d5646f0764cc6d842f000a5",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "decision_4.png",
+      "sha256": "56b60435f345c79c477c33c06928a361d245d2c8a5b240a3ae42d8e559473679",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "decision_4.svg",
+      "sha256": "b4a6b8499e4aa338f98110af2578f3822e1466da58876e3947b99af8053330f2",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "decision_5.png",
+      "sha256": "1ec0b42d5cd33ce8cb279377cae58c8f0ac80b41d05dc88155171e38755f3919",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "decision_5.svg",
+      "sha256": "733b2405c9d0eb84f4b02417aec539c0d3e4c90ebd4999b2d8a4584851db9b80",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "decision_6.png",
+      "sha256": "1282a97f4a3dddab0bc152e4e44592086fe99a0adb0f94a99c95deffc1d25be3",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "decision_6.svg",
+      "sha256": "5366809e1ec5d8b9b9d5c5a4a765703e85b22dadb89e4755a7369c6fbe89be4e",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "decision_7.png",
+      "sha256": "064e26bc17795da9a48e68cb4a24826eb9dadbf36917dca670edaf099f3262e6",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "decision_7.svg",
+      "sha256": "7720349ef9d0cafdf4e23505dfd1013e622cc6b056b99f1619ae5fa5c939b75c",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "ep_1.png",
+      "sha256": "9c1aca4d80ffa7a12f91ff9f48cecdd303dec32dd38c443ec680331c9ff2205d",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "ep_1.svg",
+      "sha256": "1f934fb29c9d2e6bb44aa5f7968b77c9ffd08eb24129c3b898028ced649987d1",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "ep_2.png",
+      "sha256": "cf30d4b51220154efa74055ef0d5981ae1e2910a3af5551c5f141b78d9ef5207",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "ep_2.svg",
+      "sha256": "eb7af37e19980b07131ec32d89da5e73faaa6b421e9121a4a1c325bee2f2909c",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "ep_3.png",
+      "sha256": "45085ea47d89e8f09885acfd3114836cb52afb3e9551047fe7329afdd60b05ec",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "ep_3.svg",
+      "sha256": "053aaf0223d56d17d8c7974bbd59fac714bcc3ddebb005533dfb140413df7c4d",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "ep_4.png",
+      "sha256": "eab4b25b9280a91a48f63b3f0c6586135b236f1b56fe52fa8536d89b79027b1d",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "ep_4.svg",
+      "sha256": "e32f4826f889184be19e553392bf16b61728d0fb93f0d67e8994bc8ff1af1808",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "ep_5.png",
+      "sha256": "fe31209e078c61a7509495183ddba311e68008a91a8b29d836d4eea8163f3728",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "ep_5.svg",
+      "sha256": "66817b0dbf457329406ffb54f63ead6d876aca549b18d9a040e423678b1bad45",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "ep_6.png",
+      "sha256": "e14d146e825f8daa5df7eb512b4055faa153006c793c474de10fb45a65ead460",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "ep_6.svg",
+      "sha256": "28966af55baae058e134662a9dad476c64b55dab6243db2a48c3ca27c472dc5c",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "ep_7.png",
+      "sha256": "aba1ca15099c1882383458f4010bf0f7ee8514ea90e93b2e504ddafa821b981a",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "ep_7.svg",
+      "sha256": "e3f1ddb12c76faa5613aae86fde42adb66b7c532c07f1b097ecdcb34820eaa70",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "ep_8.png",
+      "sha256": "1d56bbf43bb49f53e21ff68952cd13167269656f63a3b53cae1795a6d5eb93cf",
+      "type": "design_figure_not_browser_evidence"
+    },
+    {
+      "file": "ep_8.svg",
+      "sha256": "3e77fa752903e8b8179c04d0ecb0124dc556c6bb6b24bf47b84c61f95d20c89c",
+      "type": "design_figure_not_browser_evidence"
+    }
+  ]
+}

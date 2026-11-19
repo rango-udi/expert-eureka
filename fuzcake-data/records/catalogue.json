@@ -1,0 +1,199 @@
+{
+  "currency": "USD",
+  "categories": [
+    {
+      "id": "floral",
+      "name": "Floral & romantic"
+    },
+    {
+      "id": "fresh",
+      "name": "Fresh & luminous"
+    },
+    {
+      "id": "woody",
+      "name": "Warm & woody"
+    },
+    {
+      "id": "gifts",
+      "name": "Thoughtful gifts"
+    }
+  ],
+  "products": [
+    {
+      "sku": "fuzcake-rose-nocturne",
+      "name": "Rose Nocturne",
+      "brand": "fuzcake Atelier",
+      "category": "floral",
+      "price": "89.00",
+      "stock": 25,
+      "size": "50 ml",
+      "description": "Rose petals, pink pepper and soft amber.",
+      "image": "fuzcake/products/rose-nocturne.png"
+    },
+    {
+      "sku": "fuzcake-self-esteem",
+      "name": "Self Esteem Pour Homme",
+      "brand": "Self Esteem",
+      "category": "fresh",
+      "price": "74.00",
+      "stock": 32,
+      "size": "100 ml",
+      "description": "Crisp citrus, marine air and aromatic woods.",
+      "image": "fuzcake/products/self-esteem.png"
+    },
+    {
+      "sku": "fuzcake-rose-aube",
+      "name": "Rose Aube",
+      "brand": "fuzcake Atelier",
+      "category": "floral",
+      "price": "82.00",
+      "stock": 18,
+      "size": "50 ml",
+      "description": "A luminous floral composition for unhurried mornings.",
+      "image": "fuzcake/products/rose-aube.png"
+    },
+    {
+      "sku": "fuzcake-jasmine-tide",
+      "name": "Jasmine Tide",
+      "brand": "fuzcake Atelier",
+      "category": "fresh",
+      "price": "78.00",
+      "stock": 36,
+      "size": "75 ml",
+      "description": "White blossoms and a clean aquatic accord.",
+      "image": "fuzcake/products/jasmine-tide.png"
+    },
+    {
+      "sku": "fuzcake-bombshell",
+      "name": "Bombshell Collection",
+      "brand": "Victoria's Secret",
+      "category": "floral",
+      "price": "115.00",
+      "stock": 12,
+      "size": "Gift set",
+      "description": "A coordinated fragrance and body-care collection.",
+      "image": "fuzcake/products/bombshell.png"
+    },
+    {
+      "sku": "fuzcake-romance-duo",
+      "name": "New Romance Duo",
+      "brand": "New Romance",
+      "category": "floral",
+      "price": "96.00",
+      "stock": 16,
+      "size": "2 x 50 ml",
+      "description": "Two floral compositions presented as a discovery pair.",
+      "image": "fuzcake/products/romance-duo.png"
+    },
+    {
+      "sku": "fuzcake-ambre-minuit",
+      "name": "Ambre Minuit",
+      "brand": "fuzcake Atelier",
+      "category": "woody",
+      "price": "105.00",
+      "stock": 20,
+      "size": "100 ml",
+      "description": "Warm amber, dry cedar and a softly spiced finish.",
+      "image": "fuzcake/products/ambre-minuit.png"
+    },
+    {
+      "sku": "fuzcake-santal-stone",
+      "name": "Santal Stone",
+      "brand": "fuzcake Atelier",
+      "category": "woody",
+      "price": "92.00",
+      "stock": 24,
+      "size": "75 ml",
+      "description": "Sandalwood and warm resins with an earthy character.",
+      "image": "fuzcake/products/santal-stone.png"
+    },
+    {
+      "sku": "fuzcake-chanel-collection",
+      "name": "Chanel Fragrance Collection",
+      "brand": "Chanel",
+      "category": "gifts",
+      "price": "265.00",
+      "stock": 8,
+      "size": "Gift collection",
+      "description": "A fragrance selection presented with ribbon packaging.",
+      "image": "fuzcake/products/chanel-collection.png"
+    },
+    {
+      "sku": "fuzcake-golden-hour",
+      "name": "Golden Hour",
+      "brand": "fuzcake Atelier",
+      "category": "woody",
+      "price": "86.00",
+      "stock": 28,
+      "size": "50 ml",
+      "description": "A soft amber composition with a sunlit woody finish.",
+      "image": "fuzcake/products/golden-hour.png"
+    },
+    {
+      "sku": "fuzcake-coco-mademoiselle",
+      "name": "Coco Mademoiselle",
+      "brand": "Chanel",
+      "category": "floral",
+      "price": "149.00",
+      "stock": 15,
+      "size": "100 ml",
+      "description": "An elegant floral-amber fragrance for an evening wardrobe.",
+      "image": "fuzcake/products/coco-mademoiselle.png"
+    },
+    {
+      "sku": "fuzcake-vintage-green",
+      "name": "78 Vintage Green",
+      "brand": "Banana Republic",
+      "category": "fresh",
+      "price": "69.00",
+      "stock": 30,
+      "size": "75 ml",
+      "description": "Green leaves, citrus and a gentle woody base.",
+      "image": "fuzcake/products/vintage-green.png"
+    },
+    {
+      "sku": "fuzcake-bleu-chanel",
+      "name": "Bleu de Chanel",
+      "brand": "Chanel",
+      "category": "woody",
+      "price": "155.00",
+      "stock": 19,
+      "size": "100 ml",
+      "description": "A fresh woody fragrance with a composed aromatic character.",
+      "image": "fuzcake/products/bleu-chanel.png"
+    },
+    {
+      "sku": "fuzcake-coco-intense",
+      "name": "Coco Mademoiselle Intense",
+      "brand": "Chanel",
+      "category": "floral",
+      "price": "169.00",
+      "stock": 11,
+      "size": "100 ml",
+      "description": "A richer floral-amber composition with a warm dry-down.",
+      "image": "fuzcake/products/coco-intense.png"
+    },
+    {
+      "sku": "fuzcake-homme-ideal",
+      "name": "L'Homme Ideal",
+      "brand": "Guerlain",
+      "category": "woody",
+      "price": "112.00",
+      "stock": 22,
+      "size": "100 ml",
+      "description": "An aromatic woody fragrance with a warm almond accent.",
+      "image": "fuzcake/products/homme-ideal.png"
+    },
+    {
+      "sku": "fuzcake-the-one",
+      "name": "The One",
+      "brand": "Dolce & Gabbana",
+      "category": "woody",
+      "price": "108.00",
+      "stock": 17,
+      "size": "100 ml",
+      "description": "Amber, spice and warm woods for a distinctive signature.",
+      "image": "fuzcake/products/the-one.png"
+    }
+  ]
+}

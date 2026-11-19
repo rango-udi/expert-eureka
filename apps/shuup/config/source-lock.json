@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/shuup/shuup",
+  "tag": "v3.1.0",
+  "commit": "9231bf2d022b22aad5e53e144d330667eb086b7b",
+  "distribution": "shuup-3.1.0-py2.py3-none-any.whl",
+  "distribution_url": "https://files.pythonhosted.org/packages/1c/6c/e5e9366b809da5f268f1af3031042f9597c7e662bb17eeb12a90f7cda435/shuup-3.1.0-py2.py3-none-any.whl",
+  "sha256": "535b41374d3288261206cb3ffba2a4565a54bd8c30d88e0143e81388e03b78cb",
+  "metadata_patch": "Split the malformed combined toml/pytz requirement; rebuild RECORD. Application and bundled assets unchanged.",
+  "license": "OSL-3.0 as distributed in the upstream LICENSE; setup metadata uses a different classifier.",
+  "scope": "Legacy upstream fixture target on loopback; not a production deployment or a measured low-memory guarantee.",
+  "runtime_base_image": "python:3.8.20-slim-bookworm@sha256:1d52838af602b4b5a831beb13a0e4d073280665ea7be7f69ce2382f29c5a613f"
+}

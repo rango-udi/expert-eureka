@@ -1,0 +1,252 @@
+name: robot-web-pretix
+x-pretix:
+  image: ${PRETIX_IMAGE:-pretix/standalone:2026.9.2}
+  restart: unless-stopped
+  environment: &id001
+    AUTOMIGRATE: skip
+    NUM_WORKERS: ${WEB_WORKERS:-1}
+    PERIODIC_INTERVAL_SECONDS: ${PERIODIC_INTERVAL_SECONDS:-300}
+    PRETIX_PRETIX_INSTANCE_NAME: ${INSTANCE_NAME:-Pretix Robot}
+    PRETIX_PRETIX_URL: http://${PRETIX_PUBLIC_HOST:-pretix.localhost}:${PRETIX_PUBLIC_PORT:-1}
+    PRETIX_PRETIX_CURRENCY: ${CURRENCY:-EUR}
+    PRETIX_PRETIX_DATADIR: /data
+    PRETIX_LOCALE_DEFAULT: ${DEFAULT_LOCALE:-en}
+    PRETIX_LOCALE_TIMEZONE: ${TIMEZONE:-Asia/Bangkok}
+    PRETIX_DATABASE_BACKEND: postgresql
+    PRETIX_DATABASE_HOST: postgres
+    PRETIX_DATABASE_NAME: pretix
+    PRETIX_DATABASE_USER: pretix
+    PRETIX_DATABASE_PASSWORD: ${POSTGRES_PASSWORD:?Run cmdc env init}
+    PRETIX_REDIS_LOCATION: redis://redis:6379/0
+    PRETIX_REDIS_SESSIONS: 'true'
+    PRETIX_CELERY_BROKER: redis://redis:6379/1
+    PRETIX_CELERY_BACKEND: redis://redis:6379/2
+    PRETIX_MAIL_HOST: mailpit
+    PRETIX_MAIL_PORT: '1025'
+    PRETIX_MAIL_FROM: tickets@fuzcake.test
+    PRETIX_MAIL_TLS: 'off'
+    PRETIX_MAIL_SSL: 'off'
+    ADMIN_EMAIL: ${ADMIN_EMAIL:-avery@fuzcake.test}
+    ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Run cmdc env init}
+    STAFF_EMAIL: ${STAFF_EMAIL:-rowan@fuzcake.test}
+    STAFF_PASSWORD: ${STAFF_PASSWORD:?Run cmdc env init}
+  volumes: &id003
+  - pretix_data:/data
+  - pretix_config:/etc/pretix
+  - ./scripts:/workspace/scripts:ro
+  - ./backups:/workspace/backups
+  - ../../fuzcake-data:/fuzcake-data:ro
+  depends_on: &id002
+    postgres:
+      condition: service_healthy
+    redis:
+      condition: service_healthy
+    mailpit:
+      condition: service_started
+services:
+  gateway:
+    image: ${NGINX_IMAGE:-nginx:1.27.3-alpine}
+    user: root
+    entrypoint:
+    - /usr/sbin/nginx
+    command:
+    - -g
+    - daemon off;
+    restart: ${RESTART_POLICY:-no}
+    ports:
+    - target: 18445
+      published: ${PUBLIC_PORT_RANGE:-49152-65535}
+      host_ip: 127.0.0.1
+    volumes:
+    - ./.runtime/gateway.conf:/etc/nginx/nginx.conf:ro
+    healthcheck:
+      test:
+      - CMD
+      - wget
+      - -q
+      - -O
+      - /dev/null
+      - http://127.0.0.1:18445/_cmdc/health
+      interval: 5s
+      timeout: 4s
+      retries: 20
+    labels:
+      org.robot-web.app: pretix
+  postgres:
+    image: ${POSTGRES_IMAGE:-postgres:16.6-alpine}
+    restart: ${RESTART_POLICY:-no}
+    command:
+    - postgres
+    - -c
+    - shared_buffers=${PG_SHARED_BUFFERS:-64MB}
+    - -c
+    - work_mem=${PG_WORK_MEM:-2MB}
+    - -c
+    - maintenance_work_mem=${PG_MAINTENANCE_WORK_MEM:-32MB}
+    - -c
+    - max_connections=${PG_MAX_CONNECTIONS:-40}
+    environment:
+      POSTGRES_DB: pretix
+      POSTGRES_USER: pretix
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Run cmdc env init}
+    volumes:
+    - postgres_data:/var/lib/postgresql/data
+    - ./backups:/backups
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - pg_isready -U pretix -d pretix
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    labels:
+      org.robot-web.app: pretix
+  redis:
+    image: ${REDIS_IMAGE:-redis:7.4.1-alpine}
+    restart: ${RESTART_POLICY:-no}
+    command:
+    - redis-server
+    - --appendonly
+    - 'yes'
+    volumes:
+    - redis_data:/data
+    healthcheck:
+      test:
+      - CMD
+      - redis-cli
+      - ping
+      interval: 5s
+      timeout: 3s
+      retries: 30
+    labels:
+      org.robot-web.app: pretix
+  mailpit:
+    image: ${MAILPIT_IMAGE:-axllent/mailpit:v1.21.8}
+    restart: ${RESTART_POLICY:-no}
+    ports:
+    - target: 8025
+      published: ${PUBLIC_PORT_RANGE:-49152-65535}
+      host_ip: 127.0.0.1
+    environment:
+      MP_DATABASE: /data/mailpit.db
+    volumes:
+    - mail_data:/data
+    labels:
+      org.robot-web.app: pretix
+  pretix:
+    image: ${PRETIX_IMAGE:-pretix/standalone:2026.9.2}
+    restart: ${RESTART_POLICY:-no}
+    environment: *id001
+    volumes:
+    - pretix_data:/data
+    - pretix_config:/etc/pretix
+    - ./scripts:/workspace/scripts:ro
+    - ./.runtime/nginx.conf:/etc/nginx/nginx.conf:ro
+    - ../../fuzcake-data:/fuzcake-data:ro
+    depends_on: *id002
+    command:
+    - web
+    healthcheck:
+      test:
+      - CMD
+      - python3
+      - /workspace/scripts/healthcheck.py
+      interval: 10s
+      timeout: 5s
+      retries: 60
+      start_period: 30s
+    labels:
+      org.robot-web.app: pretix
+  worker:
+    image: ${PRETIX_IMAGE:-pretix/standalone:2026.9.2}
+    restart: ${RESTART_POLICY:-no}
+    environment: *id001
+    volumes: *id003
+    depends_on:
+      pretix:
+        condition: service_healthy
+    command:
+    - taskworker
+    - --concurrency
+    - ${TASK_CONCURRENCY:-1}
+    labels:
+      org.robot-web.app: pretix
+  periodic:
+    image: ${PRETIX_IMAGE:-pretix/standalone:2026.9.2}
+    restart: ${RESTART_POLICY:-no}
+    environment: *id001
+    volumes: *id003
+    depends_on:
+      pretix:
+        condition: service_healthy
+    entrypoint:
+    - /bin/sh
+    - /workspace/scripts/run_periodic_tasks.sh
+    labels:
+      org.robot-web.app: pretix
+  robot:
+    image: ${ROBOT_IMAGE:-marketsquare/robotframework-browser:21.0.0}
+    profiles:
+    - tools
+    init: true
+    shm_size: ${ROBOT_SHM_MIB:-128}m
+    working_dir: /workspace
+    entrypoint:
+    - robot
+    environment:
+      BASE_URL: http://${PRETIX_PUBLIC_HOST:-pretix.localhost}:${PRETIX_PUBLIC_PORT:-1}
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-avery@fuzcake.test}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Run cmdc env init}
+    volumes:
+    - ./tests:/workspace/tests:ro
+    - ./reports:/workspace/reports
+    command:
+    - --outputdir
+    - /workspace/reports
+    - /workspace/tests/robot
+    labels:
+      org.robot-web.app: pretix
+  git:
+    image: ${GIT_IMAGE:-alpine/git:2.47.2}
+    profiles:
+    - tools
+    working_dir: /workspace
+    volumes:
+    - ./upstream:/workspace
+    labels:
+      org.robot-web.app: pretix
+  python:
+    image: ${PYTHON_IMAGE:-python:3.12.8-alpine}
+    profiles:
+    - tools
+    working_dir: /workspace
+    environment:
+      CMDC_HOST_PLATFORM: ${CMDC_HOST_PLATFORM:-posix}
+    volumes:
+    - .:/workspace
+    - ../..:/repository:ro
+    entrypoint:
+    - python3
+    labels:
+      org.robot-web.app: pretix
+volumes:
+  postgres_data:
+    labels:
+      org.robot-web.workspace: ${CMDC_WORKSPACE:?Use the guarded root launcher}
+      org.robot-web.app: pretix
+  redis_data:
+    labels:
+      org.robot-web.workspace: ${CMDC_WORKSPACE:?Use the guarded root launcher}
+      org.robot-web.app: pretix
+  pretix_data:
+    labels:
+      org.robot-web.workspace: ${CMDC_WORKSPACE:?Use the guarded root launcher}
+      org.robot-web.app: pretix
+  pretix_config:
+    labels:
+      org.robot-web.workspace: ${CMDC_WORKSPACE:?Use the guarded root launcher}
+      org.robot-web.app: pretix
+  mail_data:
+    labels:
+      org.robot-web.workspace: ${CMDC_WORKSPACE:?Use the guarded root launcher}
+      org.robot-web.app: pretix

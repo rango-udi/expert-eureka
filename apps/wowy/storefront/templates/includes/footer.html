@@ -1,0 +1,6 @@
+<footer class="fc-footer">
+  <div><a href="{% url 'core:home' %}" class="wordmark">{{ settings.site_name }}</a><p>{{ fuzcake_store.tagline }}</p><small>Local shopping environment powered by Wowy.</small></div>
+  <div><h3>Explore</h3>{% for category in categories %}<a href="{% url 'products:category' category.slug %}">{{ category.name }}</a>{% endfor %}</div>
+  <div><h3>Your account</h3><a href="{% url 'users:dashboard.orders' %}">Order history</a><a href="{% url 'users:dashboard.addresses' %}">Delivery addresses</a><a href="{% url 'users:dashboard.wishlist' %}">Wishlist</a><a href="{% url 'core:contact' %}">Contact the boutique</a></div>
+  <div><h3>The boutique</h3><p>{{ settings.address }}</p><a href="mailto:{{ settings.contact_email }}">{{ settings.contact_email }}</a><a href="{% url 'core:privacy' %}">Privacy</a><a href="{% url 'core:terms' %}">Terms</a></div>
+</footer>

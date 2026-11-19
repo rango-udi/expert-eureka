@@ -1,0 +1,10 @@
+.env*
+!.env.template
+.venv
+.runtime
+.git
+reports
+backups
+evidence
+__pycache__
+*.zip

@@ -1,0 +1,14 @@
+# Example only: adjust memory to the configured target plus tolerance range.
+# Back up %UserProfile%\.wslconfig; merge existing sections instead of replacing them.
+[wsl2]
+# Guest physical RAM ceiling; this example uses 2048 MiB, not total Windows usage.
+memory=2048MB
+# Virtual CPU count for sequential testing; adjust for other WSL workloads.
+processors=1
+# Disk-backed swap allowance; not extra physical RAM and not a cache-reclaim setting.
+swap=1024MB
+
+[experimental]
+# Return unused Linux page cache gradually when WSL becomes idle.
+# Requires a supporting WSL version; does not cap active pull/build memory.
+autoMemoryReclaim=gradual

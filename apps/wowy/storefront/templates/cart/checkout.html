@@ -1,0 +1,32 @@
+{% extends 'base.html' %}{% block title %}Checkout{% endblock %}
+{% block content %}<main id="store-content" class="container checkout-page">
+  <span class="eyebrow">THE FINISHING TOUCH</span><h1>Your order</h1>
+  {% if checkout_error %}<p class="alert alert-danger" role="alert">{{ checkout_error }}</p>{% endif %}
+  {% if cart_items %}
+  <div class="table-wrap"><table class="table"><thead><tr><th>Fragrance</th><th>Quantity</th><th>Subtotal ({{ settings.currency }})</th></tr></thead><tbody>{% for item in cart_items %}<tr><td>{{ item.product.name }}{% if item.variant %}<small>{{ item.variant }}</small>{% endif %}</td><td>{{ item.quantity }}</td><td>{{ item.subtotal }}</td></tr>{% endfor %}</tbody></table></div>
+  <p>Products: <strong id="products-total" data-total="{{ cart.total_price }}">{{ cart.total_price }} {{ settings.currency }}</strong></p>
+  {% if addresses %}<form method="post" class="wallet-form">{% csrf_token %}
+    <input type="hidden" name="token" value="{{ checkout_token }}">
+    <label for="shipping-address">Delivery address</label><select name="shipping_address" id="shipping-address" required>{% for address in addresses %}<option value="{{ address.pk }}">{{ address.address }}, {{ address.city }}, {{ address.postal_code }}</option>{% endfor %}</select>
+    <a href="{% url 'users:dashboard.addresses' %}">Manage addresses</a>
+    <label for="delivery-service">Delivery service</label><select name="carrier" id="delivery-service" required>{% for carrier in carriers %}<option value="{{ carrier.id }}" data-fee="{{ carrier.fee }}">{{ carrier.name }} &middot; {{ carrier.eta }} &middot; {{ carrier.fee }} {{ settings.currency }}</option>{% endfor %}</select>
+    <p>Delivery: <strong id="delivery-total"></strong><br>Total: <strong id="order-total"></strong> {{ settings.currency }}</p>
+    <label for="payment-method">Payment method</label><select name="payment_method" id="payment-method"><option value="cash_on_delivery">Cash on delivery</option></select>
+    <p class="local-note">An order records an unpaid local delivery scenario. No payment gateway is contacted.</p>
+    <button class="fc-button" type="submit">Place order &nearr;</button>
+  </form>{% else %}<p>Add a delivery address to continue.</p><a class="fc-button" href="{% url 'users:dashboard.addresses' %}">Add an address &nearr;</a>{% endif %}
+  {% else %}<p>Your cart is waiting for a new favourite.</p><a class="fc-button" href="{% url 'products:index' %}">Explore fragrances &nearr;</a>{% endif %}
+</main>{% endblock %}
+{% block script %}<script>
+(function () {
+  const select = document.getElementById('delivery-service');
+  if (!select) return;
+  function updateTotal() {
+    const fee = Math.round(Number(select.selectedOptions[0].dataset.fee) * 100);
+    const goods = Math.round(Number(document.getElementById('products-total').dataset.total) * 100);
+    document.getElementById('delivery-total').textContent = (fee / 100).toFixed(2);
+    document.getElementById('order-total').textContent = ((goods + fee) / 100).toFixed(2);
+  }
+  select.addEventListener('change', updateTotal); updateTotal();
+}());
+</script>{% endblock %}

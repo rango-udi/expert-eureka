@@ -1,0 +1,1 @@
+Pretix adapter. Public entry: cmdc <command> --app pretix. See documents/APPS.md at repository root.

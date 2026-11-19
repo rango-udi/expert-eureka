@@ -1,0 +1,6 @@
+# The verified Shuup wheel is prepared separately; compatibility pins live in constraints.txt.
+waitress==2.1.2
+whitenoise==6.7.0
+
+# Shared YAML test specification parser.
+PyYAML==6.0.2

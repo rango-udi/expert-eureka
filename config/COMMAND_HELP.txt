@@ -1,0 +1,83 @@
+Robot Web Tests
+Usage: cmdc <command> --app <id> [options]
+Read first: documents/guides/WORKFLOWS.md
+Full command reference: documents/guides/COMMANDS.md
+Application IDs and profiles: documents/APPS.md
+
+CHOOSE ONE PATH (examples for Shuup, Oscar and Wowy)
+  setup --app shuup                 Prepare and START the store for manual use.
+  setup --app shuup --run-tests     Prepare app/browser and run the default UI suite.
+  robot --app shuup                 On an initialized app: prepare browser, start, run UI.
+  setup --app shuup --run-tests --customer  Prepare and run the full customer suite.
+  robot --app shuup --customer      Register, activate, search three products, COD, history.
+  robot --app shuup --design        Generate and run model-driven UI cases (Shuup only).
+  start --app shuup                 Reopen an initialized store without running tests.
+  down --app shuup                  Remove containers/network; KEEP data and configuration.
+These are alternatives, not a mandatory sequence. setup already starts the store.
+
+CHECKS HAVE DIFFERENT PURPOSES
+  validate       Run adapter-specific internal checks; NO browser UI journey.
+                 Django: checks/unit/integration/source/docs. Pretix: config/unit/syntax/docs.
+                 PHP/.NET: environment/shared records/asset hashes, not checkout tests.
+  generate       Export cases for review; does NOT execute them. Shuup --customer selects customer design.
+  report         Shuup: export Excel; auto-read output.xml; --media adds figures; --results selects a run.
+                 A locked workbook is preserved; the new report uses an alternate filename.
+  robot          Execute the selected UI suite and write reports under apps/<id>/reports.
+  robot --dryrun Validate suite structure; does NOT execute UI keywords (Django/Pretix).
+  robot-init     Prepare browser image only; optional because robot prepares it too.
+
+APP LIFECYCLE AND CONFIGURATION
+  setup          Prepare images/configuration, initialize data, start services.
+                 --with-robot: prepare browser too (Django/PHP/.NET, not Pretix).
+                 --run-tests: prepare browser and run default suite; does not run validate.
+  bootstrap      Compatibility alias for setup; do not run both.
+  init           Initialize using prepared images; Django leaves web stopped.
+  start          Start an initialized app; does not rebuild or seed Django.
+  up             Compatibility alias for start; do not run both.
+  restart        Stop then start; does not rebuild images.
+  stop           Stop services, keeping containers and data.
+  down           Remove containers/network, keeping data and images.
+  env [init]     Create/complete private configuration; may prepare helper/app images.
+  env show       Show redacted declared settings (Django/Pretix only).
+  config         Show Compose/resource configuration; Django output may include secrets.
+  manage <args>  Native Django management in Docker; unsupported on PHP/.NET.
+
+OBSERVE AND DIAGNOSE
+  status         Container state, not proof of business behavior.
+  urls           Print current entry points; does not open a browser.
+  resources      Container RAM/CPU snapshot; Pretix also accepts --watch.
+  logs           Tail service container logs; not continuous follow mode.
+  diagnostics    Tail saved backend logs locally; works without Docker.
+  source         Django/PHP/.NET: report source. Pretix: download pinned source checkout.
+  versions       Installed Django packages; Pretix evidence; PHP/.NET source-lock only.
+  pull [scope]   Pretix only: cache missing server (default), robot or all images.
+
+DATA OPERATIONS: REVIEW SCOPE IN COMMANDS.md BEFORE --yes
+  backup <name>          Stop writers and save DB/media; Django/Pretix only.
+  restore <name> --yes   Replace DB/media; writers remain stopped; Django/Pretix only.
+  reset <scope> --yes    Delete selected data; scopes differ by adapter.
+  destroy --yes         Delete selected app data/resources; scope differs by adapter.
+                        --include-files also removes private/generated files per adapter.
+
+GLOBAL COMMANDS (omit --app; help/apps/version/help file work offline)
+  help                  Print this guide. -h and --help are aliases.
+  apps                  List IDs and display names.
+  apps --names          Print display names only.
+  apps --ids            Print accepted --app IDs only.
+  apps --raw            Print the local registry as stored.
+  version               Toolkit VERSION, distinct from app versions.
+  doctor                Check Linux Docker Engine, Compose and engine memory policy.
+  wsl-vm-limit-help     Open/print VM configuration instructions; no automatic VM change.
+
+PHP/.NET robot requires a RUNNING initialized store and accepts no extra Robot options.
+Django/Pretix static suites accept --test, --include and --dryrun.
+Shuup --customer uses --customer-case <ID-pattern> or --customer-stage <stage> instead
+of Robot selection flags, because DataDriver creates tests after filtering.
+Shuup setup --run-tests --customer selects this suite; bare setup --customer is rejected.
+Shuup customer stages also include basket_update, address_book and password_change.
+Shuup --design remains the separate wallet suite; do not combine it with --customer.
+Pretix heavy calls need confirmation or --accept-pretix-risk for EACH invocation.
+PHP/.NET heavy calls need confirmation or --accept-resource-risk for EACH invocation.
+Risk consent does not replace --yes for deletion. One app runs at a time.
+Windows CMD: cmdc.cmd; PowerShell: .\cmdc.cmd; POSIX: sh cmdc.
+CMDC_UI defaults to rich on interactive terminals; plain is available for logs/CI.

@@ -1,0 +1,33 @@
+{# Native placeholder contract adapted from Shuup 3.1.0, Copyright 2012-2021 Shuup Commerce Inc., OSL-3.0. #}
+{% macro render_footer() %}
+<footer class="fc-footer">
+    <div class="fc-footer-brand">
+        <a href="/" class="wordmark">{{ request.shop.public_name }}</a>
+        <p>{{ fuzcake_store.tagline }}</p>
+        <a href="{{ url('fuzcake-house') }}">Meet our fragrance house</a>
+    </div>
+    <div class="fc-footer-content">
+        {% placeholder "footer" global %}
+            {% column {"sm": 6} %}
+                {% plugin "simple_cms.page_links" %}title = ""{% endplugin %}
+            {% endcolumn %}
+            {% column {"sm": 6} %}
+                {% plugin "category_links" %}title = "Collections"{% endplugin %}
+            {% endcolumn %}
+        {% endplaceholder %}
+    </div>
+    <div class="fc-footer-contact">
+        <h3>The boutique</h3>
+        <p>{{ fuzcake_store.addresses[0].street }}<br>{{ fuzcake_store.addresses[0].city }}, {{ fuzcake_store.addresses[0].postal_code }}</p>
+        <a href="mailto:{{ fuzcake_store.support_email }}">{{ fuzcake_store.support_email }}</a>
+        <a href="{{ url('fuzcake-delivery') }}">Delivery &amp; returns</a>
+        <a href="{{ url('fuzcake-partners') }}">Payment partners</a>
+    </div>
+    <div class="fc-footer-bottom">
+        <span>fuzcake data &copy; <a href="https://github.com/rango-udi" rel="author">rango-udi</a> &middot; <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a></span>
+        {% placeholder "footer-bottom" global %}{% endplaceholder %}
+        {% set powered_by_content = shuup.general.get_powered_by_content() %}
+        {% if powered_by_content %}{{ powered_by_content|safe }}{% endif %}
+    </div>
+</footer>
+{% endmacro %}

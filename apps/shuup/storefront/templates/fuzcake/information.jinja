@@ -1,0 +1,54 @@
+{% extends "shuup/front/base.jinja" %}
+{% block title %}{% if section == 'house' %}Our house{% elif section == 'delivery' %}Delivery & returns{% else %}Payment partners{% endif %}{% endblock %}
+{% block content %}<section class="fc-info">
+{% if section == 'house' %}<span class="eyebrow">THE HOUSE OF FUZCAKE</span>
+<h1>A fragrance.<br>A feeling. <em>Your story.</em>
+</h1>
+<p>fuzcake is a fragrance house for the quietly curious. Our collection moves between bright, fresh notes, soft florals and the warmth of woods. Find a signature for your everyday rhythm, or discover something unexpected.</p>
+<div class="fc-story">
+<img src="{{ static('fuzcake/products/rose-aube.png') }}" alt="Rose Aube in a garden of soft pink roses">
+<div>
+<h2>Come as you are.</h2>
+<p>Start with a fragrance family and follow the notes that feel familiar. There is room for more than one version of you.</p>
+</div>
+</div>
+<div class="fc-namecard">
+<span class="wordmark">fuzcake</span>
+<strong>{{ fuzcake_store.roles.STAFF.first_name }} {{ fuzcake_store.roles.STAFF.last_name }}</strong>
+<p>Boutique experience &amp; fragrance guidance<br>{{ fuzcake_store.support_email }}<br>{{ fuzcake_store.addresses[0].street }}, {{ fuzcake_store.addresses[0].city }}</p>
+</div>
+<p class="local-note">This local store uses fictional business and customer records. Product photographs were supplied for this project; fixture prices and descriptions are illustrative retail data.</p>
+{% elif section == 'delivery' %}<span class="eyebrow">FROM OUR HOUSE TO YOURS</span>
+<h1>Good things,<br>
+<em>on their way.</em>
+</h1>
+<p>Choose a delivery option at checkout. Fees below are in {{ fuzcake_currency }}; delivery times describe the local shipping scenarios used by this store.</p>
+<div class="partner-grid">{% for carrier in fuzcake_partners.carriers %}<article class="partner-card">
+<img src="{{ static(carrier.logo) }}" alt="{{ carrier.name }}">
+<h3>{{ carrier.name }}</h3>
+<p>{{ carrier.service }}<br>{{ carrier.eta }}</p>
+<strong>{{ carrier.fee }} {{ fuzcake_currency }}</strong>
+</article>{% endfor %}</div>
+<h2>Returns &amp; care</h2>
+<p>For a return scenario, contact {{ fuzcake_store.support_email }} with the order reference. Returns are routed to {{ fuzcake_store.addresses[4].street }}, {{ fuzcake_store.addresses[4].city }}. Changes to an order are recorded by the store team.</p>
+<p class="local-note">Carriers, addresses and tracking events are fictional local records. Checkout records an order; it does not book a real courier. Policy enquiries remain in the local email backend.</p>
+{% else %}<span class="eyebrow">A CONNECTED EVERYDAY</span>
+<h1>Meet your<br>
+<em>payment companions.</em>
+</h1>
+<p>Distinct identities, one familiar place. Explore the fictional banks and electronic wallets linked to the fuzcake Wallet experience.</p>
+<h2>Banking partners</h2>
+<div class="partner-grid">{% for bank in fuzcake_partners.banks %}<article class="partner-card">
+<img src="{{ static(bank.logo) }}" alt="{{ bank.name }}">
+<h3>{{ bank.name }}</h3>
+<p>{{ bank.short_name }} &middot; {{ bank.card_types|join(' / ') }}</p>
+</article>{% endfor %}</div>
+<h2>Electronic wallets</h2>
+<div class="partner-grid">{% for partner in fuzcake_partners.wallets %}<article class="partner-card">
+<img src="{{ static(partner.logo) }}" alt="{{ partner.name }}">
+<h3>{{ partner.name }}</h3>
+<p>A linked local wallet for funding and transaction scenarios.</p>
+</article>{% endfor %}</div>
+<p class="local-note">These brands are fictional. Card references contain only masked digits and local tokens. No bank account, complete card number or security code is stored.</p>
+<a href="{{ url('fuzcake-wallet') }}" class="fc-button">Open your wallet<svg class="fc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a>{% endif %}
+</section>{% endblock %}

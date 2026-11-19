@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "generated": "2026-11-19T08:47:58.842156",
+  "source_sha256": "30a8989b8ffe940f8c5c452cd1429b7e47581daffb6a40020da2cf97c6754d84",
+  "unique_execution_count": 1,
+  "tests": {
+    "SH-CUST-L01": {
+      "status": "PASS",
+      "anchor": "s1-t1",
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-L02": {
+      "status": "PASS",
+      "anchor": "s1-t2",
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-L03": {
+      "status": "PASS",
+      "anchor": "s1-t3",
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-L04": {
+      "status": "PASS",
+      "anchor": "s1-t4",
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-Q01": {
+      "status": "FAIL",
+      "anchor": "s1-t5",
+      "failure_kind": "image_wait_timeout",
+      "failure_stage": null,
+      "message": "Timed out waiting for the enlarged product photograph; no conclusion about subsequent quantity or checkout behavior."
+    },
+    "SH-CUST-Q02": {
+      "status": "FAIL",
+      "anchor": "s1-t6",
+      "failure_kind": "image_wait_timeout",
+      "failure_stage": null,
+      "message": "Timed out waiting for the enlarged product photograph; no conclusion about subsequent quantity or checkout behavior."
+    },
+    "SH-CUST-Q03": {
+      "status": "FAIL",
+      "anchor": "s1-t7",
+      "failure_kind": "image_wait_timeout",
+      "failure_stage": null,
+      "message": "Timed out waiting for the enlarged product photograph; no conclusion about subsequent quantity or checkout behavior."
+    },
+    "SH-CUST-Q04": {
+      "status": "FAIL",
+      "anchor": "s1-t8",
+      "failure_kind": "image_wait_timeout",
+      "failure_stage": null,
+      "message": "Timed out waiting for the enlarged product photograph; no conclusion about subsequent quantity or checkout behavior."
+    },
+    "SH-CUST-Q05": {
+      "status": "FAIL",
+      "anchor": "s1-t9",
+      "failure_kind": "image_wait_timeout",
+      "failure_stage": null,
+      "message": "Timed out waiting for the enlarged product photograph; no conclusion about subsequent quantity or checkout behavior."
+    },
+    "SH-CUST-Q06": {
+      "status": "FAIL",
+      "anchor": "s1-t10",
+      "failure_kind": "image_wait_timeout",
+      "failure_stage": null,
+      "message": "Timed out waiting for the enlarged product photograph; no conclusion about subsequent quantity or checkout behavior."
+    },
+    "SH-CUST-Q07": {
+      "status": "FAIL",
+      "anchor": "s1-t11",
+      "failure_kind": "image_wait_timeout",
+      "failure_stage": null,
+      "message": "Timed out waiting for the enlarged product photograph; no conclusion about subsequent quantity or checkout behavior."
+    },
+    "SH-CUST-Q08": {
+      "status": "FAIL",
+      "anchor": "s1-t12",
+      "failure_kind": "image_wait_timeout",
+      "failure_stage": null,
+      "message": "Timed out waiting for the enlarged product photograph; no conclusion about subsequent quantity or checkout behavior."
+    },
+    "SH-CUST-Q09": {
+      "status": "FAIL",
+      "anchor": "s1-t13",
+      "failure_kind": "image_wait_timeout",
+      "failure_stage": null,
+      "message": "Timed out waiting for the enlarged product photograph; no conclusion about subsequent quantity or checkout behavior."
+    },
+    "SH-CUST-R01": {
+      "status": "PASS",
+      "anchor": "s1-t14",
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-R02": {
+      "status": "PASS",
+      "anchor": "s1-t15",
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-R03": {
+      "status": "PASS",
+      "anchor": "s1-t16",
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-R04": {
+      "status": "PASS",
+      "anchor": "s1-t17",
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-R05": {
+      "status": "PASS",
+      "anchor": "s1-t18",
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-R06": {
+      "status": "PASS",
+      "anchor": "s1-t19",
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-R07": {
+      "status": "PASS",
+      "anchor": "s1-t20",
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-R08": {
+      "status": "PASS",
+      "anchor": "s1-t21",
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-E01": {
+      "status": "FAIL",
+      "anchor": "s1-t22",
+      "failure_kind": "image_wait_timeout",
+      "failure_stage": null,
+      "message": "Timed out waiting for the enlarged product photograph; no conclusion about subsequent quantity or checkout behavior."
+    }
+  },
+  "totals": {
+    "PASS": 12,
+    "FAIL": 10
+  },
+  "note": "Imported execution, not a rerun of repaired code. No credentials or raw page data retained."
+}

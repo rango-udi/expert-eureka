@@ -1,0 +1,84 @@
+{
+  "name": "fuzcake",
+  "tagline": "A little scent. A lasting feeling.",
+  "support_email": "care@fuzcake.test",
+  "currency": "USD",
+  "addresses": [
+    {
+      "id": "boutique",
+      "name": "fuzcake Fragrance House",
+      "street": "18 Tophat Street",
+      "street2": "Atelier Quarter",
+      "city": "Moonberry",
+      "region": "Silvercloud",
+      "postal_code": "99942",
+      "country": "US"
+    },
+    {
+      "id": "customer-home",
+      "name": "Mira Solen",
+      "street": "42 Fuzzy Future Street",
+      "street2": "Garden District",
+      "city": "Moonberry",
+      "region": "Silvercloud",
+      "postal_code": "99948",
+      "country": "US"
+    },
+    {
+      "id": "fulfilment",
+      "name": "fuzcake Fulfilment",
+      "street": "7 Moonberry Avenue",
+      "street2": "Commerce Quarter",
+      "city": "Moonberry",
+      "region": "Silvercloud",
+      "postal_code": "99950",
+      "country": "US"
+    },
+    {
+      "id": "customer-office",
+      "name": "Mira Solen",
+      "street": "26 Velvet Garden Boulevard",
+      "street2": "Studio Quarter",
+      "city": "Moonberry",
+      "region": "Silvercloud",
+      "postal_code": "99944",
+      "country": "US"
+    },
+    {
+      "id": "returns",
+      "name": "fuzcake Returns",
+      "street": "9 Silvercloud Lane",
+      "street2": "Atelier Quarter",
+      "city": "Moonberry",
+      "region": "Silvercloud",
+      "postal_code": "99942",
+      "country": "US"
+    }
+  ],
+  "roles": {
+    "ADMIN": {
+      "first_name": "Avery",
+      "last_name": "Vale",
+      "phone": "12025550141"
+    },
+    "CUSTOMER": {
+      "first_name": "Mira",
+      "last_name": "Solen",
+      "phone": "12025550142",
+      "billing_address": "customer-home",
+      "shipping_address": "customer-home"
+    },
+    "STAFF": {
+      "first_name": "Rowan",
+      "last_name": "Pike",
+      "phone": "12025550143"
+    }
+  },
+  "phone": "12025550142",
+  "welcome_offer": {
+    "id": "fuzcake-welcome",
+    "name": "A little welcome from fuzcake",
+    "code": "FUZCAKE10",
+    "percentage": "0.10"
+  }
+}

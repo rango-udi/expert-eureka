@@ -1,0 +1,191 @@
+{
+  "evidence_run": null,
+  "schema_version": 1,
+  "generated": "2026-11-19T12:23:15.849146",
+  "source_sha256": "c86947716d0ec5a15099f2d2a9ff6a26303abe454bcba35f539cd821fe1b58ab",
+  "unique_execution_count": 1,
+  "tests": {
+    "SH-CUST-L01": {
+      "status": "PASS",
+      "anchor": "s1-t1",
+      "observed_basket_count": null,
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-L02": {
+      "status": "PASS",
+      "anchor": "s1-t2",
+      "observed_basket_count": null,
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-L03": {
+      "status": "PASS",
+      "anchor": "s1-t3",
+      "observed_basket_count": null,
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-L04": {
+      "status": "PASS",
+      "anchor": "s1-t4",
+      "observed_basket_count": null,
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-Q01": {
+      "status": "PASS",
+      "anchor": "s1-t5",
+      "observed_basket_count": null,
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-Q02": {
+      "status": "PASS",
+      "anchor": "s1-t6",
+      "observed_basket_count": null,
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-Q03": {
+      "status": "PASS",
+      "anchor": "s1-t7",
+      "observed_basket_count": null,
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-Q04": {
+      "status": "PASS",
+      "anchor": "s1-t8",
+      "observed_basket_count": null,
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-Q05": {
+      "status": "PASS",
+      "anchor": "s1-t9",
+      "observed_basket_count": null,
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-Q06": {
+      "status": "FAIL",
+      "anchor": "s1-t10",
+      "observed_basket_count": 26,
+      "failure_kind": "above_stock_accepted",
+      "failure_stage": null,
+      "message": "Above-stock quantity was accepted into the basket."
+    },
+    "SH-CUST-Q07": {
+      "status": "PASS",
+      "anchor": "s1-t11",
+      "observed_basket_count": null,
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-Q08": {
+      "status": "PASS",
+      "anchor": "s1-t12",
+      "observed_basket_count": null,
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-Q09": {
+      "status": "PASS",
+      "anchor": "s1-t13",
+      "observed_basket_count": null,
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-R01": {
+      "status": "PASS",
+      "anchor": "s1-t14",
+      "observed_basket_count": null,
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-R02": {
+      "status": "PASS",
+      "anchor": "s1-t15",
+      "observed_basket_count": null,
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-R03": {
+      "status": "PASS",
+      "anchor": "s1-t16",
+      "observed_basket_count": null,
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-R04": {
+      "status": "PASS",
+      "anchor": "s1-t17",
+      "observed_basket_count": null,
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-R05": {
+      "status": "PASS",
+      "anchor": "s1-t18",
+      "observed_basket_count": null,
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-R06": {
+      "status": "PASS",
+      "anchor": "s1-t19",
+      "observed_basket_count": null,
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-R07": {
+      "status": "PASS",
+      "anchor": "s1-t20",
+      "observed_basket_count": null,
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-R08": {
+      "status": "PASS",
+      "anchor": "s1-t21",
+      "observed_basket_count": null,
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    },
+    "SH-CUST-E01": {
+      "status": "PASS",
+      "anchor": "s1-t22",
+      "observed_basket_count": null,
+      "failure_kind": null,
+      "failure_stage": null,
+      "message": "Passed in imported execution."
+    }
+  },
+  "totals": {
+    "PASS": 21,
+    "FAIL": 1
+  },
+  "note": "Imported execution, not a rerun of repaired code. No credentials or raw page data retained.",
+  "source_path": "tests/evidence/customer-run-20261119-122315/results.json"
+}

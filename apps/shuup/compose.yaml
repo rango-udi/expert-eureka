@@ -1,0 +1,158 @@
+name: robot-web-shuup
+x-app:
+  image: robot-web-shuup-app:3.12.4
+  build: &id001
+    context: .
+    target: app
+    additional_contexts:
+      fuzcake-data: ../../fuzcake-data
+      test-design: ../../test-design
+  working_dir: /app
+  volumes:
+  - .:/app
+  - type: bind
+    source: ../../fuzcake-data
+    target: /fuzcake-data
+    read_only: true
+    bind:
+      create_host_path: false
+  mem_limit: ${APP_MEMORY_LIMIT:-512m}
+  cpus: 1.0
+  pids_limit: 128
+  init: true
+  labels: &id002
+    org.robot-web.app: shuup
+services:
+  shuup:
+    image: robot-web-shuup-app:3.12.4
+    build: *id001
+    working_dir: /app
+    volumes:
+    - &id003
+      type: bind
+      source: ./.env
+      target: /app/.env
+      read_only: true
+      bind:
+        create_host_path: false
+    - type: bind
+      source: ./.runtime/data
+      target: /app/.runtime/data
+      bind:
+        create_host_path: false
+    - type: bind
+      source: ../../fuzcake-data
+      target: /fuzcake-data
+      read_only: true
+      bind:
+        create_host_path: false
+    mem_limit: ${APP_MEMORY_LIMIT:-512m}
+    cpus: 1.0
+    pids_limit: 128
+    init: true
+    labels: *id002
+    command:
+    - python
+    - scripts/web_server.py
+    ports:
+    - 127.0.0.1::8000
+    healthcheck:
+      test:
+      - CMD
+      - python
+      - -c
+      - import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/_cmdc/health',
+        timeout=2)
+      interval: 2s
+      timeout: 3s
+      retries: 30
+      start_period: 10s
+  tools:
+    image: robot-web-shuup-app:3.12.4
+    build: *id001
+    working_dir: /app
+    volumes:
+    - .:/app
+    - ../..:/repository:ro
+    - type: bind
+      source: ../../fuzcake-data
+      target: /fuzcake-data
+      read_only: true
+      bind:
+        create_host_path: false
+    mem_limit: ${APP_MEMORY_LIMIT:-512m}
+    cpus: 1.0
+    pids_limit: 128
+    init: true
+    labels: *id002
+    profiles:
+    - tools
+    entrypoint:
+    - python
+    - scripts/commands.py
+  robot:
+    image: robot-web-shuup-browser:3.12.4
+    build:
+      context: .
+      target: robot
+      additional_contexts:
+        fuzcake-data: ../../fuzcake-data
+        test-design: ../../test-design
+    profiles:
+    - robot
+    working_dir: /app
+    volumes:
+    - type: bind
+      source: ./tests/data
+      target: /app/tests/data
+      read_only: true
+      bind:
+        create_host_path: false
+    - *id003
+    - ./reports:/app/reports
+    - ./.runtime:/app/.runtime
+    - type: bind
+      source: ../../fuzcake-data
+      target: /fuzcake-data
+      read_only: true
+      bind:
+        create_host_path: false
+    entrypoint:
+    - python
+    - scripts/commands.py
+    - robot
+    mem_limit: ${ROBOT_MEMORY_LIMIT:-1024m}
+    cpus: 1.0
+    pids_limit: 256
+    shm_size: 256m
+    init: true
+    labels:
+      org.robot-web.app: shuup
+  report:
+    image: robot-web-shuup-report:3.12.4
+    build:
+      context: .
+      target: report
+      additional_contexts:
+        test-design: ../../test-design
+    profiles:
+    - report
+    working_dir: /app
+    volumes:
+    - .:/app:ro
+    - ./reports:/app/reports
+    - type: bind
+      source: ../../fuzcake-data
+      target: /fuzcake-data
+      read_only: true
+      bind:
+        create_host_path: false
+    entrypoint:
+    - python
+    - scripts/customer_report.py
+    mem_limit: 512m
+    cpus: 1.0
+    pids_limit: 128
+    init: true
+    labels:
+      org.robot-web.app: shuup

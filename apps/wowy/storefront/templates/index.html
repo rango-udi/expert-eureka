@@ -1,0 +1,11 @@
+{% extends 'base.html' %}{% load static %}
+{% block title %}Find your signature{% endblock %}
+{% block content %}
+<main id="store-content" class="container">
+<section class="fc-hero">
+  <div class="hero-copy"><span class="eyebrow">THE ART OF FEELING LIKE YOU</span><h1>Find a scent.<br><em>Keep a feeling.</em></h1><p>Fresh mornings, soft florals and warm evenings.<br>Discover a fragrance that feels like your story.</p><a class="fc-button" href="{% url 'products:index' %}">Explore the collection &nearr;</a><span class="hero-footnote">THE FUZCAKE FRAGRANCE WARDROBE</span></div>
+  <div class="hero-visual"><img src="{% static 'fuzcake/products/rose-nocturne.png' %}" alt="Rose Nocturne among rose petals"><span class="hero-caption">Rose Nocturne</span></div>
+</section>
+<section class="fc-collection"><span class="eyebrow">FIND YOUR SIGNATURE</span><h2>A world of <em>possibility.</em></h2><nav class="category-pills" aria-label="Fragrance families">{% for category in categories %}<a href="{% url 'products:category' category.slug %}">{{ category.name }}</a>{% endfor %}</nav><div class="fc-product-grid">{% for product in products %}{% include 'includes/product.html' with product=product %}{% endfor %}</div></section>
+</main>
+{% endblock %}

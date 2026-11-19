@@ -1,0 +1,13 @@
+{
+  "creator": "rango-udi",
+  "creator_url": "https://github.com/rango-udi",
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "scope": "Original fictional records, descriptions, arrangement and original artwork only",
+  "exclusions": [
+    "User-supplied product photographs and third-party trademarks",
+    "Noto fonts",
+    "Lucide-derived artwork",
+    "Software and adapted native templates"
+  ]
+}

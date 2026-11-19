@@ -1,0 +1,25 @@
+# Locked container application dependencies, tested on Python 3.12.
+Django==5.2.19
+django-oscar[sorl-thumbnail]==4.2.1
+sorl-thumbnail==12.11.0
+Whoosh==2.7.4
+whitenoise==6.12.0
+waitress==3.0.2
+psutil==7.2.2
+Babel==2.18.0
+Faker==40.54.0
+pillow==13.0.0
+asgiref==3.13.0
+sqlparse==0.6.1
+django-extra-views==0.16.0
+django-haystack==3.4.0
+django-treebeard==7.0.3
+django-tables2==2.7.0
+django-phonenumber-field==8.5.0
+django-widget-tweaks==1.5.1
+phonenumbers==9.0.43
+factory-boy==3.3.3
+purl==1.6
+six==1.17.0
+packaging==26.3
+typing_extensions==4.16.0

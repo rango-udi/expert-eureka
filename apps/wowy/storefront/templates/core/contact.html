@@ -1,0 +1,3 @@
+{% extends 'base.html' %}
+{% block title %}Contact the boutique{% endblock %}
+{% block content %}<main id="store-content" class="container checkout-page"><span class="eyebrow">{{ settings.site_name }}</span><h1>Here to help.</h1><p>For help with a local order, keep its order reference and contact the boutique team using the details below.</p><p>{{ settings.address }}</p><a href="mailto:{{ settings.contact_email }}">{{ settings.contact_email }}</a><p class="local-note">This store uses fictional local business data and cash-on-delivery scenarios.</p><a class="fc-button" href="{% url 'products:index' %}">Explore the collection &nearr;</a></main>{% endblock %}

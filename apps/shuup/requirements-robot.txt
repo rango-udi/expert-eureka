@@ -1,0 +1,9 @@
+# Browser batteries supply Node and wrapper dependencies; Chromium is installed in the Docker browser target.
+robotframework==7.5.1
+robotframework-browser[bb]==21.0.0
+robotframework-browser-batteries==21.0.0
+# DataDriver materializes one Robot case per reduced CSV row.
+robotframework-datadriver==1.11.2
+
+# Shared YAML test specification parser.
+PyYAML==6.0.3

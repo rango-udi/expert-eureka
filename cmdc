@@ -1,0 +1,3 @@
+#!/bin/sh
+# Keep host requirements limited to Docker Compose and a POSIX shell.
+exec sh "$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)/scripts/cmdc.sh" "$@"

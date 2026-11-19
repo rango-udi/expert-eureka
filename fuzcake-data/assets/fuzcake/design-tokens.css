@@ -1,0 +1,39 @@
+/* Presentation tokens shared by fuzcake themes; business rules stay in native apps. */
+:root {
+  --fc-color-text:#342622;
+  --fc-color-muted:#74665e;
+  --fc-color-surface:#fcf9f5;
+  --fc-color-raised:#fff;
+  --fc-color-accent:#7d443e;
+  --fc-color-accent-hover:#643730;
+  --fc-color-rose:#eedbd0;
+  --fc-color-border:#e5dcd4;
+  --fc-color-lime:#e8edb1;
+  --fc-color-focus:#9d554e;
+  --fc-color-error:#9b2929;
+  --fc-color-success:#286548;
+  --fc-color-disabled:#c9c0b8;
+  --fc-font-body:'Noto Sans',sans-serif;
+  --fc-font-heading:'Noto Serif',serif;
+  --fc-font-size-body:14px;
+  --fc-line-height:1.65;
+  --fc-space-1:4px;
+  --fc-space-2:8px;
+  --fc-space-3:12px;
+  --fc-space-4:16px;
+  --fc-space-6:24px;
+  --fc-space-8:32px;
+  --fc-radius-control:4px;
+  --fc-radius-panel:8px;
+  --fc-shadow-panel:0 12px 30px #34262215;
+  --fc-motion-fast:160ms;
+  --fc-motion-panel:200ms;
+  --fc-motion-ease:cubic-bezier(.2,.7,.2,1);
+  --fc-opacity-disabled:.55;
+  --fc-layer-dropdown:1000;
+  --fc-layer-tooltip:1030;
+  --fc-layer-modal:1050;
+}
+@media(prefers-reduced-motion:reduce) {
+  :root {--fc-motion-fast:0ms;--fc-motion-panel:0ms;}
+}

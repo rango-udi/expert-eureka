@@ -1,0 +1,98 @@
+[
+  {
+    "asset": "fuzcake/products/rose-nocturne.png",
+    "source": "image(20261118-113656).png",
+    "sha256": "72d9a2d985c9930bd26a83d013562f220c2579276a8fa46a6afa431f42cd0c8b",
+    "usage": "User-supplied product photograph; copied without alteration. Product prices and descriptions are local fixture content."
+  },
+  {
+    "asset": "fuzcake/products/self-esteem.png",
+    "source": "image(20261118-113710).png",
+    "sha256": "d5ff2022861e979fa15f2ceef2d666031ae69c39c89fb44fcb6b58935cf5fc3c",
+    "usage": "User-supplied product photograph; copied without alteration. Product prices and descriptions are local fixture content."
+  },
+  {
+    "asset": "fuzcake/products/rose-aube.png",
+    "source": "image(20261118-113723).png",
+    "sha256": "b8beb6c563ad225951301a84cc47a04af4cba4d36e3707c5f6e7dee7a519adfd",
+    "usage": "User-supplied product photograph; copied without alteration. Product prices and descriptions are local fixture content."
+  },
+  {
+    "asset": "fuzcake/products/jasmine-tide.png",
+    "source": "image(20261118-113732).png",
+    "sha256": "6b6e72875398d359d78d3b30cf606ffd4e9cb0679945529178eee8b88ecf565b",
+    "usage": "User-supplied product photograph; copied without alteration. Product prices and descriptions are local fixture content."
+  },
+  {
+    "asset": "fuzcake/products/bombshell.png",
+    "source": "image(20261118-113755).png",
+    "sha256": "9ec52e0a595d097c013d4649bf06bef0da59e15963e0733b52cbb7b2225795ad",
+    "usage": "User-supplied product photograph; copied without alteration. Product prices and descriptions are local fixture content."
+  },
+  {
+    "asset": "fuzcake/products/romance-duo.png",
+    "source": "image(20261118-113814).png",
+    "sha256": "4c01cb7e3a2a324ae569342d82a51dcc5dc3b3b80a7f88854d5bea900cb4fd97",
+    "usage": "User-supplied product photograph; copied without alteration. Product prices and descriptions are local fixture content."
+  },
+  {
+    "asset": "fuzcake/products/ambre-minuit.png",
+    "source": "image(20261118-113824).png",
+    "sha256": "9c4fa1a604b96acead84b875d8513d2b76adb7cf6813ac8883a0d212a4d5d83b",
+    "usage": "User-supplied product photograph; copied without alteration. Product prices and descriptions are local fixture content."
+  },
+  {
+    "asset": "fuzcake/products/santal-stone.png",
+    "source": "image(20261118-113834).png",
+    "sha256": "e8f0ae450f3c9216c2fd06be5b48832f6118fcf2932748cf31209e1801f08280",
+    "usage": "User-supplied product photograph; copied without alteration. Product prices and descriptions are local fixture content."
+  },
+  {
+    "asset": "fuzcake/products/chanel-collection.png",
+    "source": "image(20261118-113842).png",
+    "sha256": "17cec54b37e228bd22680bbe8fb0ca41a2e6c5f090fdbcd8c7bfcbc613cabfef",
+    "usage": "User-supplied product photograph; copied without alteration. Product prices and descriptions are local fixture content."
+  },
+  {
+    "asset": "fuzcake/products/golden-hour.png",
+    "source": "image(20261118-113848).png",
+    "sha256": "e31b5b86790ae1f3f05e573d9fdd947bf5186f49f2513129cd9cb7d3f3411a71",
+    "usage": "User-supplied product photograph; copied without alteration. Product prices and descriptions are local fixture content."
+  },
+  {
+    "asset": "fuzcake/products/coco-mademoiselle.png",
+    "source": "image(20261118-113855).png",
+    "sha256": "de48c050ea745b570542ffe40de9cadd6d6eb97f0e92391190e19fbd3364ceeb",
+    "usage": "User-supplied product photograph; copied without alteration. Product prices and descriptions are local fixture content."
+  },
+  {
+    "asset": "fuzcake/products/vintage-green.png",
+    "source": "image(20261118-113907).png",
+    "sha256": "a29c61fc58685c83bba77b855056cdbe139264e1b9d0f224d377d1128d884087",
+    "usage": "User-supplied product photograph; copied without alteration. Product prices and descriptions are local fixture content."
+  },
+  {
+    "asset": "fuzcake/products/bleu-chanel.png",
+    "source": "image(20261118-113911).png",
+    "sha256": "40062271c418a0616371c1ff051989696c3441db5c65de4150d9c89fe53b3445",
+    "usage": "User-supplied product photograph; copied without alteration. Product prices and descriptions are local fixture content."
+  },
+  {
+    "asset": "fuzcake/products/coco-intense.png",
+    "source": "image(20261118-113921).png",
+    "sha256": "a301b9b8ecbe1e9aea6330cb3eecbc76ccc75fd620427a2980bed22213ae4442",
+    "usage": "User-supplied product photograph; copied without alteration. Product prices and descriptions are local fixture content."
+  },
+  {
+    "asset": "fuzcake/products/homme-ideal.png",
+    "source": "image(20261118-113931).png",
+    "sha256": "c43288cdfbef99d88b4f2f348ad8f1781460341348f07feea7c9e1b3bfac4b54",
+    "usage": "User-supplied product photograph; copied without alteration. Product prices and descriptions are local fixture content."
+  },
+  {
+    "asset": "fuzcake/products/the-one.png",
+    "source": "image(20261118-113942).png",
+    "sha256": "9f9410aa9aac1f2076431193f72c93de4ca588d7a72aa5dc8eda276dbd8199c3",
+    "usage": "User-supplied product photograph; copied without alteration. Product prices and descriptions are local fixture content."
+  }
+]

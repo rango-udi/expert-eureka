@@ -1,0 +1,22 @@
+Copyright (c) 2026 rango-udi (https://github.com/rango-udi)
+SPDX-License-Identifier: CC-BY-4.0
+
+The original fictional records, authored descriptions, database arrangement and
+original partner artwork in this directory are licensed under the Creative
+Commons Attribution 4.0 International license:
+https://creativecommons.org/licenses/by/4.0/
+Legal code: https://creativecommons.org/licenses/by/4.0/legalcode.en
+
+You may share and adapt the licensed material, including commercially, provided
+you give appropriate credit to rango-udi, retain the license link, and indicate
+changes. Do not imply endorsement. The linked legal code governs the grant.
+
+Suggested credit: "fuzcake data by rango-udi, CC BY 4.0; modified where noted."
+
+Scope exclusions: user-supplied product photographs, third-party trademarks,
+Noto fonts, and Lucide-derived artwork retain their respective rights/licenses.
+Bundled font/icon notices are in assets/fuzcake/licenses/. See
+records/asset-provenance.json and documents/THIRD_PARTY_NOTICES.md in the
+workspace. This license grants only rights held by the licensor; it does not
+grant ownership of third-party photographs or marks. Software remains under its
+applicable software license; adapted native templates retain upstream notices.

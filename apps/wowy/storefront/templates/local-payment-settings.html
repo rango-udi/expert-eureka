@@ -1,0 +1,2 @@
+{% extends 'users/admin/base.html' %}
+{% block content %}<main class="container checkout-page"><h1>Local payment settings</h1><p>This target records cash-on-delivery orders in {{ settings.currency }}. No online gateway or real payment keys are needed.</p><a href="{% url 'users:admin.orders' %}">Review orders</a></main>{% endblock %}

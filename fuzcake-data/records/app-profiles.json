@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "apps": {
+    "oscar": [
+      "store",
+      "catalogue"
+    ],
+    "shuup": [
+      "store",
+      "catalogue",
+      "partners",
+      "wallet"
+    ],
+    "wowy": [
+      "store",
+      "catalogue",
+      "partners"
+    ],
+    "pretix": [
+      "events"
+    ],
+    "nopcommerce": [
+      "store",
+      "catalogue"
+    ],
+    "prestashop": [
+      "store",
+      "catalogue"
+    ],
+    "woocommerce": [
+      "store",
+      "catalogue",
+      "partners"
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "repository": "PrestaShop/PrestaShop",
+  "ref": "9.2.1",
+  "docker_repository": "PrestaShop/docker",
+  "docker_commit": "3ae38c60bb134da57c1d0777fce2c2855515f582",
+  "image": "prestashop/prestashop:9.2.1-6.1-classic-8.3-apache"
+}

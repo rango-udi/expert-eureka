@@ -1,0 +1,16 @@
+{
+  "repository": "https://github.com/manjurulhoque/wowy",
+  "commit": "1781390d41c991e0211f4e1042f0e54033dae2ed",
+  "tree": "c8c998e8d40260ba5b369b5ff086ab24bafbc993",
+  "license": "MIT",
+  "retrieval": "Git fetch of the pinned commit during Docker build; verify commit and tree before copying an allowlist.",
+  "excluded": [
+    "db.sqlite3",
+    "media",
+    ".env.example",
+    "products/fixtures",
+    "screenshots",
+    "gambo/settings.py"
+  ],
+  "integration": "Django 5.2 runtime; adapter-owned settings, checkout, cart validation and access boundary. Stripe/dj-stripe are omitted from this local COD target."
+}

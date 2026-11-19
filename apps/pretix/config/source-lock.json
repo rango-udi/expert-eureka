@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/pretix/pretix",
+  "tag": "v2026.9.2",
+  "commit": "46bd2caea20dc1b97ebd02bcb802996f872e0c66",
+  "image_lock": "apps/pretix/compose.lock.yaml",
+  "origin": "Pinned application adapter restored from the attached v0.9.0 archive; not a latest-version claim.",
+  "gateway_image": "nginx:1.27.3-alpine@sha256:814a8e88df978ade80e584cc5b333144b9372a8e3c98872d07137dbf3b44d0e4"
+}

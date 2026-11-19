@@ -1,0 +1,3 @@
+{% extends 'base.html' %}
+{% block title %}Our house{% endblock %}
+{% block content %}<main id="store-content" class="container checkout-page"><span class="eyebrow">{{ settings.site_name }}</span><h1>A fragrance. A feeling. Your story.</h1><p>Explore a wardrobe of fresh notes, soft florals and warm woods. Choose a fragrance family and follow the notes that feel like you.</p><p>{{ settings.address }}</p><a href="mailto:{{ settings.contact_email }}">{{ settings.contact_email }}</a><p class="local-note">This store uses fictional local business data and cash-on-delivery scenarios.</p><a class="fc-button" href="{% url 'products:index' %}">Explore the collection &nearr;</a></main>{% endblock %}

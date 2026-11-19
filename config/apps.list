@@ -1,0 +1,8 @@
+# id|compose project|application root relative to repository|display name
+oscar|robot-web-oscar|apps/oscar|Oscar
+pretix|robot-web-pretix|apps/pretix|pretix
+shuup|robot-web-shuup|apps/shuup|Shuup
+wowy|robot-web-wowy|apps/wowy|Wowy
+nopcommerce|robot-web-nopcommerce|apps/nopcommerce|nopCommerce
+prestashop|robot-web-prestashop|apps/prestashop|PrestaShop
+woocommerce|robot-web-woocommerce|apps/woocommerce|WooCommerce

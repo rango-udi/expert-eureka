@@ -1,0 +1,6 @@
+.env*
+.runtime
+.git
+__pycache__
+*.pyc
+*.zip

@@ -1,0 +1,147 @@
+{
+  "owner_role": "CUSTOMER",
+  "account_reference": "FW-MOON-2048",
+  "currency": "USD",
+  "expected_balance_minor": 26100,
+  "ledger": [
+    {
+      "reference": "FW-2026-0901-0101",
+      "kind": "opening",
+      "amount_minor": 25000,
+      "status": "posted",
+      "occurred_at": "2026-09-01T09:00:00Z",
+      "description": "Opening wallet balance",
+      "method": "wallet-quantumgem"
+    },
+    {
+      "reference": "FW-2026-0903-0147",
+      "kind": "topup",
+      "amount_minor": 10000,
+      "status": "posted",
+      "occurred_at": "2026-09-03T14:20:00Z",
+      "description": "Top-up from Reserve debit",
+      "method": "card-trb-4286"
+    },
+    {
+      "reference": "FW-2026-0904-0182",
+      "kind": "payment",
+      "amount_minor": -9395,
+      "status": "posted",
+      "occurred_at": "2026-09-04T10:30:00Z",
+      "description": "Rose Nocturne with careful delivery",
+      "method": "wallet-quantumgem",
+      "order": "FC-260904-0182"
+    },
+    {
+      "reference": "FW-2026-0906-0208",
+      "kind": "refund",
+      "amount_minor": 495,
+      "status": "posted",
+      "occurred_at": "2026-09-06T11:00:00Z",
+      "description": "Delivery fee adjustment",
+      "method": "wallet-quantumgem",
+      "order": "FC-260904-0182"
+    },
+    {
+      "reference": "FW-2026-0908-0242",
+      "kind": "topup",
+      "amount_minor": 5000,
+      "status": "pending",
+      "occurred_at": "2026-09-08T08:15:00Z",
+      "description": "OneCard funding awaiting confirmation",
+      "method": "wallet-onecard"
+    },
+    {
+      "reference": "FW-2026-0908-0243",
+      "kind": "topup",
+      "amount_minor": 2500,
+      "status": "failed",
+      "occurred_at": "2026-09-08T08:16:00Z",
+      "description": "VelvetR funding cancelled",
+      "method": "wallet-velvetr"
+    }
+  ],
+  "orders": [
+    {
+      "reference": "FC-260904-0182",
+      "sku": "fuzcake-rose-nocturne",
+      "quantity": 1,
+      "items_minor": 8900,
+      "shipping_minor": 495,
+      "total_minor": 9395,
+      "address": "customer-home",
+      "carrier": "fuzcake-delivery",
+      "tracking": "FCD-MB-260904-0182",
+      "status": "delivered",
+      "events": [
+        {
+          "at": "2026-09-04T10:35:00Z",
+          "status": "confirmed"
+        },
+        {
+          "at": "2026-09-04T15:00:00Z",
+          "status": "packed"
+        },
+        {
+          "at": "2026-09-05T08:00:00Z",
+          "status": "in_transit"
+        },
+        {
+          "at": "2026-09-06T09:45:00Z",
+          "status": "delivered"
+        }
+      ],
+      "payment_method": "wallet-quantumgem"
+    },
+    {
+      "reference": "FC-260908-0244",
+      "sku": "fuzcake-self-esteem",
+      "quantity": 1,
+      "items_minor": 7400,
+      "shipping_minor": 895,
+      "total_minor": 8295,
+      "address": "customer-office",
+      "carrier": "sweetlemon",
+      "tracking": "SL-MB-260908-0244",
+      "status": "in_transit",
+      "payment_method": "fixture-payment",
+      "events": [
+        {
+          "at": "2026-09-08T09:00:00Z",
+          "status": "confirmed"
+        },
+        {
+          "at": "2026-09-08T11:30:00Z",
+          "status": "packed"
+        },
+        {
+          "at": "2026-09-08T14:00:00Z",
+          "status": "in_transit"
+        }
+      ]
+    },
+    {
+      "reference": "FC-260909-0271",
+      "sku": "fuzcake-santal-stone",
+      "quantity": 1,
+      "items_minor": 9200,
+      "shipping_minor": 1495,
+      "total_minor": 10695,
+      "address": "customer-home",
+      "carrier": "ultrafazt",
+      "tracking": "UF-MB-260909-0271",
+      "status": "packed",
+      "payment_method": "fixture-payment",
+      "events": [
+        {
+          "at": "2026-09-09T09:00:00Z",
+          "status": "confirmed"
+        },
+        {
+          "at": "2026-09-09T11:30:00Z",
+          "status": "packed"
+        }
+      ]
+    }
+  ]
+}

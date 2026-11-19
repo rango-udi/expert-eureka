@@ -1,0 +1,219 @@
+{
+  "name": "robot-web-nopcommerce",
+  "services": {
+    "db": {
+      "init": true,
+      "cpus": 1,
+      "pids_limit": 192,
+      "labels": {
+        "org.robot-web.app": "nopcommerce"
+      },
+      "restart": "no",
+      "image": "postgres:16.6-bookworm",
+      "mem_limit": "${DB_MEMORY_LIMIT:-256m}",
+      "volumes": [
+        "database_data:/var/lib/postgresql/data"
+      ],
+      "environment": {
+        "POSTGRES_DB": "commerce",
+        "POSTGRES_USER": "commerce",
+        "POSTGRES_PASSWORD": "${DB_PASSWORD:-unconfigured}"
+      },
+      "command": [
+        "postgres",
+        "-c",
+        "shared_buffers=32MB",
+        "-c",
+        "max_connections=25"
+      ],
+      "healthcheck": {
+        "test": [
+          "CMD-SHELL",
+          "pg_isready -U commerce -d commerce"
+        ],
+        "interval": "3s",
+        "timeout": "5s",
+        "retries": 40
+      }
+    },
+    "app": {
+      "init": true,
+      "cpus": 1,
+      "pids_limit": 192,
+      "labels": {
+        "org.robot-web.app": "nopcommerce"
+      },
+      "restart": "no",
+      "image": "robot-web-nopcommerce-app:3.9.2",
+      "build": {
+        "context": ".",
+        "target": "app"
+      },
+      "env_file": [
+        {
+          "path": ".env",
+          "required": false
+        }
+      ],
+      "mem_limit": "${APP_MEMORY_LIMIT:-1024m}",
+      "ports": [
+        "127.0.0.1:${HTTP_PORT:-8084}:${HTTP_PORT:-8084}"
+      ],
+      "volumes": [
+        {
+          "type": "bind",
+          "source": "../../fuzcake-data",
+          "target": "/fuzcake-data",
+          "read_only": true,
+          "bind": {
+            "create_host_path": false
+          }
+        },
+        "app_data:/app/App_Data",
+        "product_media:/app/wwwroot/images"
+      ],
+      "healthcheck": {
+        "test": [
+          "CMD-SHELL",
+          "curl --fail --silent http://127.0.0.1:$${HTTP_PORT}/ >/dev/null"
+        ],
+        "interval": "5s",
+        "timeout": "10s",
+        "retries": 60,
+        "start_period": "30s"
+      },
+      "platform": "linux/amd64",
+      "environment": {
+        "ASPNETCORE_URLS": "http://+:${HTTP_PORT:-8084}",
+        "DOTNET_GCHeapHardLimit": "0x28000000",
+        "DOTNET_gcServer": "0",
+        "InstallationConfig__DisableSampleData": "true",
+        "InstallationConfig__InstallRegionalResources": "false"
+      }
+    },
+    "tools": {
+      "init": true,
+      "cpus": 1,
+      "pids_limit": 192,
+      "labels": {
+        "org.robot-web.app": "nopcommerce"
+      },
+      "restart": "no",
+      "image": "robot-web-commerce-tools:3.9.2",
+      "build": {
+        "context": "../../scripts/commerce",
+        "target": "tools"
+      },
+      "profiles": [
+        "tools"
+      ],
+      "env_file": [
+        {
+          "path": ".env",
+          "required": false
+        }
+      ],
+      "mem_limit": "256m",
+      "working_dir": "/workspace",
+      "volumes": [
+        {
+          "type": "bind",
+          "source": ".",
+          "target": "/workspace",
+          "read_only": false,
+          "bind": {
+            "create_host_path": false
+          }
+        },
+        {
+          "type": "bind",
+          "source": "../../fuzcake-data",
+          "target": "/fuzcake-data",
+          "read_only": true,
+          "bind": {
+            "create_host_path": false
+          }
+        }
+      ]
+    },
+    "robot": {
+      "init": true,
+      "cpus": 1,
+      "pids_limit": 192,
+      "labels": {
+        "org.robot-web.app": "nopcommerce"
+      },
+      "restart": "no",
+      "image": "robot-web-commerce-browser:3.9.2",
+      "build": {
+        "context": "../../scripts/commerce",
+        "target": "robot"
+      },
+      "profiles": [
+        "robot"
+      ],
+      "env_file": [
+        {
+          "path": ".env",
+          "required": false
+        }
+      ],
+      "environment": {
+        "BASE_URL": "http://127.0.0.1:${HTTP_PORT:-8084}"
+      },
+      "mem_limit": "${ROBOT_MEMORY_LIMIT:-1024m}",
+      "shm_size": "256m",
+      "working_dir": "/workspace",
+      "volumes": [
+        {
+          "type": "bind",
+          "source": "./reports",
+          "target": "/workspace/reports",
+          "read_only": false,
+          "bind": {
+            "create_host_path": false
+          }
+        },
+        {
+          "type": "bind",
+          "source": "./tests",
+          "target": "/checks",
+          "read_only": true,
+          "bind": {
+            "create_host_path": false
+          }
+        },
+        {
+          "type": "bind",
+          "source": "../../fuzcake-data",
+          "target": "/fuzcake-data",
+          "read_only": true,
+          "bind": {
+            "create_host_path": false
+          }
+        }
+      ],
+      "network_mode": "service:app"
+    }
+  },
+  "volumes": {
+    "database_data": {
+      "labels": {
+        "org.robot-web.workspace": "${CMDC_WORKSPACE:?Use root cmdc}",
+        "org.robot-web.app": "nopcommerce"
+      }
+    },
+    "app_data": {
+      "labels": {
+        "org.robot-web.workspace": "${CMDC_WORKSPACE:?Use root cmdc}",
+        "org.robot-web.app": "nopcommerce"
+      }
+    },
+    "product_media": {
+      "labels": {
+        "org.robot-web.workspace": "${CMDC_WORKSPACE:?Use root cmdc}",
+        "org.robot-web.app": "nopcommerce"
+      }
+    }
+  }
+}

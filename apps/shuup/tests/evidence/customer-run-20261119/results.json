@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "generated": "2026-11-19T06:15:42.880826",
+  "source_sha256": "e0405b7f30ce46f4ccf3af47317bf4c44bf64a27346e36972deba8e166088e5a",
+  "unique_execution_count": 1,
+  "duplicate_inputs": [
+    "output(1).xml",
+    "output(2).xml"
+  ],
+  "tests": {
+    "SH-CUST-L01": {
+      "status": "PASS",
+      "anchor": "s1-t1",
+      "message": "Passed in the imported execution.",
+      "failure_kind": null
+    },
+    "SH-CUST-L02": {
+      "status": "PASS",
+      "anchor": "s1-t2",
+      "message": "Passed in the imported execution.",
+      "failure_kind": null
+    },
+    "SH-CUST-L03": {
+      "status": "PASS",
+      "anchor": "s1-t3",
+      "message": "Passed in the imported execution.",
+      "failure_kind": null
+    },
+    "SH-CUST-L04": {
+      "status": "PASS",
+      "anchor": "s1-t4",
+      "message": "Passed in the imported execution.",
+      "failure_kind": null
+    },
+    "SH-CUST-Q01": {
+      "status": "FAIL",
+      "anchor": "s1-t5",
+      "message": "Selector css=h1 matched two responsive product headings; business assertions after the heading were not executed.",
+      "failure_kind": "test_selector"
+    },
+    "SH-CUST-Q02": {
+      "status": "FAIL",
+      "anchor": "s1-t6",
+      "message": "Selector css=h1 matched two responsive product headings; business assertions after the heading were not executed.",
+      "failure_kind": "test_selector"
+    },
+    "SH-CUST-Q03": {
+      "status": "FAIL",
+      "anchor": "s1-t7",
+      "message": "Selector css=h1 matched two responsive product headings; business assertions after the heading were not executed.",
+      "failure_kind": "test_selector"
+    },
+    "SH-CUST-Q04": {
+      "status": "FAIL",
+      "anchor": "s1-t8",
+      "message": "Selector css=h1 matched two responsive product headings; business assertions after the heading were not executed.",
+      "failure_kind": "test_selector"
+    },
+    "SH-CUST-Q05": {
+      "status": "FAIL",
+      "anchor": "s1-t9",
+      "message": "Selector css=h1 matched two responsive product headings; business assertions after the heading were not executed.",
+      "failure_kind": "test_selector"
+    },
+    "SH-CUST-Q06": {
+      "status": "FAIL",
+      "anchor": "s1-t10",
+      "message": "Selector css=h1 matched two responsive product headings; business assertions after the heading were not executed.",
+      "failure_kind": "test_selector"
+    },
+    "SH-CUST-Q07": {
+      "status": "FAIL",
+      "anchor": "s1-t11",
+      "message": "Selector css=h1 matched two responsive product headings; business assertions after the heading were not executed.",
+      "failure_kind": "test_selector"
+    },
+    "SH-CUST-Q08": {
+      "status": "FAIL",
+      "anchor": "s1-t12",
+      "message": "Selector css=h1 matched two responsive product headings; business assertions after the heading were not executed.",
+      "failure_kind": "test_selector"
+    },
+    "SH-CUST-Q09": {
+      "status": "FAIL",
+      "anchor": "s1-t13",
+      "message": "Selector css=h1 matched two responsive product headings; business assertions after the heading were not executed.",
+      "failure_kind": "test_selector"
+    },
+    "SH-CUST-R01": {
+      "status": "PASS",
+      "anchor": "s1-t14",
+      "message": "Passed in the imported execution.",
+      "failure_kind": null
+    },
+    "SH-CUST-R02": {
+      "status": "PASS",
+      "anchor": "s1-t15",
+      "message": "Passed in the imported execution.",
+      "failure_kind": null
+    },
+    "SH-CUST-R03": {
+      "status": "PASS",
+      "anchor": "s1-t16",
+      "message": "Passed in the imported execution.",
+      "failure_kind": null
+    },
+    "SH-CUST-R04": {
+      "status": "PASS",
+      "anchor": "s1-t17",
+      "message": "Passed in the imported execution.",
+      "failure_kind": null
+    },
+    "SH-CUST-R05": {
+      "status": "PASS",
+      "anchor": "s1-t18",
+      "message": "Passed in the imported execution.",
+      "failure_kind": null
+    },
+    "SH-CUST-R06": {
+      "status": "PASS",
+      "anchor": "s1-t19",
+      "message": "Passed in the imported execution.",
+      "failure_kind": null
+    },
+    "SH-CUST-R07": {
+      "status": "PASS",
+      "anchor": "s1-t20",
+      "message": "Passed in the imported execution.",
+      "failure_kind": null
+    },
+    "SH-CUST-R08": {
+      "status": "PASS",
+      "anchor": "s1-t21",
+      "message": "Passed in the imported execution.",
+      "failure_kind": null
+    },
+    "SH-CUST-E01": {
+      "status": "FAIL",
+      "anchor": "s1-t22",
+      "message": "Selector css=h1 matched two responsive product headings; business assertions after the heading were not executed.",
+      "failure_kind": "test_selector",
+      "failure_stage": "first_product_heading"
+    }
+  },
+  "totals": {
+    "PASS": 12,
+    "FAIL": 10
+  },
+  "note": "Imported pre-fix execution. Not a rerun of the repaired selectors. No credentials or raw page data included."
+}

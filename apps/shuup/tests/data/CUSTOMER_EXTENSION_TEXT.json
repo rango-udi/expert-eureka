@@ -1,0 +1,604 @@
+{
+  "cases": [
+    {
+      "id": "TC-GB-001",
+      "robot_ids": [
+        "SH-CUST-B01"
+      ],
+      "requirement": "YC-GB",
+      "analysis": "BVA-GB-01, EP-GB-02",
+      "en": {
+        "title": "Updating a basket line with quantity 0",
+        "description": "Updating a basket line with quantity 0.",
+        "steps": "1. Log in with the displayed account.\n2. Add 2 Rose Nocturne bottles and open the basket.\n3. Enter the attempted quantity and leave the control to update.\n4. Reopen the basket and inspect quantity and total.",
+        "expected": "A native quantity/stock error rejects the attempted value; saved quantity stays 2 and total stays 178.00 USD."
+      },
+      "vi": {
+        "title": "C\u1eadp nh\u1eadt d\u00f2ng gi\u1ecf h\u00e0ng v\u1edbi s\u1ed1 l\u01b0\u1ee3ng 0",
+        "description": "C\u1eadp nh\u1eadt d\u00f2ng gi\u1ecf h\u00e0ng v\u1edbi s\u1ed1 l\u01b0\u1ee3ng 0.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp b\u1eb1ng t\u00e0i kho\u1ea3n trong d\u1eef li\u1ec7u.\n2. Th\u00eam 2 chai Rose Nocturne v\u00e0 m\u1edf gi\u1ecf h\u00e0ng.\n3. Nh\u1eadp gi\u00e1 tr\u1ecb s\u1ed1 l\u01b0\u1ee3ng \u0111ang th\u1eed, chuy\u1ec3n kh\u1ecfi \u00f4 \u0111\u1ec3 c\u1eadp nh\u1eadt.\n4. Ki\u1ec3m tra s\u1ed1 l\u01b0\u1ee3ng v\u00e0 t\u1ed5ng ti\u1ec1n sau khi t\u1ea3i l\u1ea1i gi\u1ecf.",
+        "expected": "C\u00f3 l\u1ed7i s\u1ed1 l\u01b0\u1ee3ng/t\u1ed3n kho native; s\u1ed1 \u0111\u00e3 l\u01b0u v\u1eabn l\u00e0 2, t\u1ed5ng ti\u1ec1n 178.00 USD."
+      }
+    },
+    {
+      "id": "TC-GB-002",
+      "robot_ids": [
+        "SH-CUST-B02"
+      ],
+      "requirement": "YC-GB",
+      "analysis": "BVA-GB-02, EP-GB-01",
+      "en": {
+        "title": "Updating a basket line with quantity 1",
+        "description": "Updating a basket line with quantity 1.",
+        "steps": "1. Log in with the displayed account.\n2. Add 2 Rose Nocturne bottles and open the basket.\n3. Enter the attempted quantity and leave the control to update.\n4. Reopen the basket and inspect quantity and total.",
+        "expected": "The line and navigation count become 1; the total equals 89.00 USD."
+      },
+      "vi": {
+        "title": "C\u1eadp nh\u1eadt d\u00f2ng gi\u1ecf h\u00e0ng v\u1edbi s\u1ed1 l\u01b0\u1ee3ng 1",
+        "description": "C\u1eadp nh\u1eadt d\u00f2ng gi\u1ecf h\u00e0ng v\u1edbi s\u1ed1 l\u01b0\u1ee3ng 1.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp b\u1eb1ng t\u00e0i kho\u1ea3n trong d\u1eef li\u1ec7u.\n2. Th\u00eam 2 chai Rose Nocturne v\u00e0 m\u1edf gi\u1ecf h\u00e0ng.\n3. Nh\u1eadp gi\u00e1 tr\u1ecb s\u1ed1 l\u01b0\u1ee3ng \u0111ang th\u1eed, chuy\u1ec3n kh\u1ecfi \u00f4 \u0111\u1ec3 c\u1eadp nh\u1eadt.\n4. Ki\u1ec3m tra s\u1ed1 l\u01b0\u1ee3ng v\u00e0 t\u1ed5ng ti\u1ec1n sau khi t\u1ea3i l\u1ea1i gi\u1ecf.",
+        "expected": "D\u00f2ng h\u00e0ng v\u00e0 s\u1ed1 l\u01b0\u1ee3ng tr\u00ean menu th\u00e0nh 1; t\u1ed5ng ti\u1ec1n 89.00 USD."
+      }
+    },
+    {
+      "id": "TC-GB-003",
+      "robot_ids": [
+        "SH-CUST-B03"
+      ],
+      "requirement": "YC-GB",
+      "analysis": "BVA-GB-03, EP-GB-01",
+      "en": {
+        "title": "Updating a basket line with quantity 2",
+        "description": "Updating a basket line with quantity 2.",
+        "steps": "1. Log in with the displayed account.\n2. Add 2 Rose Nocturne bottles and open the basket.\n3. Enter the attempted quantity and leave the control to update.\n4. Reopen the basket and inspect quantity and total.",
+        "expected": "The line and navigation count become 2; the total equals 178.00 USD."
+      },
+      "vi": {
+        "title": "C\u1eadp nh\u1eadt d\u00f2ng gi\u1ecf h\u00e0ng v\u1edbi s\u1ed1 l\u01b0\u1ee3ng 2",
+        "description": "C\u1eadp nh\u1eadt d\u00f2ng gi\u1ecf h\u00e0ng v\u1edbi s\u1ed1 l\u01b0\u1ee3ng 2.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp b\u1eb1ng t\u00e0i kho\u1ea3n trong d\u1eef li\u1ec7u.\n2. Th\u00eam 2 chai Rose Nocturne v\u00e0 m\u1edf gi\u1ecf h\u00e0ng.\n3. Nh\u1eadp gi\u00e1 tr\u1ecb s\u1ed1 l\u01b0\u1ee3ng \u0111ang th\u1eed, chuy\u1ec3n kh\u1ecfi \u00f4 \u0111\u1ec3 c\u1eadp nh\u1eadt.\n4. Ki\u1ec3m tra s\u1ed1 l\u01b0\u1ee3ng v\u00e0 t\u1ed5ng ti\u1ec1n sau khi t\u1ea3i l\u1ea1i gi\u1ecf.",
+        "expected": "D\u00f2ng h\u00e0ng v\u00e0 s\u1ed1 l\u01b0\u1ee3ng tr\u00ean menu th\u00e0nh 2; t\u1ed5ng ti\u1ec1n 178.00 USD."
+      }
+    },
+    {
+      "id": "TC-GB-004",
+      "robot_ids": [
+        "SH-CUST-B04"
+      ],
+      "requirement": "YC-GB",
+      "analysis": "BVA-GB-04, EP-GB-01",
+      "en": {
+        "title": "Updating a basket line with quantity 24",
+        "description": "Updating a basket line with quantity 24.",
+        "steps": "1. Log in with the displayed account.\n2. Add 2 Rose Nocturne bottles and open the basket.\n3. Enter the attempted quantity and leave the control to update.\n4. Reopen the basket and inspect quantity and total.",
+        "expected": "The line and navigation count become 24; the total equals 2136.00 USD."
+      },
+      "vi": {
+        "title": "C\u1eadp nh\u1eadt d\u00f2ng gi\u1ecf h\u00e0ng v\u1edbi s\u1ed1 l\u01b0\u1ee3ng 24",
+        "description": "C\u1eadp nh\u1eadt d\u00f2ng gi\u1ecf h\u00e0ng v\u1edbi s\u1ed1 l\u01b0\u1ee3ng 24.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp b\u1eb1ng t\u00e0i kho\u1ea3n trong d\u1eef li\u1ec7u.\n2. Th\u00eam 2 chai Rose Nocturne v\u00e0 m\u1edf gi\u1ecf h\u00e0ng.\n3. Nh\u1eadp gi\u00e1 tr\u1ecb s\u1ed1 l\u01b0\u1ee3ng \u0111ang th\u1eed, chuy\u1ec3n kh\u1ecfi \u00f4 \u0111\u1ec3 c\u1eadp nh\u1eadt.\n4. Ki\u1ec3m tra s\u1ed1 l\u01b0\u1ee3ng v\u00e0 t\u1ed5ng ti\u1ec1n sau khi t\u1ea3i l\u1ea1i gi\u1ecf.",
+        "expected": "D\u00f2ng h\u00e0ng v\u00e0 s\u1ed1 l\u01b0\u1ee3ng tr\u00ean menu th\u00e0nh 24; t\u1ed5ng ti\u1ec1n 2136.00 USD."
+      }
+    },
+    {
+      "id": "TC-GB-005",
+      "robot_ids": [
+        "SH-CUST-B05"
+      ],
+      "requirement": "YC-GB",
+      "analysis": "BVA-GB-05, EP-GB-01",
+      "en": {
+        "title": "Updating a basket line with quantity 25",
+        "description": "Updating a basket line with quantity 25.",
+        "steps": "1. Log in with the displayed account.\n2. Add 2 Rose Nocturne bottles and open the basket.\n3. Enter the attempted quantity and leave the control to update.\n4. Reopen the basket and inspect quantity and total.",
+        "expected": "The line and navigation count become 25; the total equals 2225.00 USD."
+      },
+      "vi": {
+        "title": "C\u1eadp nh\u1eadt d\u00f2ng gi\u1ecf h\u00e0ng v\u1edbi s\u1ed1 l\u01b0\u1ee3ng 25",
+        "description": "C\u1eadp nh\u1eadt d\u00f2ng gi\u1ecf h\u00e0ng v\u1edbi s\u1ed1 l\u01b0\u1ee3ng 25.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp b\u1eb1ng t\u00e0i kho\u1ea3n trong d\u1eef li\u1ec7u.\n2. Th\u00eam 2 chai Rose Nocturne v\u00e0 m\u1edf gi\u1ecf h\u00e0ng.\n3. Nh\u1eadp gi\u00e1 tr\u1ecb s\u1ed1 l\u01b0\u1ee3ng \u0111ang th\u1eed, chuy\u1ec3n kh\u1ecfi \u00f4 \u0111\u1ec3 c\u1eadp nh\u1eadt.\n4. Ki\u1ec3m tra s\u1ed1 l\u01b0\u1ee3ng v\u00e0 t\u1ed5ng ti\u1ec1n sau khi t\u1ea3i l\u1ea1i gi\u1ecf.",
+        "expected": "D\u00f2ng h\u00e0ng v\u00e0 s\u1ed1 l\u01b0\u1ee3ng tr\u00ean menu th\u00e0nh 25; t\u1ed5ng ti\u1ec1n 2225.00 USD."
+      }
+    },
+    {
+      "id": "TC-GB-006",
+      "robot_ids": [
+        "SH-CUST-B06"
+      ],
+      "requirement": "YC-GB",
+      "analysis": "BVA-GB-06, EP-GB-03",
+      "en": {
+        "title": "Updating a basket line with quantity 26",
+        "description": "Updating a basket line with quantity 26.",
+        "steps": "1. Log in with the displayed account.\n2. Add 2 Rose Nocturne bottles and open the basket.\n3. Enter the attempted quantity and leave the control to update.\n4. Reopen the basket and inspect quantity and total.",
+        "expected": "A native quantity/stock error rejects the attempted value; saved quantity stays 2 and total stays 178.00 USD."
+      },
+      "vi": {
+        "title": "C\u1eadp nh\u1eadt d\u00f2ng gi\u1ecf h\u00e0ng v\u1edbi s\u1ed1 l\u01b0\u1ee3ng 26",
+        "description": "C\u1eadp nh\u1eadt d\u00f2ng gi\u1ecf h\u00e0ng v\u1edbi s\u1ed1 l\u01b0\u1ee3ng 26.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp b\u1eb1ng t\u00e0i kho\u1ea3n trong d\u1eef li\u1ec7u.\n2. Th\u00eam 2 chai Rose Nocturne v\u00e0 m\u1edf gi\u1ecf h\u00e0ng.\n3. Nh\u1eadp gi\u00e1 tr\u1ecb s\u1ed1 l\u01b0\u1ee3ng \u0111ang th\u1eed, chuy\u1ec3n kh\u1ecfi \u00f4 \u0111\u1ec3 c\u1eadp nh\u1eadt.\n4. Ki\u1ec3m tra s\u1ed1 l\u01b0\u1ee3ng v\u00e0 t\u1ed5ng ti\u1ec1n sau khi t\u1ea3i l\u1ea1i gi\u1ecf.",
+        "expected": "C\u00f3 l\u1ed7i s\u1ed1 l\u01b0\u1ee3ng/t\u1ed3n kho native; s\u1ed1 \u0111\u00e3 l\u01b0u v\u1eabn l\u00e0 2, t\u1ed5ng ti\u1ec1n 178.00 USD."
+      }
+    },
+    {
+      "id": "TC-GB-007",
+      "robot_ids": [
+        "SH-CUST-B07"
+      ],
+      "requirement": "YC-GB",
+      "analysis": "BVA-GB-07, EP-GB-01",
+      "en": {
+        "title": "Updating a basket line with quantity 3",
+        "description": "Updating a basket line with quantity 3.",
+        "steps": "1. Log in with the displayed account.\n2. Add 2 Rose Nocturne bottles and open the basket.\n3. Enter the attempted quantity and leave the control to update.\n4. Reopen the basket and inspect quantity and total.",
+        "expected": "The line and navigation count become 3; the total equals 267.00 USD."
+      },
+      "vi": {
+        "title": "C\u1eadp nh\u1eadt d\u00f2ng gi\u1ecf h\u00e0ng v\u1edbi s\u1ed1 l\u01b0\u1ee3ng 3",
+        "description": "C\u1eadp nh\u1eadt d\u00f2ng gi\u1ecf h\u00e0ng v\u1edbi s\u1ed1 l\u01b0\u1ee3ng 3.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp b\u1eb1ng t\u00e0i kho\u1ea3n trong d\u1eef li\u1ec7u.\n2. Th\u00eam 2 chai Rose Nocturne v\u00e0 m\u1edf gi\u1ecf h\u00e0ng.\n3. Nh\u1eadp gi\u00e1 tr\u1ecb s\u1ed1 l\u01b0\u1ee3ng \u0111ang th\u1eed, chuy\u1ec3n kh\u1ecfi \u00f4 \u0111\u1ec3 c\u1eadp nh\u1eadt.\n4. Ki\u1ec3m tra s\u1ed1 l\u01b0\u1ee3ng v\u00e0 t\u1ed5ng ti\u1ec1n sau khi t\u1ea3i l\u1ea1i gi\u1ecf.",
+        "expected": "D\u00f2ng h\u00e0ng v\u00e0 s\u1ed1 l\u01b0\u1ee3ng tr\u00ean menu th\u00e0nh 3; t\u1ed5ng ti\u1ec1n 267.00 USD."
+      }
+    },
+    {
+      "id": "TC-GB-008",
+      "robot_ids": [
+        "SH-CUST-B08"
+      ],
+      "requirement": "YC-GB",
+      "analysis": "EP-GB-08",
+      "en": {
+        "title": "Updating a basket line with an empty quantity",
+        "description": "Updating a basket line with an empty quantity.",
+        "steps": "1. Log in with the displayed account.\n2. Add 2 Rose Nocturne bottles and open the basket.\n3. Enter the attempted quantity and leave the control to update.\n4. Reopen the basket and inspect quantity and total.",
+        "expected": "The empty value leaves the saved quantity at 2 and total at 178.00 USD."
+      },
+      "vi": {
+        "title": "C\u1eadp nh\u1eadt d\u00f2ng gi\u1ecf h\u00e0ng v\u1edbi \u00f4 s\u1ed1 l\u01b0\u1ee3ng \u0111\u1ec3 tr\u1ed1ng",
+        "description": "C\u1eadp nh\u1eadt d\u00f2ng gi\u1ecf h\u00e0ng v\u1edbi \u00f4 s\u1ed1 l\u01b0\u1ee3ng \u0111\u1ec3 tr\u1ed1ng.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp b\u1eb1ng t\u00e0i kho\u1ea3n trong d\u1eef li\u1ec7u.\n2. Th\u00eam 2 chai Rose Nocturne v\u00e0 m\u1edf gi\u1ecf h\u00e0ng.\n3. Nh\u1eadp gi\u00e1 tr\u1ecb s\u1ed1 l\u01b0\u1ee3ng \u0111ang th\u1eed, chuy\u1ec3n kh\u1ecfi \u00f4 \u0111\u1ec3 c\u1eadp nh\u1eadt.\n4. Ki\u1ec3m tra s\u1ed1 l\u01b0\u1ee3ng v\u00e0 t\u1ed5ng ti\u1ec1n sau khi t\u1ea3i l\u1ea1i gi\u1ecf.",
+        "expected": "Gi\u00e1 tr\u1ecb tr\u1ed1ng gi\u1eef s\u1ed1 l\u01b0\u1ee3ng \u0111\u00e3 l\u01b0u l\u00e0 2 v\u00e0 t\u1ed5ng ti\u1ec1n 178.00 USD."
+      }
+    },
+    {
+      "id": "TC-GB-009",
+      "robot_ids": [
+        "SH-CUST-B09"
+      ],
+      "requirement": "YC-GB",
+      "analysis": "EP-GB-09",
+      "en": {
+        "title": "Updating a basket line with quantity 1.5",
+        "description": "Updating a basket line with quantity 1.5.",
+        "steps": "1. Log in with the displayed account.\n2. Add 2 Rose Nocturne bottles and open the basket.\n3. Enter the attempted quantity and leave the control to update.\n4. Reopen the basket and inspect quantity and total.",
+        "expected": "A native quantity/stock error rejects the attempted value; saved quantity stays 2 and total stays 178.00 USD."
+      },
+      "vi": {
+        "title": "C\u1eadp nh\u1eadt d\u00f2ng gi\u1ecf h\u00e0ng v\u1edbi s\u1ed1 l\u01b0\u1ee3ng 1.5",
+        "description": "C\u1eadp nh\u1eadt d\u00f2ng gi\u1ecf h\u00e0ng v\u1edbi s\u1ed1 l\u01b0\u1ee3ng 1.5.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp b\u1eb1ng t\u00e0i kho\u1ea3n trong d\u1eef li\u1ec7u.\n2. Th\u00eam 2 chai Rose Nocturne v\u00e0 m\u1edf gi\u1ecf h\u00e0ng.\n3. Nh\u1eadp gi\u00e1 tr\u1ecb s\u1ed1 l\u01b0\u1ee3ng \u0111ang th\u1eed, chuy\u1ec3n kh\u1ecfi \u00f4 \u0111\u1ec3 c\u1eadp nh\u1eadt.\n4. Ki\u1ec3m tra s\u1ed1 l\u01b0\u1ee3ng v\u00e0 t\u1ed5ng ti\u1ec1n sau khi t\u1ea3i l\u1ea1i gi\u1ecf.",
+        "expected": "C\u00f3 l\u1ed7i s\u1ed1 l\u01b0\u1ee3ng/t\u1ed3n kho native; s\u1ed1 \u0111\u00e3 l\u01b0u v\u1eabn l\u00e0 2, t\u1ed5ng ti\u1ec1n 178.00 USD."
+      }
+    },
+    {
+      "id": "TC-GB-010",
+      "robot_ids": [
+        "SH-CUST-B10"
+      ],
+      "requirement": "YC-GB",
+      "analysis": "QD-GB-01",
+      "en": {
+        "title": "Removing one product from a two-product basket",
+        "description": "Removing one product from a two-product basket.",
+        "steps": "1. Log in.\n2. Add 2 Rose Nocturne bottles and 1 Self Esteem.\n3. Open the basket and delete Rose Nocturne.\n4. Inspect rows, count and total.",
+        "expected": "Rose Nocturne is absent; one Self Esteem remains with total 74.00 USD."
+      },
+      "vi": {
+        "title": "X\u00f3a m\u1ed9t s\u1ea3n ph\u1ea9m kh\u1ecfi gi\u1ecf hai s\u1ea3n ph\u1ea9m",
+        "description": "X\u00f3a m\u1ed9t s\u1ea3n ph\u1ea9m kh\u1ecfi gi\u1ecf hai s\u1ea3n ph\u1ea9m.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp b\u1eb1ng t\u00e0i kho\u1ea3n \u0111\u00e3 ghi.\n2. Th\u00eam 2 chai Rose Nocturne v\u00e0 1 Self Esteem.\n3. M\u1edf gi\u1ecf, nh\u1ea5n n\u00fat x\u00f3a c\u1ee7a Rose Nocturne.\n4. Ki\u1ec3m tra s\u1ed1 d\u00f2ng, s\u1ed1 l\u01b0\u1ee3ng v\u00e0 t\u1ed5ng ti\u1ec1n.",
+        "expected": "Rose Nocturne \u0111\u01b0\u1ee3c x\u00f3a; c\u00f2n 1 Self Esteem, t\u1ed5ng ti\u1ec1n 74.00 USD."
+      }
+    },
+    {
+      "id": "TC-GB-011",
+      "robot_ids": [
+        "SH-CUST-B11"
+      ],
+      "requirement": "YC-GB",
+      "analysis": "QD-GB-02",
+      "en": {
+        "title": "Removing the final basket line",
+        "description": "Removing the final basket line.",
+        "steps": "1. Log in.\n2. Add 2 Rose Nocturne bottles.\n3. Open the basket and delete Rose Nocturne.\n4. Inspect rows, count and total.",
+        "expected": "The saved basket count becomes 0 and no product row remains."
+      },
+      "vi": {
+        "title": "X\u00f3a d\u00f2ng cu\u1ed1i c\u00f9ng c\u1ee7a gi\u1ecf h\u00e0ng",
+        "description": "X\u00f3a d\u00f2ng cu\u1ed1i c\u00f9ng c\u1ee7a gi\u1ecf h\u00e0ng.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp b\u1eb1ng t\u00e0i kho\u1ea3n \u0111\u00e3 ghi.\n2. Th\u00eam 2 chai Rose Nocturne.\n3. M\u1edf gi\u1ecf, nh\u1ea5n n\u00fat x\u00f3a c\u1ee7a Rose Nocturne.\n4. Ki\u1ec3m tra s\u1ed1 d\u00f2ng, s\u1ed1 l\u01b0\u1ee3ng v\u00e0 t\u1ed5ng ti\u1ec1n.",
+        "expected": "S\u1ed1 l\u01b0\u1ee3ng \u0111\u00e3 l\u01b0u th\u00e0nh 0 v\u00e0 gi\u1ecf kh\u00f4ng c\u00f2n d\u00f2ng s\u1ea3n ph\u1ea9m."
+      }
+    },
+    {
+      "id": "TC-GB-012",
+      "robot_ids": [
+        "SH-CUST-B12"
+      ],
+      "requirement": "YC-GB",
+      "analysis": "QD-GB-03",
+      "en": {
+        "title": "Adding the same product twice in one session",
+        "description": "Adding the same product twice in one session.",
+        "steps": "1. Log in.\n2. Add 1 then 2 Rose Nocturne bottles.\n3. Open the basket and inspect the merged line.\n4. Inspect rows, count and total.",
+        "expected": "A single Rose Nocturne line contains 3 bottles; total is 267.00 USD."
+      },
+      "vi": {
+        "title": "Th\u00eam c\u00f9ng s\u1ea3n ph\u1ea9m hai l\u1ea7n trong m\u1ed9t phi\u00ean",
+        "description": "Th\u00eam c\u00f9ng s\u1ea3n ph\u1ea9m hai l\u1ea7n trong m\u1ed9t phi\u00ean.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp b\u1eb1ng t\u00e0i kho\u1ea3n \u0111\u00e3 ghi.\n2. Th\u00eam 1 r\u1ed3i th\u00eam 2 chai Rose Nocturne.\n3. M\u1edf gi\u1ecf v\u00e0 ki\u1ec3m tra g\u1ed9p d\u00f2ng.\n4. Ki\u1ec3m tra s\u1ed1 d\u00f2ng, s\u1ed1 l\u01b0\u1ee3ng v\u00e0 t\u1ed5ng ti\u1ec1n.",
+        "expected": "M\u1ed9t d\u00f2ng Rose Nocturne c\u00f3 3 chai, t\u1ed5ng ti\u1ec1n 267.00 USD."
+      }
+    },
+    {
+      "id": "TC-SD-001",
+      "robot_ids": [
+        "SH-CUST-A01"
+      ],
+      "requirement": "YC-SD",
+      "analysis": "BVA-SD-07, EP-SD-01",
+      "en": {
+        "title": "Saving a complete additional address",
+        "description": "Saving a complete additional address.",
+        "steps": "1. Log in with the displayed account and open Address Book from the dashboard.\n2. Choose Create new, enter the exact values and submit Save changes.\n3. Inspect validation or reopen the address and compare every field.\n4. Delete only the created address and inspect the list.",
+        "expected": "The address is saved with the exact entered fields, remains available on reopening, then is removed through its own Delete link."
+      },
+      "vi": {
+        "title": "L\u01b0u \u0111\u1ecba ch\u1ec9 b\u1ed5 sung \u0111\u1ea7y \u0111\u1ee7",
+        "description": "L\u01b0u \u0111\u1ecba ch\u1ec9 b\u1ed5 sung \u0111\u1ea7y \u0111\u1ee7.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp b\u1eb1ng t\u00e0i kho\u1ea3n trong d\u1eef li\u1ec7u; m\u1edf s\u1ed5 \u0111\u1ecba ch\u1ec9 t\u1eeb dashboard.\n2. Ch\u1ecdn Create new, nh\u1eadp \u0111\u00fang d\u1eef li\u1ec7u v\u00e0 nh\u1ea5n Save changes.\n3. Ki\u1ec3m tra l\u1ed7i ho\u1eb7c m\u1edf l\u1ea1i \u0111\u1ecba ch\u1ec9 \u0111\u1ec3 \u0111\u1ed1i chi\u1ebfu t\u1eebng tr\u01b0\u1eddng.\n4. X\u00f3a \u0111\u00fang \u0111\u1ecba ch\u1ec9 v\u1eeba t\u1ea1o v\u00e0 ki\u1ec3m tra danh s\u00e1ch.",
+        "expected": "\u0110\u1ecba ch\u1ec9 l\u01b0u \u0111\u00fang gi\u00e1 tr\u1ecb \u0111\u00e3 nh\u1eadp v\u00e0 gi\u1eef nguy\u00ean khi m\u1edf l\u1ea1i; sau ki\u1ec3m tra x\u00f3a \u0111\u00fang \u0111\u1ecba ch\u1ec9 v\u1eeba t\u1ea1o."
+      }
+    },
+    {
+      "id": "TC-SD-002",
+      "robot_ids": [
+        "SH-CUST-A02"
+      ],
+      "requirement": "YC-SD",
+      "analysis": "QD-SD-01, EP-SD-01",
+      "en": {
+        "title": "Updating a saved address street",
+        "description": "Updating a saved address street.",
+        "steps": "1. Log in with the displayed account and open Address Book from the dashboard.\n2. Choose Create new, enter the exact values and submit Save changes.\n3. Inspect validation or reopen the address and compare every field.\n4. Change street to 81 Silvercloud Lane, save and reopen.\n5. Delete the created address.",
+        "expected": "The same saved address retains street 81 Silvercloud Lane on reopening; it is then removed."
+      },
+      "vi": {
+        "title": "C\u1eadp nh\u1eadt \u0111\u01b0\u1eddng c\u1ee7a \u0111\u1ecba ch\u1ec9 \u0111\u00e3 l\u01b0u",
+        "description": "C\u1eadp nh\u1eadt \u0111\u01b0\u1eddng c\u1ee7a \u0111\u1ecba ch\u1ec9 \u0111\u00e3 l\u01b0u.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp b\u1eb1ng t\u00e0i kho\u1ea3n trong d\u1eef li\u1ec7u; m\u1edf s\u1ed5 \u0111\u1ecba ch\u1ec9 t\u1eeb dashboard.\n2. Ch\u1ecdn Create new, nh\u1eadp \u0111\u00fang d\u1eef li\u1ec7u v\u00e0 nh\u1ea5n Save changes.\n3. Ki\u1ec3m tra l\u1ed7i ho\u1eb7c m\u1edf l\u1ea1i \u0111\u1ecba ch\u1ec9 \u0111\u1ec3 \u0111\u1ed1i chi\u1ebfu t\u1eebng tr\u01b0\u1eddng.\n4. S\u1eeda \u0111\u01b0\u1eddng th\u00e0nh 81 Silvercloud Lane, l\u01b0u v\u00e0 m\u1edf l\u1ea1i.\n5. X\u00f3a \u0111\u1ecba ch\u1ec9 v\u1eeba t\u1ea1o.",
+        "expected": "C\u00f9ng \u0111\u1ecba ch\u1ec9 gi\u1eef \u0111\u01b0\u1eddng 81 Silvercloud Lane khi m\u1edf l\u1ea1i; sau ki\u1ec3m tra x\u00f3a \u0111\u1ecba ch\u1ec9 \u0111\u00f3."
+      }
+    },
+    {
+      "id": "TC-SD-003",
+      "robot_ids": [
+        "SH-CUST-A03"
+      ],
+      "requirement": "YC-SD",
+      "analysis": "QD-SD-02, EP-SD-01",
+      "en": {
+        "title": "Deleting a saved additional address",
+        "description": "Deleting a saved additional address.",
+        "steps": "1. Log in with the displayed account and open Address Book from the dashboard.\n2. Choose Create new, enter the exact values and submit Save changes.\n3. Inspect validation or reopen the address and compare every field.\n4. Delete only the created address and inspect the list.",
+        "expected": "The saved address disappears from the additional-address list after deletion."
+      },
+      "vi": {
+        "title": "X\u00f3a \u0111\u1ecba ch\u1ec9 b\u1ed5 sung \u0111\u00e3 l\u01b0u",
+        "description": "X\u00f3a \u0111\u1ecba ch\u1ec9 b\u1ed5 sung \u0111\u00e3 l\u01b0u.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp b\u1eb1ng t\u00e0i kho\u1ea3n trong d\u1eef li\u1ec7u; m\u1edf s\u1ed5 \u0111\u1ecba ch\u1ec9 t\u1eeb dashboard.\n2. Ch\u1ecdn Create new, nh\u1eadp \u0111\u00fang d\u1eef li\u1ec7u v\u00e0 nh\u1ea5n Save changes.\n3. Ki\u1ec3m tra l\u1ed7i ho\u1eb7c m\u1edf l\u1ea1i \u0111\u1ecba ch\u1ec9 \u0111\u1ec3 \u0111\u1ed1i chi\u1ebfu t\u1eebng tr\u01b0\u1eddng.\n4. X\u00f3a \u0111\u00fang \u0111\u1ecba ch\u1ec9 v\u1eeba t\u1ea1o v\u00e0 ki\u1ec3m tra danh s\u00e1ch.",
+        "expected": "\u0110\u1ecba ch\u1ec9 \u0111\u00e3 l\u01b0u bi\u1ebfn m\u1ea5t kh\u1ecfi danh s\u00e1ch \u0111\u1ecba ch\u1ec9 b\u1ed5 sung sau khi x\u00f3a."
+      }
+    },
+    {
+      "id": "TC-SD-004",
+      "robot_ids": [
+        "SH-CUST-A04"
+      ],
+      "requirement": "YC-SD",
+      "analysis": "BVA-SD-01, EP-SD-02",
+      "en": {
+        "title": "Saving an address with an empty title",
+        "description": "Saving an address with an empty title.",
+        "steps": "1. Log in with the displayed account and open Address Book from the dashboard.\n2. Choose Create new, enter the exact values and submit Save changes.\n3. Inspect validation or reopen the address and compare every field.",
+        "expected": "The changed field has a native/server validation error; no address is saved."
+      },
+      "vi": {
+        "title": "L\u01b0u \u0111\u1ecba ch\u1ec9 v\u1edbi ti\u00eau \u0111\u1ec1 \u0111\u1ec3 tr\u1ed1ng",
+        "description": "L\u01b0u \u0111\u1ecba ch\u1ec9 v\u1edbi ti\u00eau \u0111\u1ec1 \u0111\u1ec3 tr\u1ed1ng.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp b\u1eb1ng t\u00e0i kho\u1ea3n trong d\u1eef li\u1ec7u; m\u1edf s\u1ed5 \u0111\u1ecba ch\u1ec9 t\u1eeb dashboard.\n2. Ch\u1ecdn Create new, nh\u1eadp \u0111\u00fang d\u1eef li\u1ec7u v\u00e0 nh\u1ea5n Save changes.\n3. Ki\u1ec3m tra l\u1ed7i ho\u1eb7c m\u1edf l\u1ea1i \u0111\u1ecba ch\u1ec9 \u0111\u1ec3 \u0111\u1ed1i chi\u1ebfu t\u1eebng tr\u01b0\u1eddng.",
+        "expected": "Tr\u01b0\u1eddng \u0111ang th\u1eed c\u00f3 l\u1ed7i native/server; \u0111\u1ecba ch\u1ec9 ch\u01b0a \u0111\u01b0\u1ee3c l\u01b0u."
+      }
+    },
+    {
+      "id": "TC-SD-005",
+      "robot_ids": [
+        "SH-CUST-A05"
+      ],
+      "requirement": "YC-SD",
+      "analysis": "EP-SD-05",
+      "en": {
+        "title": "Saving an address with an empty street",
+        "description": "Saving an address with an empty street.",
+        "steps": "1. Log in with the displayed account and open Address Book from the dashboard.\n2. Choose Create new, enter the exact values and submit Save changes.\n3. Inspect validation or reopen the address and compare every field.",
+        "expected": "The changed field has a native/server validation error; no address is saved."
+      },
+      "vi": {
+        "title": "L\u01b0u \u0111\u1ecba ch\u1ec9 v\u1edbi \u0111\u01b0\u1eddng \u0111\u1ec3 tr\u1ed1ng",
+        "description": "L\u01b0u \u0111\u1ecba ch\u1ec9 v\u1edbi \u0111\u01b0\u1eddng \u0111\u1ec3 tr\u1ed1ng.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp b\u1eb1ng t\u00e0i kho\u1ea3n trong d\u1eef li\u1ec7u; m\u1edf s\u1ed5 \u0111\u1ecba ch\u1ec9 t\u1eeb dashboard.\n2. Ch\u1ecdn Create new, nh\u1eadp \u0111\u00fang d\u1eef li\u1ec7u v\u00e0 nh\u1ea5n Save changes.\n3. Ki\u1ec3m tra l\u1ed7i ho\u1eb7c m\u1edf l\u1ea1i \u0111\u1ecba ch\u1ec9 \u0111\u1ec3 \u0111\u1ed1i chi\u1ebfu t\u1eebng tr\u01b0\u1eddng.",
+        "expected": "Tr\u01b0\u1eddng \u0111ang th\u1eed c\u00f3 l\u1ed7i native/server; \u0111\u1ecba ch\u1ec9 ch\u01b0a \u0111\u01b0\u1ee3c l\u01b0u."
+      }
+    },
+    {
+      "id": "TC-SD-006",
+      "robot_ids": [
+        "SH-CUST-A06"
+      ],
+      "requirement": "YC-SD",
+      "analysis": "BVA-SD-02, EP-SD-01",
+      "en": {
+        "title": "Entering an address title of 1 characters",
+        "description": "Entering an address title of 1 characters.",
+        "steps": "1. Log in with the displayed account and open Address Book from the dashboard.\n2. Choose Create new, enter the exact values and submit Save changes.\n3. Inspect validation or reopen the address and compare every field.\n4. Delete only the created address and inspect the list.",
+        "expected": "The address is saved with the exact entered fields, remains available on reopening, then is removed through its own Delete link."
+      },
+      "vi": {
+        "title": "Nh\u1eadp ti\u00eau \u0111\u1ec1 \u0111\u1ecba ch\u1ec9 d\u00e0i 1 k\u00fd t\u1ef1",
+        "description": "Nh\u1eadp ti\u00eau \u0111\u1ec1 \u0111\u1ecba ch\u1ec9 d\u00e0i 1 k\u00fd t\u1ef1.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp b\u1eb1ng t\u00e0i kho\u1ea3n trong d\u1eef li\u1ec7u; m\u1edf s\u1ed5 \u0111\u1ecba ch\u1ec9 t\u1eeb dashboard.\n2. Ch\u1ecdn Create new, nh\u1eadp \u0111\u00fang d\u1eef li\u1ec7u v\u00e0 nh\u1ea5n Save changes.\n3. Ki\u1ec3m tra l\u1ed7i ho\u1eb7c m\u1edf l\u1ea1i \u0111\u1ecba ch\u1ec9 \u0111\u1ec3 \u0111\u1ed1i chi\u1ebfu t\u1eebng tr\u01b0\u1eddng.\n4. X\u00f3a \u0111\u00fang \u0111\u1ecba ch\u1ec9 v\u1eeba t\u1ea1o v\u00e0 ki\u1ec3m tra danh s\u00e1ch.",
+        "expected": "\u0110\u1ecba ch\u1ec9 l\u01b0u \u0111\u00fang gi\u00e1 tr\u1ecb \u0111\u00e3 nh\u1eadp v\u00e0 gi\u1eef nguy\u00ean khi m\u1edf l\u1ea1i; sau ki\u1ec3m tra x\u00f3a \u0111\u00fang \u0111\u1ecba ch\u1ec9 v\u1eeba t\u1ea1o."
+      }
+    },
+    {
+      "id": "TC-SD-007",
+      "robot_ids": [
+        "SH-CUST-A07"
+      ],
+      "requirement": "YC-SD",
+      "analysis": "BVA-SD-03, EP-SD-01",
+      "en": {
+        "title": "Entering an address title of 2 characters",
+        "description": "Entering an address title of 2 characters.",
+        "steps": "1. Log in with the displayed account and open Address Book from the dashboard.\n2. Choose Create new, enter the exact values and submit Save changes.\n3. Inspect validation or reopen the address and compare every field.\n4. Delete only the created address and inspect the list.",
+        "expected": "The address is saved with the exact entered fields, remains available on reopening, then is removed through its own Delete link."
+      },
+      "vi": {
+        "title": "Nh\u1eadp ti\u00eau \u0111\u1ec1 \u0111\u1ecba ch\u1ec9 d\u00e0i 2 k\u00fd t\u1ef1",
+        "description": "Nh\u1eadp ti\u00eau \u0111\u1ec1 \u0111\u1ecba ch\u1ec9 d\u00e0i 2 k\u00fd t\u1ef1.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp b\u1eb1ng t\u00e0i kho\u1ea3n trong d\u1eef li\u1ec7u; m\u1edf s\u1ed5 \u0111\u1ecba ch\u1ec9 t\u1eeb dashboard.\n2. Ch\u1ecdn Create new, nh\u1eadp \u0111\u00fang d\u1eef li\u1ec7u v\u00e0 nh\u1ea5n Save changes.\n3. Ki\u1ec3m tra l\u1ed7i ho\u1eb7c m\u1edf l\u1ea1i \u0111\u1ecba ch\u1ec9 \u0111\u1ec3 \u0111\u1ed1i chi\u1ebfu t\u1eebng tr\u01b0\u1eddng.\n4. X\u00f3a \u0111\u00fang \u0111\u1ecba ch\u1ec9 v\u1eeba t\u1ea1o v\u00e0 ki\u1ec3m tra danh s\u00e1ch.",
+        "expected": "\u0110\u1ecba ch\u1ec9 l\u01b0u \u0111\u00fang gi\u00e1 tr\u1ecb \u0111\u00e3 nh\u1eadp v\u00e0 gi\u1eef nguy\u00ean khi m\u1edf l\u1ea1i; sau ki\u1ec3m tra x\u00f3a \u0111\u00fang \u0111\u1ecba ch\u1ec9 v\u1eeba t\u1ea1o."
+      }
+    },
+    {
+      "id": "TC-SD-008",
+      "robot_ids": [
+        "SH-CUST-A08"
+      ],
+      "requirement": "YC-SD",
+      "analysis": "BVA-SD-04, EP-SD-01",
+      "en": {
+        "title": "Entering an address title of 254 characters",
+        "description": "Entering an address title of 254 characters.",
+        "steps": "1. Log in with the displayed account and open Address Book from the dashboard.\n2. Choose Create new, enter the exact values and submit Save changes.\n3. Inspect validation or reopen the address and compare every field.\n4. Delete only the created address and inspect the list.",
+        "expected": "The address is saved with the exact entered fields, remains available on reopening, then is removed through its own Delete link."
+      },
+      "vi": {
+        "title": "Nh\u1eadp ti\u00eau \u0111\u1ec1 \u0111\u1ecba ch\u1ec9 d\u00e0i 254 k\u00fd t\u1ef1",
+        "description": "Nh\u1eadp ti\u00eau \u0111\u1ec1 \u0111\u1ecba ch\u1ec9 d\u00e0i 254 k\u00fd t\u1ef1.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp b\u1eb1ng t\u00e0i kho\u1ea3n trong d\u1eef li\u1ec7u; m\u1edf s\u1ed5 \u0111\u1ecba ch\u1ec9 t\u1eeb dashboard.\n2. Ch\u1ecdn Create new, nh\u1eadp \u0111\u00fang d\u1eef li\u1ec7u v\u00e0 nh\u1ea5n Save changes.\n3. Ki\u1ec3m tra l\u1ed7i ho\u1eb7c m\u1edf l\u1ea1i \u0111\u1ecba ch\u1ec9 \u0111\u1ec3 \u0111\u1ed1i chi\u1ebfu t\u1eebng tr\u01b0\u1eddng.\n4. X\u00f3a \u0111\u00fang \u0111\u1ecba ch\u1ec9 v\u1eeba t\u1ea1o v\u00e0 ki\u1ec3m tra danh s\u00e1ch.",
+        "expected": "\u0110\u1ecba ch\u1ec9 l\u01b0u \u0111\u00fang gi\u00e1 tr\u1ecb \u0111\u00e3 nh\u1eadp v\u00e0 gi\u1eef nguy\u00ean khi m\u1edf l\u1ea1i; sau ki\u1ec3m tra x\u00f3a \u0111\u00fang \u0111\u1ecba ch\u1ec9 v\u1eeba t\u1ea1o."
+      }
+    },
+    {
+      "id": "TC-SD-009",
+      "robot_ids": [
+        "SH-CUST-A09"
+      ],
+      "requirement": "YC-SD",
+      "analysis": "BVA-SD-05, EP-SD-01",
+      "en": {
+        "title": "Entering an address title of 255 characters",
+        "description": "Entering an address title of 255 characters.",
+        "steps": "1. Log in with the displayed account and open Address Book from the dashboard.\n2. Choose Create new, enter the exact values and submit Save changes.\n3. Inspect validation or reopen the address and compare every field.\n4. Delete only the created address and inspect the list.",
+        "expected": "The address is saved with the exact entered fields, remains available on reopening, then is removed through its own Delete link."
+      },
+      "vi": {
+        "title": "Nh\u1eadp ti\u00eau \u0111\u1ec1 \u0111\u1ecba ch\u1ec9 d\u00e0i 255 k\u00fd t\u1ef1",
+        "description": "Nh\u1eadp ti\u00eau \u0111\u1ec1 \u0111\u1ecba ch\u1ec9 d\u00e0i 255 k\u00fd t\u1ef1.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp b\u1eb1ng t\u00e0i kho\u1ea3n trong d\u1eef li\u1ec7u; m\u1edf s\u1ed5 \u0111\u1ecba ch\u1ec9 t\u1eeb dashboard.\n2. Ch\u1ecdn Create new, nh\u1eadp \u0111\u00fang d\u1eef li\u1ec7u v\u00e0 nh\u1ea5n Save changes.\n3. Ki\u1ec3m tra l\u1ed7i ho\u1eb7c m\u1edf l\u1ea1i \u0111\u1ecba ch\u1ec9 \u0111\u1ec3 \u0111\u1ed1i chi\u1ebfu t\u1eebng tr\u01b0\u1eddng.\n4. X\u00f3a \u0111\u00fang \u0111\u1ecba ch\u1ec9 v\u1eeba t\u1ea1o v\u00e0 ki\u1ec3m tra danh s\u00e1ch.",
+        "expected": "\u0110\u1ecba ch\u1ec9 l\u01b0u \u0111\u00fang gi\u00e1 tr\u1ecb \u0111\u00e3 nh\u1eadp v\u00e0 gi\u1eef nguy\u00ean khi m\u1edf l\u1ea1i; sau ki\u1ec3m tra x\u00f3a \u0111\u00fang \u0111\u1ecba ch\u1ec9 v\u1eeba t\u1ea1o."
+      }
+    },
+    {
+      "id": "TC-SD-010",
+      "robot_ids": [
+        "SH-CUST-A10"
+      ],
+      "requirement": "YC-SD",
+      "analysis": "BVA-SD-06, EP-SD-03",
+      "en": {
+        "title": "Entering an address title of 256 characters",
+        "description": "Entering an address title of 256 characters.",
+        "steps": "1. Log in with the displayed account and open Address Book from the dashboard.\n2. Choose Create new, enter the exact values and submit Save changes.\n3. Inspect validation or reopen the address and compare every field.\n4. Delete only the created address and inspect the list.",
+        "expected": "The native maxlength is 255; the 256-character attempt is limited to its first 255 characters and that value is saved."
+      },
+      "vi": {
+        "title": "Nh\u1eadp ti\u00eau \u0111\u1ec1 \u0111\u1ecba ch\u1ec9 d\u00e0i 256 k\u00fd t\u1ef1",
+        "description": "Nh\u1eadp ti\u00eau \u0111\u1ec1 \u0111\u1ecba ch\u1ec9 d\u00e0i 256 k\u00fd t\u1ef1.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp b\u1eb1ng t\u00e0i kho\u1ea3n trong d\u1eef li\u1ec7u; m\u1edf s\u1ed5 \u0111\u1ecba ch\u1ec9 t\u1eeb dashboard.\n2. Ch\u1ecdn Create new, nh\u1eadp \u0111\u00fang d\u1eef li\u1ec7u v\u00e0 nh\u1ea5n Save changes.\n3. Ki\u1ec3m tra l\u1ed7i ho\u1eb7c m\u1edf l\u1ea1i \u0111\u1ecba ch\u1ec9 \u0111\u1ec3 \u0111\u1ed1i chi\u1ebfu t\u1eebng tr\u01b0\u1eddng.\n4. X\u00f3a \u0111\u00fang \u0111\u1ecba ch\u1ec9 v\u1eeba t\u1ea1o v\u00e0 ki\u1ec3m tra danh s\u00e1ch.",
+        "expected": "maxlength native l\u00e0 255; thao t\u00e1c nh\u1eadp 256 k\u00fd t\u1ef1 b\u1ecb gi\u1edbi h\u1ea1n c\u00f2n 255 k\u00fd t\u1ef1 \u0111\u1ea7u, \u0111\u00fang gi\u00e1 tr\u1ecb \u0111\u00f3 \u0111\u01b0\u1ee3c l\u01b0u."
+      }
+    },
+    {
+      "id": "TC-SD-011",
+      "robot_ids": [
+        "SH-CUST-A11"
+      ],
+      "requirement": "YC-SD",
+      "analysis": "QD-SD-03, EP-SD-04",
+      "en": {
+        "title": "Accessing another customer saved address",
+        "description": "Accessing another customer saved address.",
+        "steps": "1. Log in with the displayed account and open Address Book from the dashboard.\n2. Choose Create new, enter the exact values and submit Save changes.\n3. Inspect validation or reopen the address and compare every field.\n4. Record the created address Edit/Delete links, log out and log in as the displayed other account.\n5. Inspect the address list and recorded URLs for ownership isolation.\n6. Log in as the owner, verify the address remains intact, then delete it.",
+        "expected": "The other customer sees neither the owner address nor its values; a deletion attempt preserves it. The owner can reopen it unchanged."
+      },
+      "vi": {
+        "title": "Truy c\u1eadp \u0111\u1ecba ch\u1ec9 \u0111\u00e3 l\u01b0u c\u1ee7a kh\u00e1ch h\u00e0ng kh\u00e1c",
+        "description": "Truy c\u1eadp \u0111\u1ecba ch\u1ec9 \u0111\u00e3 l\u01b0u c\u1ee7a kh\u00e1ch h\u00e0ng kh\u00e1c.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp b\u1eb1ng t\u00e0i kho\u1ea3n trong d\u1eef li\u1ec7u; m\u1edf s\u1ed5 \u0111\u1ecba ch\u1ec9 t\u1eeb dashboard.\n2. Ch\u1ecdn Create new, nh\u1eadp \u0111\u00fang d\u1eef li\u1ec7u v\u00e0 nh\u1ea5n Save changes.\n3. Ki\u1ec3m tra l\u1ed7i ho\u1eb7c m\u1edf l\u1ea1i \u0111\u1ecba ch\u1ec9 \u0111\u1ec3 \u0111\u1ed1i chi\u1ebfu t\u1eebng tr\u01b0\u1eddng.\n4. Ghi l\u1ea1i li\u00ean k\u1ebft Edit v\u00e0 Delete c\u1ee7a \u0111\u1ecba ch\u1ec9 v\u1eeba t\u1ea1o; \u0111\u0103ng xu\u1ea5t, \u0111\u0103ng nh\u1eadp henry.foster b\u1eb1ng m\u1eadt kh\u1ea9u \u0111\u00e3 ghi.\n5. M\u1edf s\u1ed5 \u0111\u1ecba ch\u1ec9 v\u00e0 c\u00e1c li\u00ean k\u1ebft \u0111\u00e3 ghi \u0111\u1ec3 ki\u1ec3m tra ph\u00e2n quy\u1ec1n.\n6. \u0110\u0103ng nh\u1eadp l\u1ea1i grace.mitchell, ki\u1ec3m tra nguy\u00ean \u0111\u1ecba ch\u1ec9 r\u1ed3i x\u00f3a n\u00f3.",
+        "expected": "Kh\u00e1ch kh\u00e1c kh\u00f4ng th\u1ea5y \u0111\u1ecba ch\u1ec9 v\u00e0 gi\u00e1 tr\u1ecb c\u1ee7a ch\u1ee7 s\u1edf h\u1eefu; thao t\u00e1c x\u00f3a kh\u00f4ng l\u00e0m m\u1ea5t \u0111\u1ecba ch\u1ec9. Ch\u1ee7 s\u1edf h\u1eefu m\u1edf l\u1ea1i th\u1ea5y nguy\u00ean gi\u00e1 tr\u1ecb."
+      }
+    },
+    {
+      "id": "TC-MK-001",
+      "robot_ids": [
+        "SH-CUST-P01"
+      ],
+      "requirement": "YC-MK",
+      "analysis": "QD-MK-01, EP-MK-01",
+      "en": {
+        "title": "Changing the password with an incorrect current password",
+        "description": "Changing the password with an incorrect current password.",
+        "steps": "1. Log in with the displayed account.\n2. Open customer information then Change password.\n3. Enter the exact three password values and submit Save password.\n4. Inspect validation, log out and verify the original password still works.",
+        "expected": "The changed field has a native/server error; the original password still authenticates."
+      },
+      "vi": {
+        "title": "\u0110\u1ed5i m\u1eadt kh\u1ea9u v\u1edbi m\u1eadt kh\u1ea9u hi\u1ec7n t\u1ea1i kh\u00e1c m\u1eadt kh\u1ea9u t\u00e0i kho\u1ea3n",
+        "description": "\u0110\u1ed5i m\u1eadt kh\u1ea9u v\u1edbi m\u1eadt kh\u1ea9u hi\u1ec7n t\u1ea1i kh\u00e1c m\u1eadt kh\u1ea9u t\u00e0i kho\u1ea3n.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp b\u1eb1ng t\u00e0i kho\u1ea3n trong d\u1eef li\u1ec7u.\n2. M\u1edf th\u00f4ng tin t\u00e0i kho\u1ea3n r\u1ed3i Change password.\n3. Nh\u1eadp \u0111\u00fang ba gi\u00e1 tr\u1ecb m\u1eadt kh\u1ea9u \u0111\u00e3 ghi v\u00e0 nh\u1ea5n Save password.\n4. Ki\u1ec3m tra l\u1ed7i, \u0111\u0103ng xu\u1ea5t v\u00e0 \u0111\u0103ng nh\u1eadp l\u1ea1i b\u1eb1ng m\u1eadt kh\u1ea9u ban \u0111\u1ea7u.",
+        "expected": "Tr\u01b0\u1eddng \u0111ang th\u1eed c\u00f3 l\u1ed7i native/server; m\u1eadt kh\u1ea9u ban \u0111\u1ea7u v\u1eabn \u0111\u0103ng nh\u1eadp \u0111\u01b0\u1ee3c."
+      }
+    },
+    {
+      "id": "TC-MK-002",
+      "robot_ids": [
+        "SH-CUST-P02"
+      ],
+      "requirement": "YC-MK",
+      "analysis": "QD-MK-02, EP-MK-02",
+      "en": {
+        "title": "Changing the password with an empty current password",
+        "description": "Changing the password with an empty current password.",
+        "steps": "1. Log in with the displayed account.\n2. Open customer information then Change password.\n3. Enter the exact three password values and submit Save password.\n4. Inspect validation, log out and verify the original password still works.",
+        "expected": "The changed field has a native/server error; the original password still authenticates."
+      },
+      "vi": {
+        "title": "\u0110\u1ed5i m\u1eadt kh\u1ea9u v\u1edbi m\u1eadt kh\u1ea9u hi\u1ec7n t\u1ea1i \u0111\u1ec3 tr\u1ed1ng",
+        "description": "\u0110\u1ed5i m\u1eadt kh\u1ea9u v\u1edbi m\u1eadt kh\u1ea9u hi\u1ec7n t\u1ea1i \u0111\u1ec3 tr\u1ed1ng.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp b\u1eb1ng t\u00e0i kho\u1ea3n trong d\u1eef li\u1ec7u.\n2. M\u1edf th\u00f4ng tin t\u00e0i kho\u1ea3n r\u1ed3i Change password.\n3. Nh\u1eadp \u0111\u00fang ba gi\u00e1 tr\u1ecb m\u1eadt kh\u1ea9u \u0111\u00e3 ghi v\u00e0 nh\u1ea5n Save password.\n4. Ki\u1ec3m tra l\u1ed7i, \u0111\u0103ng xu\u1ea5t v\u00e0 \u0111\u0103ng nh\u1eadp l\u1ea1i b\u1eb1ng m\u1eadt kh\u1ea9u ban \u0111\u1ea7u.",
+        "expected": "Tr\u01b0\u1eddng \u0111ang th\u1eed c\u00f3 l\u1ed7i native/server; m\u1eadt kh\u1ea9u ban \u0111\u1ea7u v\u1eabn \u0111\u0103ng nh\u1eadp \u0111\u01b0\u1ee3c."
+      }
+    },
+    {
+      "id": "TC-MK-003",
+      "robot_ids": [
+        "SH-CUST-P03"
+      ],
+      "requirement": "YC-MK",
+      "analysis": "QD-MK-03, EP-MK-03",
+      "en": {
+        "title": "Changing the password with an empty new password",
+        "description": "Changing the password with an empty new password.",
+        "steps": "1. Log in with the displayed account.\n2. Open customer information then Change password.\n3. Enter the exact three password values and submit Save password.\n4. Inspect validation, log out and verify the original password still works.",
+        "expected": "The changed field has a native/server error; the original password still authenticates."
+      },
+      "vi": {
+        "title": "\u0110\u1ed5i m\u1eadt kh\u1ea9u v\u1edbi m\u1eadt kh\u1ea9u m\u1edbi \u0111\u1ec3 tr\u1ed1ng",
+        "description": "\u0110\u1ed5i m\u1eadt kh\u1ea9u v\u1edbi m\u1eadt kh\u1ea9u m\u1edbi \u0111\u1ec3 tr\u1ed1ng.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp b\u1eb1ng t\u00e0i kho\u1ea3n trong d\u1eef li\u1ec7u.\n2. M\u1edf th\u00f4ng tin t\u00e0i kho\u1ea3n r\u1ed3i Change password.\n3. Nh\u1eadp \u0111\u00fang ba gi\u00e1 tr\u1ecb m\u1eadt kh\u1ea9u \u0111\u00e3 ghi v\u00e0 nh\u1ea5n Save password.\n4. Ki\u1ec3m tra l\u1ed7i, \u0111\u0103ng xu\u1ea5t v\u00e0 \u0111\u0103ng nh\u1eadp l\u1ea1i b\u1eb1ng m\u1eadt kh\u1ea9u ban \u0111\u1ea7u.",
+        "expected": "Tr\u01b0\u1eddng \u0111ang th\u1eed c\u00f3 l\u1ed7i native/server; m\u1eadt kh\u1ea9u ban \u0111\u1ea7u v\u1eabn \u0111\u0103ng nh\u1eadp \u0111\u01b0\u1ee3c."
+      }
+    },
+    {
+      "id": "TC-MK-004",
+      "robot_ids": [
+        "SH-CUST-P04"
+      ],
+      "requirement": "YC-MK",
+      "analysis": "QD-MK-04, EP-MK-04",
+      "en": {
+        "title": "Changing the password with an empty password confirmation",
+        "description": "Changing the password with an empty password confirmation.",
+        "steps": "1. Log in with the displayed account.\n2. Open customer information then Change password.\n3. Enter the exact three password values and submit Save password.\n4. Inspect validation, log out and verify the original password still works.",
+        "expected": "The changed field has a native/server error; the original password still authenticates."
+      },
+      "vi": {
+        "title": "\u0110\u1ed5i m\u1eadt kh\u1ea9u v\u1edbi x\u00e1c nh\u1eadn m\u1eadt kh\u1ea9u \u0111\u1ec3 tr\u1ed1ng",
+        "description": "\u0110\u1ed5i m\u1eadt kh\u1ea9u v\u1edbi x\u00e1c nh\u1eadn m\u1eadt kh\u1ea9u \u0111\u1ec3 tr\u1ed1ng.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp b\u1eb1ng t\u00e0i kho\u1ea3n trong d\u1eef li\u1ec7u.\n2. M\u1edf th\u00f4ng tin t\u00e0i kho\u1ea3n r\u1ed3i Change password.\n3. Nh\u1eadp \u0111\u00fang ba gi\u00e1 tr\u1ecb m\u1eadt kh\u1ea9u \u0111\u00e3 ghi v\u00e0 nh\u1ea5n Save password.\n4. Ki\u1ec3m tra l\u1ed7i, \u0111\u0103ng xu\u1ea5t v\u00e0 \u0111\u0103ng nh\u1eadp l\u1ea1i b\u1eb1ng m\u1eadt kh\u1ea9u ban \u0111\u1ea7u.",
+        "expected": "Tr\u01b0\u1eddng \u0111ang th\u1eed c\u00f3 l\u1ed7i native/server; m\u1eadt kh\u1ea9u ban \u0111\u1ea7u v\u1eabn \u0111\u0103ng nh\u1eadp \u0111\u01b0\u1ee3c."
+      }
+    },
+    {
+      "id": "TC-MK-005",
+      "robot_ids": [
+        "SH-CUST-P05"
+      ],
+      "requirement": "YC-MK",
+      "analysis": "QD-MK-05, EP-MK-05",
+      "en": {
+        "title": "Changing the password with different new passwords",
+        "description": "Changing the password with different new passwords.",
+        "steps": "1. Log in with the displayed account.\n2. Open customer information then Change password.\n3. Enter the exact three password values and submit Save password.\n4. Inspect validation, log out and verify the original password still works.",
+        "expected": "The changed field has a native/server error; the original password still authenticates."
+      },
+      "vi": {
+        "title": "\u0110\u1ed5i m\u1eadt kh\u1ea9u v\u1edbi hai m\u1eadt kh\u1ea9u m\u1edbi kh\u00e1c nhau",
+        "description": "\u0110\u1ed5i m\u1eadt kh\u1ea9u v\u1edbi hai m\u1eadt kh\u1ea9u m\u1edbi kh\u00e1c nhau.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp b\u1eb1ng t\u00e0i kho\u1ea3n trong d\u1eef li\u1ec7u.\n2. M\u1edf th\u00f4ng tin t\u00e0i kho\u1ea3n r\u1ed3i Change password.\n3. Nh\u1eadp \u0111\u00fang ba gi\u00e1 tr\u1ecb m\u1eadt kh\u1ea9u \u0111\u00e3 ghi v\u00e0 nh\u1ea5n Save password.\n4. Ki\u1ec3m tra l\u1ed7i, \u0111\u0103ng xu\u1ea5t v\u00e0 \u0111\u0103ng nh\u1eadp l\u1ea1i b\u1eb1ng m\u1eadt kh\u1ea9u ban \u0111\u1ea7u.",
+        "expected": "Tr\u01b0\u1eddng \u0111ang th\u1eed c\u00f3 l\u1ed7i native/server; m\u1eadt kh\u1ea9u ban \u0111\u1ea7u v\u1eabn \u0111\u0103ng nh\u1eadp \u0111\u01b0\u1ee3c."
+      }
+    },
+    {
+      "id": "TC-MK-006",
+      "robot_ids": [
+        "SH-CUST-P06"
+      ],
+      "requirement": "YC-MK",
+      "analysis": "QD-MK-06, EP-MK-06",
+      "en": {
+        "title": "Changing the password with matching new passwords",
+        "description": "Changing the password with matching new passwords.",
+        "steps": "1. Log in and open Change password.\n2. Submit the displayed current and matching new passwords.\n3. Log out, verify old-password rejection and new-password authentication.\n4. Restore the original through the same form.\n5. Log out and authenticate with the original password.",
+        "expected": "The new password authenticates and the old password is rejected; restore the original through Change password and verify it authenticates again."
+      },
+      "vi": {
+        "title": "\u0110\u1ed5i m\u1eadt kh\u1ea9u v\u1edbi hai m\u1eadt kh\u1ea9u m\u1edbi tr\u00f9ng nhau",
+        "description": "\u0110\u1ed5i m\u1eadt kh\u1ea9u v\u1edbi hai m\u1eadt kh\u1ea9u m\u1edbi tr\u00f9ng nhau.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp v\u00e0 m\u1edf Change password.\n2. Nh\u1eadp m\u1eadt kh\u1ea9u hi\u1ec7n t\u1ea1i v\u00e0 hai m\u1eadt kh\u1ea9u m\u1edbi \u0111\u00e3 ghi, l\u01b0u.\n3. \u0110\u0103ng xu\u1ea5t; th\u1eed m\u1eadt kh\u1ea9u c\u0169 r\u1ed3i \u0111\u0103ng nh\u1eadp b\u1eb1ng m\u1eadt kh\u1ea9u m\u1edbi.\n4. \u0110\u1ed5i l\u1ea1i m\u1eadt kh\u1ea9u ban \u0111\u1ea7u qua c\u00f9ng form.\n5. \u0110\u0103ng xu\u1ea5t, \u0111\u0103ng nh\u1eadp l\u1ea1i b\u1eb1ng m\u1eadt kh\u1ea9u ban \u0111\u1ea7u.",
+        "expected": "M\u1eadt kh\u1ea9u m\u1edbi \u0111\u0103ng nh\u1eadp \u0111\u01b0\u1ee3c, m\u1eadt kh\u1ea9u c\u0169 b\u1ecb t\u1eeb ch\u1ed1i; \u0111\u1ed5i l\u1ea1i m\u1eadt kh\u1ea9u ban \u0111\u1ea7u qua UI v\u00e0 x\u00e1c nh\u1eadn \u0111\u0103ng nh\u1eadp l\u1ea1i th\u00e0nh c\u00f4ng."
+      }
+    },
+    {
+      "id": "TC-MK-007",
+      "robot_ids": [
+        "SH-CUST-P07"
+      ],
+      "requirement": "YC-MK",
+      "analysis": "QD-MK-07, EP-MK-07",
+      "en": {
+        "title": "Changing the password with a signed-out session",
+        "description": "Changing the password with a signed-out session.",
+        "steps": "1. Log in, open Change password and record its URL.\n2. Log out.\n3. Open the recorded URL.\n4. Inspect the login redirect and absence of password-change fields.",
+        "expected": "The recorded change-password URL redirects to login and exposes no password-change controls."
+      },
+      "vi": {
+        "title": "\u0110\u1ed5i m\u1eadt kh\u1ea9u v\u1edbi phi\u00ean \u0111\u00e3 \u0111\u0103ng xu\u1ea5t",
+        "description": "\u0110\u1ed5i m\u1eadt kh\u1ea9u v\u1edbi phi\u00ean \u0111\u00e3 \u0111\u0103ng xu\u1ea5t.",
+        "steps": "1. \u0110\u0103ng nh\u1eadp v\u00e0 m\u1edf Change password, ghi l\u1ea1i li\u00ean k\u1ebft.\n2. \u0110\u0103ng xu\u1ea5t.\n3. M\u1edf li\u00ean k\u1ebft v\u1eeba ghi.\n4. Ki\u1ec3m tra trang \u0111\u0103ng nh\u1eadp v\u00e0 s\u1ef1 v\u1eafng m\u1eb7t c\u1ee7a form \u0111\u1ed5i m\u1eadt kh\u1ea9u.",
+        "expected": "Li\u00ean k\u1ebft \u0111\u1ed5i m\u1eadt kh\u1ea9u \u0111\u00e3 ghi chuy\u1ec3n t\u1edbi \u0111\u0103ng nh\u1eadp; kh\u00f4ng hi\u1ec7n c\u00e1c \u00f4 \u0111\u1ed5i m\u1eadt kh\u1ea9u."
+      }
+    }
+  ]
+}

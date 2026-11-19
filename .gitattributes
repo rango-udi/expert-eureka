@@ -1,0 +1,8 @@
+* text=auto
+*.py text eol=lf
+*.robot text eol=lf
+*.cmd text eol=crlf
+cmdc text eol=lf
+*.sh text eol=lf
+*.ps1 text eol=crlf
+.env.template text eol=lf

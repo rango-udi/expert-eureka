@@ -1,0 +1,84 @@
+# Reviewed test specification. Quote UI values and decimal boundaries.
+# Credentials are resolved from environment variables, never stored here.
+schema_version: 1
+description: 'Wallet amount: single-fault UI design. Running valid rows adds simulated
+  credit.'
+fields:
+  amount:
+    nominal: '25.00'
+    min: '5.00'
+    max: '500.00'
+    step: '0.01'
+    partitions:
+    - id: within
+      valid: true
+      representative: '25.00'
+      min: '5.00'
+      max: '500.00'
+    - id: below
+      valid: false
+      representative: '4.99'
+      below: '5.00'
+    - id: above
+      valid: false
+      representative: '500.01'
+      above: '500.00'
+    - id: missing
+      valid: false
+      representative: ''
+      values:
+      - ''
+    - id: precision
+      valid: false
+      representative: '5.001'
+      values:
+      - '5.001'
+decision_table:
+  conditions:
+    amount_allowed:
+      field: amount
+      'true': '25.00'
+      'false': '4.99'
+  rules:
+  - id: allow
+    when:
+      amount_allowed: true
+    expected: accepted
+  - id: block
+    when:
+      amount_allowed: false
+    expected: rejected
+ui:
+  setup:
+  - action: navigate
+    path: /login/
+  - action: fill_env
+    selector: form[action="/login/"] input[name="username"]
+    env: ROBOT_CUSTOMER_EMAIL
+  - action: fill_env
+    selector: form[action="/login/"] input[name="password"]
+    env: ROBOT_CUSTOMER_PASSWORD
+  - action: click
+    selector: form[action="/login/"] button[type="submit"]
+  - action: wait
+    selector: .top-nav a[href*="/logout/"]
+    state: attached
+  path: /wallet/
+  bindings:
+    amount:
+      kind: fill
+      selector: '#funding-amount'
+  submit: .wallet-form button[type="submit"]
+  oracles:
+    accepted:
+      kind: visible_text
+      selector: .alert-success
+      text: Wallet updated.
+    rejected:
+      kind: native_invalid
+      selector: '#funding-amount'
+attribution:
+  creator: rango-udi
+  license: MIT
+  scope: Workspace test model; fuzcake source records retain CC-BY-4.0
+fault_policy: single

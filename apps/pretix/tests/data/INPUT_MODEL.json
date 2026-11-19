@@ -1,0 +1,18 @@
+{
+  "description": "Example input model for data-generation techniques. Its ranges and expected results are not verified pretix business rules.",
+  "fields": {
+    "quantity": {"min": 1, "max": 10, "nominal": 2,
+      "valid_representatives": [1, 5, 10], "invalid_representatives": [0, 11, "abc"]},
+    "voucher": {"nominal": "ROBOT10",
+      "valid_representatives": ["ROBOT10", ""], "invalid_representatives": ["UNKNOWN"]}
+  },
+  "decision_table": {
+    "conditions": ["has_stock", "voucher_valid"],
+    "rules": [
+      {"when": [true, true], "expected": "allow_with_discount"},
+      {"when": [true, false], "expected": "reject_voucher"},
+      {"when": [false, true], "expected": "reject_stock"},
+      {"when": [false, false], "expected": "reject_stock_and_voucher"}
+    ]
+  }
+}

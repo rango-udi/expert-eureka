@@ -1,0 +1,416 @@
+{
+  "schema_version": 1,
+  "language": "en",
+  "cases": [
+    {
+      "id": "TC-DK-001",
+      "title": "Registration and activation with valid account details",
+      "description": "The customer submits valid registration details, activates the delivered email link and logs in with the new account.",
+      "robot_ids": [
+        "SH-CUST-E01"
+      ],
+      "analysis": "EP-DK-01, EP-DK-05, EP-DK-08, EP-DK-10",
+      "requirement": "YC-DK"
+    },
+    {
+      "id": "TC-DK-002",
+      "title": "Registration with an empty username",
+      "description": "The customer submits registration with the username field empty; the email and both passwords retain valid values.",
+      "robot_ids": [
+        "SH-CUST-R01"
+      ],
+      "analysis": "EP-DK-02",
+      "requirement": "YC-DK"
+    },
+    {
+      "id": "TC-DK-003",
+      "title": "Registration with a username containing a space",
+      "description": "The customer submits registration with a space in the username; the email and both passwords retain valid values.",
+      "robot_ids": [
+        "SH-CUST-R02"
+      ],
+      "analysis": "EP-DK-03",
+      "requirement": "YC-DK"
+    },
+    {
+      "id": "TC-DK-004",
+      "title": "Registration with an existing username",
+      "description": "The customer submits registration with a username belonging to an existing account, a new email and matching passwords.",
+      "robot_ids": [
+        "SH-CUST-R03"
+      ],
+      "analysis": "EP-DK-04",
+      "requirement": "YC-DK"
+    },
+    {
+      "id": "TC-DK-005",
+      "title": "Registration with an empty email",
+      "description": "The customer submits registration with the email field empty; the username and both passwords retain valid values.",
+      "robot_ids": [
+        "SH-CUST-R04"
+      ],
+      "analysis": "EP-DK-06",
+      "requirement": "YC-DK"
+    },
+    {
+      "id": "TC-DK-006",
+      "title": "Registration with an email missing the at sign",
+      "description": "The customer submits registration with an email missing @; the username and both passwords retain valid values.",
+      "robot_ids": [
+        "SH-CUST-R05"
+      ],
+      "analysis": "EP-DK-07",
+      "requirement": "YC-DK"
+    },
+    {
+      "id": "TC-DK-007",
+      "title": "Registration with an empty password",
+      "description": "The customer submits registration with the first password empty; the username, email and password confirmation retain valid values.",
+      "robot_ids": [
+        "SH-CUST-R06"
+      ],
+      "analysis": "EP-DK-09",
+      "requirement": "YC-DK"
+    },
+    {
+      "id": "TC-DK-008",
+      "title": "Registration with an empty password confirmation",
+      "description": "The customer submits registration with the confirmation empty; the username, email and first password retain valid values.",
+      "robot_ids": [
+        "SH-CUST-R07"
+      ],
+      "analysis": "EP-DK-11",
+      "requirement": "YC-DK"
+    },
+    {
+      "id": "TC-DK-009",
+      "title": "Registration with different passwords",
+      "description": "The customer submits registration with two different passwords and valid username and email values.",
+      "robot_ids": [
+        "SH-CUST-R08"
+      ],
+      "analysis": "EP-DK-12",
+      "requirement": "YC-DK"
+    },
+    {
+      "id": "TC-DN-001",
+      "title": "Login with an activated account",
+      "description": "The customer submits the exact username and password of an account activated through email.",
+      "robot_ids": [
+        "SH-CUST-E01"
+      ],
+      "analysis": "EP-DN-01, EP-DN-04",
+      "requirement": "YC-DN"
+    },
+    {
+      "id": "TC-DN-002",
+      "title": "Login with an empty username",
+      "description": "The customer submits an empty username and the valid fixture account password.",
+      "robot_ids": [
+        "SH-CUST-L01"
+      ],
+      "analysis": "EP-DN-02",
+      "requirement": "YC-DN"
+    },
+    {
+      "id": "TC-DN-003",
+      "title": "Login with an unregistered username",
+      "description": "The customer submits a username outside the registered accounts and the fixture account password.",
+      "robot_ids": [
+        "SH-CUST-L02"
+      ],
+      "analysis": "EP-DN-03",
+      "requirement": "YC-DN"
+    },
+    {
+      "id": "TC-DN-004",
+      "title": "Login with an empty password",
+      "description": "The customer submits an activated username with the password field empty.",
+      "robot_ids": [
+        "SH-CUST-L03"
+      ],
+      "analysis": "EP-DN-05",
+      "requirement": "YC-DN"
+    },
+    {
+      "id": "TC-DN-005",
+      "title": "Login with a different account password",
+      "description": "The customer submits an activated username and a password different from its configured password.",
+      "robot_ids": [
+        "SH-CUST-L04"
+      ],
+      "analysis": "EP-DN-06",
+      "requirement": "YC-DN"
+    },
+    {
+      "id": "TC-TK-001",
+      "title": "Searching for three products by their full names",
+      "description": "The customer searches separately for The One, L'Homme Ideal and Rose Aube by full name.",
+      "robot_ids": [
+        "SH-CUST-E01"
+      ],
+      "analysis": "EP-TK-01",
+      "requirement": "YC-TK"
+    },
+    {
+      "id": "TC-TK-002",
+      "title": "Search with a term outside the product catalogue",
+      "description": "The customer searches for a literal term outside the current product catalogue.",
+      "robot_ids": [
+        "SH-CUST-E01"
+      ],
+      "analysis": "EP-TK-02",
+      "requirement": "YC-TK"
+    },
+    {
+      "id": "TC-SP-001",
+      "title": "Viewing details and images of three search results",
+      "description": "The customer opens each search result and observes its name, price, size, description and product image.",
+      "robot_ids": [
+        "SH-CUST-E01"
+      ],
+      "analysis": "EP-TK-01",
+      "requirement": "YC-SP"
+    },
+    {
+      "id": "TC-GH-001",
+      "title": "Adding Rose Nocturne with quantity 0",
+      "description": "The customer performs this scenario through the visible storefront: adding Rose Nocturne with quantity 0.",
+      "robot_ids": [
+        "SH-CUST-Q01"
+      ],
+      "analysis": "BVA-SL-01, EP-SL-02",
+      "requirement": "YC-GH"
+    },
+    {
+      "id": "TC-GH-002",
+      "title": "Adding Rose Nocturne with quantity 1",
+      "description": "The customer performs this scenario through the visible storefront: adding Rose Nocturne with quantity 1.",
+      "robot_ids": [
+        "SH-CUST-Q02"
+      ],
+      "analysis": "BVA-SL-02, EP-SL-01",
+      "requirement": "YC-GH"
+    },
+    {
+      "id": "TC-GH-003",
+      "title": "Adding Rose Nocturne with quantity 2",
+      "description": "The customer performs this scenario through the visible storefront: adding Rose Nocturne with quantity 2.",
+      "robot_ids": [
+        "SH-CUST-Q03"
+      ],
+      "analysis": "BVA-SL-03, EP-SL-01",
+      "requirement": "YC-GH"
+    },
+    {
+      "id": "TC-GH-004",
+      "title": "Adding 24 Rose Nocturne bottles with stock of 25",
+      "description": "The customer performs this scenario through the visible storefront: adding 24 Rose Nocturne bottles with stock of 25.",
+      "robot_ids": [
+        "SH-CUST-Q04"
+      ],
+      "analysis": "BVA-SL-04, EP-SL-01",
+      "requirement": "YC-GH"
+    },
+    {
+      "id": "TC-GH-005",
+      "title": "Adding 25 Rose Nocturne bottles with stock of 25",
+      "description": "The customer performs this scenario through the visible storefront: adding 25 Rose Nocturne bottles with stock of 25.",
+      "robot_ids": [
+        "SH-CUST-Q05"
+      ],
+      "analysis": "BVA-SL-05, EP-SL-01",
+      "requirement": "YC-GH"
+    },
+    {
+      "id": "TC-GH-006",
+      "title": "Adding 26 Rose Nocturne bottles with stock of 25",
+      "description": "The customer performs this scenario through the visible storefront: adding 26 Rose Nocturne bottles with stock of 25.",
+      "robot_ids": [
+        "SH-CUST-Q06"
+      ],
+      "analysis": "BVA-SL-06, EP-SL-03",
+      "requirement": "YC-GH"
+    },
+    {
+      "id": "TC-GH-007",
+      "title": "Adding Rose Nocturne with quantity 3",
+      "description": "The customer performs this scenario through the visible storefront: adding Rose Nocturne with quantity 3.",
+      "robot_ids": [
+        "SH-CUST-Q07"
+      ],
+      "analysis": "BVA-SL-07, EP-SL-01",
+      "requirement": "YC-GH"
+    },
+    {
+      "id": "TC-GH-008",
+      "title": "Adding Rose Nocturne with an empty quantity",
+      "description": "The customer performs this scenario through the visible storefront: adding Rose Nocturne with an empty quantity.",
+      "robot_ids": [
+        "SH-CUST-Q08"
+      ],
+      "analysis": "EP-SL-04",
+      "requirement": "YC-GH"
+    },
+    {
+      "id": "TC-GH-009",
+      "title": "Adding Rose Nocturne with quantity 1.5",
+      "description": "The customer performs this scenario through the visible storefront: adding Rose Nocturne with quantity 1.5.",
+      "robot_ids": [
+        "SH-CUST-Q09"
+      ],
+      "analysis": "EP-SL-05",
+      "requirement": "YC-GH"
+    },
+    {
+      "id": "TC-GH-010",
+      "title": "Adding three different products and viewing the basket total",
+      "description": "The customer performs this scenario through the visible storefront: adding three different products and viewing the basket total.",
+      "robot_ids": [
+        "SH-CUST-E01"
+      ],
+      "analysis": "QD-KM-01",
+      "requirement": "YC-GH"
+    },
+    {
+      "id": "TC-KM-001",
+      "title": "Viewing the basket total with an empty coupon field",
+      "description": "The customer performs this scenario through the visible storefront: viewing the basket total with an empty coupon field.",
+      "robot_ids": [
+        "SH-CUST-E01"
+      ],
+      "analysis": "QD-KM-01",
+      "requirement": "YC-KM"
+    },
+    {
+      "id": "TC-KM-002",
+      "title": "Applying an unknown coupon code",
+      "description": "The customer performs this scenario through the visible storefront: applying an unknown coupon code.",
+      "robot_ids": [
+        "SH-CUST-E01"
+      ],
+      "analysis": "QD-KM-02",
+      "requirement": "YC-KM"
+    },
+    {
+      "id": "TC-KM-003",
+      "title": "Applying FUZCAKE10 to the three-product basket",
+      "description": "The customer performs this scenario through the visible storefront: applying FUZCAKE10 to the three-product basket.",
+      "robot_ids": [
+        "SH-CUST-E01"
+      ],
+      "analysis": "QD-KM-03",
+      "requirement": "YC-KM"
+    },
+    {
+      "id": "TC-KM-004",
+      "title": "Removing an applied FUZCAKE10 coupon",
+      "description": "The customer performs this scenario through the visible storefront: removing an applied FUZCAKE10 coupon.",
+      "robot_ids": [
+        "SH-CUST-E01"
+      ],
+      "analysis": "QD-KM-04",
+      "requirement": "YC-KM"
+    },
+    {
+      "id": "TC-DC-001",
+      "title": "Using the billing address for delivery",
+      "description": "The customer performs this scenario through the visible storefront: using the billing address for delivery.",
+      "robot_ids": [
+        "SH-CUST-E01"
+      ],
+      "analysis": "EP-DC-01, QD-DC-01",
+      "requirement": "YC-DC"
+    },
+    {
+      "id": "TC-DC-002",
+      "title": "Entering a separate delivery address",
+      "description": "The customer performs this scenario through the visible storefront: entering a separate delivery address.",
+      "robot_ids": [
+        "SH-CUST-E01"
+      ],
+      "analysis": "EP-DC-02, QD-DC-02",
+      "requirement": "YC-DC"
+    },
+    {
+      "id": "TC-DC-003",
+      "title": "Continuing checkout with an empty billing street",
+      "description": "The customer performs this scenario through the visible storefront: continuing checkout with an empty billing street.",
+      "robot_ids": [
+        "SH-CUST-E01"
+      ],
+      "analysis": "EP-DC-03, QD-DC-03",
+      "requirement": "YC-DC"
+    },
+    {
+      "id": "TC-VC-001",
+      "title": "Selecting Careful delivery and viewing the order total",
+      "description": "The customer performs this scenario through the visible storefront: selecting Careful delivery and viewing the order total.",
+      "robot_ids": [
+        "SH-CUST-E01"
+      ],
+      "analysis": "QD-VC-01",
+      "requirement": "YC-VC"
+    },
+    {
+      "id": "TC-VC-002",
+      "title": "Selecting Priority delivery and viewing the order total",
+      "description": "The customer performs this scenario through the visible storefront: selecting Priority delivery and viewing the order total.",
+      "robot_ids": [
+        "SH-CUST-E01"
+      ],
+      "analysis": "QD-VC-02",
+      "requirement": "YC-VC"
+    },
+    {
+      "id": "TC-VC-003",
+      "title": "Selecting Express delivery and viewing the order total",
+      "description": "The customer performs this scenario through the visible storefront: selecting Express delivery and viewing the order total.",
+      "robot_ids": [
+        "SH-CUST-E01"
+      ],
+      "analysis": "QD-VC-03",
+      "requirement": "YC-VC"
+    },
+    {
+      "id": "TC-DH-001",
+      "title": "Placing an order with the terms checkbox cleared",
+      "description": "The customer performs this scenario through the visible storefront: placing an order with the terms checkbox cleared.",
+      "robot_ids": [
+        "SH-CUST-E01"
+      ],
+      "analysis": "QD-DH-01",
+      "requirement": "YC-DH"
+    },
+    {
+      "id": "TC-DH-002",
+      "title": "Placing a three-product order with Pay on delivery",
+      "description": "The customer performs this scenario through the visible storefront: placing a three-product order with Pay on delivery.",
+      "robot_ids": [
+        "SH-CUST-E01"
+      ],
+      "analysis": "QD-DH-02, QD-KM-03, QD-VC-01",
+      "requirement": "YC-DH"
+    },
+    {
+      "id": "TC-LS-001",
+      "title": "Reopening the latest order from order history",
+      "description": "The customer performs this scenario through the visible storefront: reopening the latest order from order history.",
+      "robot_ids": [
+        "SH-CUST-E01"
+      ],
+      "analysis": "QD-DH-02, QD-DC-02",
+      "requirement": "YC-LS"
+    },
+    {
+      "id": "TC-HT-001",
+      "title": "Registering, purchasing three products and reopening order history",
+      "description": "The customer performs this scenario through the visible storefront: registering, purchasing three products and reopening order history.",
+      "robot_ids": [
+        "SH-CUST-E01"
+      ],
+      "analysis": "EP-DK-01, EP-DN-01, EP-TK-01, QD-KM-03, QD-DC-02, QD-VC-01, QD-DH-02",
+      "requirement": "YC-HT"
+    }
+  ]
+}

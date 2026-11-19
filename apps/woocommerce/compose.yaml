@@ -1,0 +1,236 @@
+{
+  "name": "robot-web-woocommerce",
+  "services": {
+    "db": {
+      "init": true,
+      "cpus": 1,
+      "pids_limit": 192,
+      "labels": {
+        "org.robot-web.app": "woocommerce"
+      },
+      "restart": "no",
+      "image": "mariadb:11.4.5",
+      "mem_limit": "${DB_MEMORY_LIMIT:-256m}",
+      "volumes": [
+        "database_data:/var/lib/mysql"
+      ],
+      "environment": {
+        "MARIADB_DATABASE": "commerce",
+        "MARIADB_USER": "commerce",
+        "MARIADB_PASSWORD": "${DB_PASSWORD:-unconfigured}",
+        "MARIADB_ROOT_PASSWORD": "${DB_ROOT_PASSWORD:-unconfigured}"
+      },
+      "command": [
+        "--innodb-buffer-pool-size=64M",
+        "--max-connections=25",
+        "--performance-schema=OFF"
+      ],
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "healthcheck.sh",
+          "--connect",
+          "--innodb_initialized"
+        ],
+        "interval": "3s",
+        "timeout": "5s",
+        "retries": 40
+      }
+    },
+    "app": {
+      "init": true,
+      "cpus": 1,
+      "pids_limit": 192,
+      "labels": {
+        "org.robot-web.app": "woocommerce"
+      },
+      "restart": "no",
+      "image": "robot-web-woocommerce-app:3.9.2",
+      "build": {
+        "context": ".",
+        "target": "app"
+      },
+      "env_file": [
+        {
+          "path": ".env",
+          "required": false
+        }
+      ],
+      "mem_limit": "${APP_MEMORY_LIMIT:-512m}",
+      "ports": [
+        "127.0.0.1:${HTTP_PORT:-8086}:${HTTP_PORT:-8086}"
+      ],
+      "volumes": [
+        {
+          "type": "bind",
+          "source": "../../fuzcake-data",
+          "target": "/fuzcake-data",
+          "read_only": true,
+          "bind": {
+            "create_host_path": false
+          }
+        },
+        "app_data:/var/www/html",
+        {
+          "type": "bind",
+          "source": "./scripts",
+          "target": "/opt/adapter",
+          "read_only": true,
+          "bind": {
+            "create_host_path": false
+          }
+        },
+        {
+          "type": "bind",
+          "source": "./.runtime",
+          "target": "/private",
+          "read_only": false,
+          "bind": {
+            "create_host_path": false
+          }
+        }
+      ],
+      "healthcheck": {
+        "test": [
+          "CMD",
+          "php",
+          "-r",
+          "$$s=@fsockopen('127.0.0.1',(int)getenv('HTTP_PORT')); if (!$$s) exit(1); fclose($$s);"
+        ],
+        "interval": "5s",
+        "timeout": "10s",
+        "retries": 60,
+        "start_period": "30s"
+      },
+      "environment": {
+        "WORDPRESS_DB_HOST": "db",
+        "WORDPRESS_DB_NAME": "commerce",
+        "WORDPRESS_DB_USER": "commerce",
+        "WORDPRESS_DB_PASSWORD": "${DB_PASSWORD}",
+        "WORDPRESS_CONFIG_EXTRA": "define('DISABLE_WP_CRON', true); define('WP_MEMORY_LIMIT', '256M'); define('DISALLOW_FILE_EDIT', true);"
+      },
+      "entrypoint": [
+        "sh",
+        "/opt/adapter/entrypoint.sh"
+      ]
+    },
+    "tools": {
+      "init": true,
+      "cpus": 1,
+      "pids_limit": 192,
+      "labels": {
+        "org.robot-web.app": "woocommerce"
+      },
+      "restart": "no",
+      "image": "robot-web-commerce-tools:3.9.2",
+      "build": {
+        "context": "../../scripts/commerce",
+        "target": "tools"
+      },
+      "profiles": [
+        "tools"
+      ],
+      "env_file": [
+        {
+          "path": ".env",
+          "required": false
+        }
+      ],
+      "mem_limit": "256m",
+      "working_dir": "/workspace",
+      "volumes": [
+        {
+          "type": "bind",
+          "source": ".",
+          "target": "/workspace",
+          "read_only": false,
+          "bind": {
+            "create_host_path": false
+          }
+        },
+        {
+          "type": "bind",
+          "source": "../../fuzcake-data",
+          "target": "/fuzcake-data",
+          "read_only": true,
+          "bind": {
+            "create_host_path": false
+          }
+        }
+      ]
+    },
+    "robot": {
+      "init": true,
+      "cpus": 1,
+      "pids_limit": 192,
+      "labels": {
+        "org.robot-web.app": "woocommerce"
+      },
+      "restart": "no",
+      "image": "robot-web-commerce-browser:3.9.2",
+      "build": {
+        "context": "../../scripts/commerce",
+        "target": "robot"
+      },
+      "profiles": [
+        "robot"
+      ],
+      "env_file": [
+        {
+          "path": ".env",
+          "required": false
+        }
+      ],
+      "environment": {
+        "BASE_URL": "http://127.0.0.1:${HTTP_PORT:-8086}"
+      },
+      "mem_limit": "${ROBOT_MEMORY_LIMIT:-1024m}",
+      "shm_size": "256m",
+      "working_dir": "/workspace",
+      "volumes": [
+        {
+          "type": "bind",
+          "source": "./reports",
+          "target": "/workspace/reports",
+          "read_only": false,
+          "bind": {
+            "create_host_path": false
+          }
+        },
+        {
+          "type": "bind",
+          "source": "./tests",
+          "target": "/checks",
+          "read_only": true,
+          "bind": {
+            "create_host_path": false
+          }
+        },
+        {
+          "type": "bind",
+          "source": "../../fuzcake-data",
+          "target": "/fuzcake-data",
+          "read_only": true,
+          "bind": {
+            "create_host_path": false
+          }
+        }
+      ],
+      "network_mode": "service:app"
+    }
+  },
+  "volumes": {
+    "database_data": {
+      "labels": {
+        "org.robot-web.workspace": "${CMDC_WORKSPACE:?Use root cmdc}",
+        "org.robot-web.app": "woocommerce"
+      }
+    },
+    "app_data": {
+      "labels": {
+        "org.robot-web.workspace": "${CMDC_WORKSPACE:?Use root cmdc}",
+        "org.robot-web.app": "woocommerce"
+      }
+    }
+  }
+}

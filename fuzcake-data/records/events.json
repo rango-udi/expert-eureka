@@ -1,0 +1,32 @@
+{
+  "organizer": {
+    "slug": "demo-organizer",
+    "name": "Moonberry Events"
+  },
+  "team": "Event operations",
+  "event": {
+    "slug": "workspace-conference",
+    "name": "Future Makers Summit",
+    "starts_in_days": 365,
+    "duration_days": 1,
+    "currency": "EUR"
+  },
+  "tickets": [
+    {
+      "name": "Community ticket",
+      "price": "0.00",
+      "quota": 1000
+    },
+    {
+      "name": "Standard ticket",
+      "price": "25.00",
+      "quota": 1000
+    }
+  ],
+  "voucher": {
+    "code": "ROBOT10",
+    "max_usages": 100,
+    "percent": "10.00"
+  },
+  "manual_payment_note": "Treasurarity Bank - local payment scenario. No bank transfer is required."
+}

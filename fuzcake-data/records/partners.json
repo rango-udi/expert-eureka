@@ -1,0 +1,180 @@
+{
+  "banks": [
+    {
+      "id": "treasurarity",
+      "name": "Treasurarity Bank",
+      "short_name": "TRB",
+      "color": "#173b35",
+      "accent": "#d6b97a",
+      "card_types": [
+        "Reserve debit",
+        "Atelier credit"
+      ],
+      "font": "Noto Serif",
+      "logo": "fuzcake/brands/treasurarity.svg"
+    },
+    {
+      "id": "united-pantry",
+      "name": "United Pantry Bank",
+      "short_name": "UPB",
+      "color": "#a5452d",
+      "accent": "#f3e7cf",
+      "card_types": [
+        "Everyday debit",
+        "Harvest credit"
+      ],
+      "font": "Noto Sans",
+      "logo": "fuzcake/brands/united-pantry.svg"
+    },
+    {
+      "id": "delivas",
+      "name": "Delivas Bank",
+      "short_name": "DVB",
+      "color": "#283c7d",
+      "accent": "#b9c9ff",
+      "card_types": [
+        "Horizon debit",
+        "Journey credit"
+      ],
+      "font": "Noto Serif",
+      "logo": "fuzcake/brands/delivas.svg"
+    }
+  ],
+  "wallets": [
+    {
+      "id": "quantumgem",
+      "name": "QuantumGem",
+      "short_name": "QG",
+      "color": "#5a367b",
+      "accent": "#dcc8fb",
+      "font": "Noto Sans",
+      "logo": "fuzcake/brands/quantumgem.svg"
+    },
+    {
+      "id": "onecard",
+      "name": "OneCard",
+      "short_name": "OC",
+      "color": "#132c40",
+      "accent": "#9fdcd5",
+      "font": "monospace",
+      "logo": "fuzcake/brands/onecard.svg"
+    },
+    {
+      "id": "velvetr",
+      "name": "VelvetR",
+      "short_name": "VR",
+      "color": "#a72958",
+      "accent": "#ffe0ea",
+      "font": "Noto Serif",
+      "logo": "fuzcake/brands/velvetr.svg"
+    },
+    {
+      "id": "limy",
+      "name": "Limy",
+      "short_name": "LY",
+      "color": "#385b22",
+      "accent": "#dcf5a2",
+      "font": "Noto Sans",
+      "logo": "fuzcake/brands/limy.svg"
+    }
+  ],
+  "carriers": [
+    {
+      "id": "fuzcake-delivery",
+      "name": "fuzcake Delivery",
+      "short_name": "FD",
+      "color": "#694943",
+      "accent": "#f8dfd3",
+      "fee": "4.95",
+      "service": "Careful delivery",
+      "eta": "2-4 business days",
+      "logo": "fuzcake/brands/fuzcake-delivery.svg"
+    },
+    {
+      "id": "sweetlemon",
+      "name": "SweetLemon Delivery",
+      "short_name": "SL",
+      "color": "#616300",
+      "accent": "#f4ef9d",
+      "fee": "8.95",
+      "service": "Priority delivery",
+      "eta": "1-2 business days",
+      "logo": "fuzcake/brands/sweetlemon.svg"
+    },
+    {
+      "id": "ultrafazt",
+      "name": "UltraFazt Delivery",
+      "short_name": "UF",
+      "color": "#b34423",
+      "accent": "#ffdfc6",
+      "fee": "14.95",
+      "service": "Express delivery",
+      "eta": "Next business day",
+      "logo": "fuzcake/brands/ultrafazt.svg"
+    }
+  ],
+  "funding_methods": [
+    {
+      "id": "card-trb-4286",
+      "brand": "treasurarity",
+      "kind": "bank_card",
+      "name": "Reserve debit",
+      "last_four": "4286",
+      "holder": "Mira Solen",
+      "expiry": "12/30",
+      "token": "FUZ-CARD-TRB-4286"
+    },
+    {
+      "id": "card-upb-6319",
+      "brand": "united-pantry",
+      "kind": "bank_card",
+      "name": "Everyday debit",
+      "last_four": "6319",
+      "holder": "Mira Solen",
+      "expiry": "08/31",
+      "token": "FUZ-CARD-UPB-6319"
+    },
+    {
+      "id": "card-dvb-9073",
+      "brand": "delivas",
+      "kind": "bank_card",
+      "name": "Horizon debit",
+      "last_four": "9073",
+      "holder": "Mira Solen",
+      "expiry": "05/30",
+      "token": "FUZ-CARD-DVB-9073"
+    },
+    {
+      "id": "wallet-quantumgem",
+      "brand": "quantumgem",
+      "kind": "electronic_wallet",
+      "name": "QuantumGem balance",
+      "handle": "mira.solen",
+      "token": "FUZ-WALLET-QG"
+    },
+    {
+      "id": "wallet-onecard",
+      "brand": "onecard",
+      "kind": "electronic_wallet",
+      "name": "OneCard balance",
+      "handle": "mira.solen",
+      "token": "FUZ-WALLET-OC"
+    },
+    {
+      "id": "wallet-velvetr",
+      "brand": "velvetr",
+      "kind": "electronic_wallet",
+      "name": "VelvetR balance",
+      "handle": "mira.solen",
+      "token": "FUZ-WALLET-VR"
+    },
+    {
+      "id": "wallet-limy",
+      "brand": "limy",
+      "kind": "electronic_wallet",
+      "name": "Limy balance",
+      "handle": "mira.solen",
+      "token": "FUZ-WALLET-LY"
+    }
+  ]
+}

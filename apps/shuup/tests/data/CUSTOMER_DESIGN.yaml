@@ -1,0 +1,764 @@
+# Literal fictional inputs, including all test passwords.
+schema_version: 1
+description: Customer black-box UI specification; isolated negative probes and one
+  continuous registered-customer order.
+quantity_product: fuzcake-rose-nocturne
+order_products:
+- fuzcake-the-one
+- fuzcake-homme-ideal
+- fuzcake-rose-aube
+billing_address: customer-home
+shipping_address: customer-office
+quantity_model:
+  schema_version: 1
+  fields:
+    quantity:
+      nominal: '3'
+      min: '1'
+      max: '25'
+      step: '1'
+      partitions:
+      - id: in_stock
+        valid: true
+        representative: '3'
+        min: '1'
+        max: '25'
+      - id: below
+        valid: false
+        representative: '0'
+        below: '1'
+      - id: above_stock
+        valid: false
+        representative: '26'
+        above: '25'
+      - id: missing
+        valid: false
+        representative: ''
+        values:
+        - ''
+      - id: fraction
+        valid: false
+        representative: '1.5'
+        values:
+        - '1.5'
+  fault_policy: single
+negative_cases:
+- id: SH-CUST-R01
+  stage: registration
+  field: username
+  value: ''
+  title: Registration with an empty username
+  description: The customer submits registration with the username field empty; the
+    email and both passwords retain valid values.
+  expected: rejected
+  covers:
+  - EP-R01
+- id: SH-CUST-R02
+  stage: registration
+  field: username
+  value: lucas parker
+  title: Registration with a username containing a space
+  description: The customer submits registration with a space in the username; the
+    email and both passwords retain valid values.
+  expected: rejected
+  covers:
+  - EP-R02
+- id: SH-CUST-R03
+  stage: registration
+  field: username
+  value: oliver.bennett
+  title: Registration with an existing username
+  description: The customer submits registration with a username belonging to an existing
+    account, a new email and matching passwords.
+  expected: rejected
+  covers:
+  - EP-R03
+- id: SH-CUST-R04
+  stage: registration
+  field: email
+  value: ''
+  title: Registration with an empty email
+  description: The customer submits registration with the email field empty; the username
+    and both passwords retain valid values.
+  expected: rejected
+  covers:
+  - EP-R04
+- id: SH-CUST-R05
+  stage: registration
+  field: email
+  value: lucas.parker.fuzcake.test
+  title: Registration with an email missing the at sign
+  description: The customer submits registration with an email missing @; the username
+    and both passwords retain valid values.
+  expected: rejected
+  covers:
+  - EP-R05
+- id: SH-CUST-R06
+  stage: registration
+  field: password1
+  value: ''
+  title: Registration with an empty password
+  description: The customer submits registration with the first password empty; the
+    username, email and password confirmation retain valid values.
+  expected: rejected
+  covers:
+  - EP-R06
+- id: SH-CUST-R07
+  stage: registration
+  field: password2
+  value: ''
+  title: Registration with an empty password confirmation
+  description: The customer submits registration with the confirmation empty; the
+    username, email and first password retain valid values.
+  expected: rejected
+  covers:
+  - EP-R07
+- id: SH-CUST-R08
+  stage: registration
+  field: password2
+  value: Lucas!7363Maple
+  title: Registration with different passwords
+  description: The customer submits registration with two different passwords and
+    valid username and email values.
+  expected: rejected
+  covers:
+  - EP-R08
+- id: SH-CUST-L01
+  stage: login
+  field: username
+  value: ''
+  title: Login with an empty username
+  description: The customer submits an empty username and the valid fixture account
+    password.
+  expected: rejected
+  covers:
+  - EP-L01
+- id: SH-CUST-L02
+  stage: login
+  field: username
+  value: nathan.reed
+  title: Login with an unregistered username
+  description: The customer submits a username outside the registered accounts and
+    the fixture account password.
+  expected: rejected
+  covers:
+  - EP-L02
+- id: SH-CUST-L03
+  stage: login
+  field: password
+  value: ''
+  title: Login with an empty password
+  description: The customer submits an activated username with the password field
+    empty.
+  expected: rejected
+  covers:
+  - EP-L03
+- id: SH-CUST-L04
+  stage: login
+  field: password
+  value: Oliver!0000Maple
+  title: Login with a different account password
+  description: The customer submits an activated username and a password different
+    from its configured password.
+  expected: rejected
+  covers:
+  - EP-L04
+decision_rules:
+- id: D-C01
+  condition: coupon absent
+  expected: No coupon discount; basket subtotal unchanged
+- id: D-C02
+  condition: coupon unknown
+  expected: Visible native error; code not applied; total unchanged
+- id: D-C03
+  condition: coupon active
+  expected: Configured welcome percentage applied exactly once
+- id: D-C04
+  condition: applied coupon removed
+  expected: Discount removed and subtotal restored
+- id: D-A01
+  condition: same_as_billing true
+  expected: Shipping inputs copy billing inputs
+- id: D-A02
+  condition: same_as_billing false
+  expected: Independent shipping address retained
+- id: D-S01
+  condition: Careful delivery and COD selected
+  expected: Discounted product subtotal plus the configured fee for the selected carrier
+- id: D-S02
+  condition: Priority delivery and COD selected
+  expected: Discounted product subtotal plus the configured fee for the selected carrier
+- id: D-S03
+  condition: Express delivery and COD selected
+  expected: Discounted product subtotal plus the configured fee for the selected carrier
+- id: D-T01
+  condition: terms unchecked, other inputs valid
+  expected: Confirmation rejected; no success page
+- id: D-T02
+  condition: terms checked, other inputs valid
+  expected: Order received; payment remains not paid; customer can reopen exact order
+scope_exclusions:
+- 'External paid-card gateway, declined cards and capture: not configured'
+- 'Unavailable shipping/payment options: not reachable in seeded customer UI; no injected
+  fake option'
+- 'Email/password maximum length, password strength and all country/postal combinations:
+  outside this declared model'
+- 'Stock mutation/concurrency, all product combinations and order cancellation: separate
+  integration or later models'
+- 'Other-customer order authorization and every checkout combination: not established
+  by the single new-customer order'
+attribution:
+  creator: rango-udi
+  license: MIT
+  scope: Test specification; shared fixture records retain CC-BY-4.0
+final_carrier: fuzcake-delivery
+fault_policy: single
+test_data:
+  existing_customer:
+    username: oliver.bennett
+    email: oliver.bennett@fuzcake.test
+    password: Oliver!4826Maple
+    first_name: Oliver
+    last_name: Bennett
+  registration_baseline:
+    username: lucas.parker
+    email: lucas.parker@fuzcake.test
+    password1: Lucas!7362Maple
+    password2: Lucas!7362Maple
+  journey_customer:
+    username: emily.carter
+    email: emily.carter@fuzcake.test
+    password1: Emily!4826Cedar
+    password2: Emily!4826Cedar
+    full_name: Emily Carter
+  absent_search: Ocean Mist Unavailable
+  unknown_coupon: NOTVALID2026
+  order_comment: Please keep the three fragrances together.
+extensions:
+  accounts:
+  - &id002
+    username: grace.mitchell
+    email: grace.mitchell@fuzcake.test
+    password: Grace!5824Willow
+    first_name: Grace
+    last_name: Mitchell
+  - &id003
+    username: henry.foster
+    email: henry.foster@fuzcake.test
+    password: Henry!7362Cedar
+    first_name: Henry
+    last_name: Foster
+  address:
+    name: Grace Mitchell
+    street: 64 Willow Garden Lane
+    street2: Suite 12
+    city: Moonberry
+    postal_code: '48261'
+    country: US
+    phone: +1 202 555 0147
+    email: grace.mitchell@fuzcake.test
+  cases:
+  - id: SH-CUST-B01
+    business_id: TC-GB-001
+    stage: basket_update
+    operation: update
+    inputs:
+      account: &id001
+        username: oliver.bennett
+        password: Oliver!4826Maple
+      product_sku: fuzcake-rose-nocturne
+      initial_quantity: '2'
+      value: '0'
+    expected: rejected
+    covers:
+    - BVA-GB-01
+    - EP-GB-02
+  - id: SH-CUST-B02
+    business_id: TC-GB-002
+    stage: basket_update
+    operation: update
+    inputs:
+      account: *id001
+      product_sku: fuzcake-rose-nocturne
+      initial_quantity: '2'
+      value: '1'
+    expected: accepted
+    covers:
+    - BVA-GB-02
+    - EP-GB-01
+  - id: SH-CUST-B03
+    business_id: TC-GB-003
+    stage: basket_update
+    operation: update
+    inputs:
+      account: *id001
+      product_sku: fuzcake-rose-nocturne
+      initial_quantity: '2'
+      value: '2'
+    expected: accepted
+    covers:
+    - BVA-GB-03
+    - EP-GB-01
+  - id: SH-CUST-B04
+    business_id: TC-GB-004
+    stage: basket_update
+    operation: update
+    inputs:
+      account: *id001
+      product_sku: fuzcake-rose-nocturne
+      initial_quantity: '2'
+      value: '24'
+    expected: accepted
+    covers:
+    - BVA-GB-04
+    - EP-GB-01
+  - id: SH-CUST-B05
+    business_id: TC-GB-005
+    stage: basket_update
+    operation: update
+    inputs:
+      account: *id001
+      product_sku: fuzcake-rose-nocturne
+      initial_quantity: '2'
+      value: '25'
+    expected: accepted
+    covers:
+    - BVA-GB-05
+    - EP-GB-01
+  - id: SH-CUST-B06
+    business_id: TC-GB-006
+    stage: basket_update
+    operation: update
+    inputs:
+      account: *id001
+      product_sku: fuzcake-rose-nocturne
+      initial_quantity: '2'
+      value: '26'
+    expected: rejected
+    covers:
+    - BVA-GB-06
+    - EP-GB-03
+  - id: SH-CUST-B07
+    business_id: TC-GB-007
+    stage: basket_update
+    operation: update
+    inputs:
+      account: *id001
+      product_sku: fuzcake-rose-nocturne
+      initial_quantity: '2'
+      value: '3'
+    expected: accepted
+    covers:
+    - BVA-GB-07
+    - EP-GB-01
+  - id: SH-CUST-B08
+    business_id: TC-GB-008
+    stage: basket_update
+    operation: update
+    inputs:
+      account: *id001
+      product_sku: fuzcake-rose-nocturne
+      initial_quantity: '2'
+      value: ''
+    expected: unchanged
+    covers:
+    - EP-GB-08
+  - id: SH-CUST-B09
+    business_id: TC-GB-009
+    stage: basket_update
+    operation: update
+    inputs:
+      account: *id001
+      product_sku: fuzcake-rose-nocturne
+      initial_quantity: '2'
+      value: '1.5'
+    expected: rejected
+    covers:
+    - EP-GB-09
+  - id: SH-CUST-B10
+    business_id: TC-GB-010
+    stage: basket_update
+    operation: delete_one
+    inputs:
+      account: *id001
+      product_sku: fuzcake-rose-nocturne
+      initial_quantity: '2'
+      second_quantity: '1'
+      second_sku: fuzcake-self-esteem
+    expected: accepted
+    covers:
+    - QD-GB-01
+  - id: SH-CUST-B11
+    business_id: TC-GB-011
+    stage: basket_update
+    operation: delete_last
+    inputs:
+      account: *id001
+      product_sku: fuzcake-rose-nocturne
+      initial_quantity: '2'
+    expected: accepted
+    covers:
+    - QD-GB-02
+  - id: SH-CUST-B12
+    business_id: TC-GB-012
+    stage: basket_update
+    operation: repeat_add
+    inputs:
+      account: *id001
+      product_sku: fuzcake-rose-nocturne
+      initial_quantity: '1'
+      second_quantity: '2'
+    expected: accepted
+    covers:
+    - QD-GB-03
+  - id: SH-CUST-A01
+    business_id: TC-SD-001
+    stage: address_book
+    operation: create
+    inputs:
+      account: *id002
+      address:
+        name: Grace Mitchell
+        street: 64 Willow Garden Lane
+        street2: Suite 12
+        city: Moonberry
+        postal_code: '48261'
+        country: US
+        phone: +1 202 555 0147
+        email: grace.mitchell@fuzcake.test
+      title: Willow Studio
+      role: '1'
+      status: '1'
+    expected: accepted
+    covers:
+    - BVA-SD-07
+    - EP-SD-01
+  - id: SH-CUST-A02
+    business_id: TC-SD-002
+    stage: address_book
+    operation: edit
+    inputs:
+      account: *id002
+      address:
+        name: Grace Mitchell
+        street: 64 Willow Garden Lane
+        street2: Suite 12
+        city: Moonberry
+        postal_code: '48261'
+        country: US
+        phone: +1 202 555 0147
+        email: grace.mitchell@fuzcake.test
+      title: Willow Studio
+      updated_street: 81 Silvercloud Lane
+      role: '1'
+      status: '1'
+    expected: accepted
+    covers:
+    - QD-SD-01
+    - EP-SD-01
+  - id: SH-CUST-A03
+    business_id: TC-SD-003
+    stage: address_book
+    operation: delete
+    inputs:
+      account: *id002
+      address:
+        name: Grace Mitchell
+        street: 64 Willow Garden Lane
+        street2: Suite 12
+        city: Moonberry
+        postal_code: '48261'
+        country: US
+        phone: +1 202 555 0147
+        email: grace.mitchell@fuzcake.test
+      title: Willow Studio
+      role: '1'
+      status: '1'
+    expected: accepted
+    covers:
+    - QD-SD-02
+    - EP-SD-01
+  - id: SH-CUST-A04
+    business_id: TC-SD-004
+    stage: address_book
+    operation: create
+    inputs:
+      account: *id002
+      address:
+        name: Grace Mitchell
+        street: 64 Willow Garden Lane
+        street2: Suite 12
+        city: Moonberry
+        postal_code: '48261'
+        country: US
+        phone: +1 202 555 0147
+        email: grace.mitchell@fuzcake.test
+      title: ''
+      role: '1'
+      status: '1'
+    expected: rejected
+    covers:
+    - BVA-SD-01
+    - EP-SD-02
+  - id: SH-CUST-A05
+    business_id: TC-SD-005
+    stage: address_book
+    operation: create
+    inputs:
+      account: *id002
+      address:
+        name: Grace Mitchell
+        street: ''
+        street2: Suite 12
+        city: Moonberry
+        postal_code: '48261'
+        country: US
+        phone: +1 202 555 0147
+        email: grace.mitchell@fuzcake.test
+      title: Willow Studio
+      role: '1'
+      status: '1'
+    expected: rejected
+    covers:
+    - EP-SD-05
+  - id: SH-CUST-A06
+    business_id: TC-SD-006
+    stage: address_book
+    operation: create
+    inputs:
+      account: *id002
+      address:
+        name: Grace Mitchell
+        street: 64 Willow Garden Lane
+        street2: Suite 12
+        city: Moonberry
+        postal_code: '48261'
+        country: US
+        phone: +1 202 555 0147
+        email: grace.mitchell@fuzcake.test
+      title: W
+      role: '1'
+      status: '1'
+    expected: accepted
+    covers:
+    - BVA-SD-02
+    - EP-SD-01
+  - id: SH-CUST-A07
+    business_id: TC-SD-007
+    stage: address_book
+    operation: create
+    inputs:
+      account: *id002
+      address:
+        name: Grace Mitchell
+        street: 64 Willow Garden Lane
+        street2: Suite 12
+        city: Moonberry
+        postal_code: '48261'
+        country: US
+        phone: +1 202 555 0147
+        email: grace.mitchell@fuzcake.test
+      title: WG
+      role: '1'
+      status: '1'
+    expected: accepted
+    covers:
+    - BVA-SD-03
+    - EP-SD-01
+  - id: SH-CUST-A08
+    business_id: TC-SD-008
+    stage: address_book
+    operation: create
+    inputs:
+      account: *id002
+      address:
+        name: Grace Mitchell
+        street: 64 Willow Garden Lane
+        street2: Suite 12
+        city: Moonberry
+        postal_code: '48261'
+        country: US
+        phone: +1 202 555 0147
+        email: grace.mitchell@fuzcake.test
+      title: Willow Garden receiving studio for Grace Mitchell with weekday collection
+        at the Moonberry fragrance office and clearly labelled delivery instructions
+        for the north entrance. Willow Garden receiving studio for Grace Mitchell
+        with weekday collection at th
+      role: '1'
+      status: '1'
+    expected: accepted
+    covers:
+    - BVA-SD-04
+    - EP-SD-01
+  - id: SH-CUST-A09
+    business_id: TC-SD-009
+    stage: address_book
+    operation: create
+    inputs:
+      account: *id002
+      address:
+        name: Grace Mitchell
+        street: 64 Willow Garden Lane
+        street2: Suite 12
+        city: Moonberry
+        postal_code: '48261'
+        country: US
+        phone: +1 202 555 0147
+        email: grace.mitchell@fuzcake.test
+      title: Willow Garden receiving studio for Grace Mitchell with weekday collection
+        at the Moonberry fragrance office and clearly labelled delivery instructions
+        for the north entrance. Willow Garden receiving studio for Grace Mitchell
+        with weekday collection at the
+      role: '1'
+      status: '1'
+    expected: accepted
+    covers:
+    - BVA-SD-05
+    - EP-SD-01
+  - id: SH-CUST-A10
+    business_id: TC-SD-010
+    stage: address_book
+    operation: create
+    inputs:
+      account: *id002
+      address:
+        name: Grace Mitchell
+        street: 64 Willow Garden Lane
+        street2: Suite 12
+        city: Moonberry
+        postal_code: '48261'
+        country: US
+        phone: +1 202 555 0147
+        email: grace.mitchell@fuzcake.test
+      title: 'Willow Garden receiving studio for Grace Mitchell with weekday collection
+        at the Moonberry fragrance office and clearly labelled delivery instructions
+        for the north entrance. Willow Garden receiving studio for Grace Mitchell
+        with weekday collection at the '
+      role: '1'
+      status: '1'
+    expected: bounded
+    covers:
+    - BVA-SD-06
+    - EP-SD-03
+  - id: SH-CUST-A11
+    business_id: TC-SD-011
+    stage: address_book
+    operation: ownership
+    inputs:
+      account: *id002
+      address:
+        name: Grace Mitchell
+        street: 64 Willow Garden Lane
+        street2: Suite 12
+        city: Moonberry
+        postal_code: '48261'
+        country: US
+        phone: +1 202 555 0147
+        email: grace.mitchell@fuzcake.test
+      title: Willow Studio
+      other_account: *id003
+      role: '1'
+      status: '1'
+    expected: accepted
+    covers:
+    - QD-SD-03
+    - EP-SD-04
+  - id: SH-CUST-P01
+    business_id: TC-MK-001
+    stage: password_change
+    operation: change
+    inputs:
+      account: *id002
+      old_password: Grace!0000Willow
+      new_password: Grace!9637Cedar
+      confirm_password: Grace!9637Cedar
+    expected: rejected
+    covers:
+    - QD-MK-01
+    - EP-MK-01
+  - id: SH-CUST-P02
+    business_id: TC-MK-002
+    stage: password_change
+    operation: change
+    inputs:
+      account: *id002
+      old_password: ''
+      new_password: Grace!9637Cedar
+      confirm_password: Grace!9637Cedar
+    expected: rejected
+    covers:
+    - QD-MK-02
+    - EP-MK-02
+  - id: SH-CUST-P03
+    business_id: TC-MK-003
+    stage: password_change
+    operation: change
+    inputs:
+      account: *id002
+      old_password: Grace!5824Willow
+      new_password: ''
+      confirm_password: Grace!9637Cedar
+    expected: rejected
+    covers:
+    - QD-MK-03
+    - EP-MK-03
+  - id: SH-CUST-P04
+    business_id: TC-MK-004
+    stage: password_change
+    operation: change
+    inputs:
+      account: *id002
+      old_password: Grace!5824Willow
+      new_password: Grace!9637Cedar
+      confirm_password: ''
+    expected: rejected
+    covers:
+    - QD-MK-04
+    - EP-MK-04
+  - id: SH-CUST-P05
+    business_id: TC-MK-005
+    stage: password_change
+    operation: change
+    inputs:
+      account: *id002
+      old_password: Grace!5824Willow
+      new_password: Grace!9637Cedar
+      confirm_password: Grace!9638Cedar
+    expected: rejected
+    covers:
+    - QD-MK-05
+    - EP-MK-05
+  - id: SH-CUST-P06
+    business_id: TC-MK-006
+    stage: password_change
+    operation: change
+    inputs:
+      account: *id002
+      old_password: Grace!5824Willow
+      new_password: Grace!9637Cedar
+      confirm_password: Grace!9637Cedar
+    expected: accepted
+    covers:
+    - QD-MK-06
+    - EP-MK-06
+  - id: SH-CUST-P07
+    business_id: TC-MK-007
+    stage: password_change
+    operation: change
+    inputs:
+      account: *id002
+    expected: login_required
+    covers:
+    - QD-MK-07
+    - EP-MK-07
+  domains:
+    basket_quantity:
+      min: '1'
+      max: '25'
+      step: '1'
+      nominal: '3'
+    address_title_length:
+      min: '1'
+      max: '255'
+      step: '1'
+      nominal: '13'

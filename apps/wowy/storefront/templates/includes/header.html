@@ -1,0 +1,21 @@
+{% load static %}
+<a class="skip-link" href="#store-content">Skip to content</a>
+<div class="announcement">A fragrance for every version of you</div>
+<header class="fc-header">
+  <a class="wordmark" href="{% url 'core:home' %}">{{ settings.site_name }}<span>FRAGRANCE HOUSE</span></a>
+  <nav class="fc-links" aria-label="Main navigation">
+    <a href="{% url 'products:index' %}">The collection</a>
+    <a href="{% url 'users:dashboard.orders' %}">My orders</a>
+    <a href="{% url 'users:dashboard.wishlist' %}">Wishlist</a>
+  </nav>
+  <div class="fc-tools">
+    {% if user.is_authenticated %}
+      <a href="{% url 'users:dashboard.index' %}">{{ user.name }}</a>
+      {% if user.is_superuser %}<a href="{% url 'users:admin.index' %}">Administration</a>{% endif %}
+      <form id="logout-form" action="{% url 'users:logout' %}" method="post">{% csrf_token %}<button type="submit" class="text-button">Log out</button></form>
+    {% else %}<a href="{% url 'users:login' %}">Log in</a><a href="{% url 'users:signup' %}">Create account</a>{% endif %}
+    <a href="{% url 'cart:checkout' %}">Checkout</a>
+    <button class="pull-bs-canvas-right text-button" type="button" aria-label="Open cart">Cart (<span class="cart-count">0</span>)</button>
+  </div>
+</header>
+{% if messages %}<div class="container" aria-live="polite">{% for message in messages %}<p class="alert alert-info">{{ message }}</p>{% endfor %}</div>{% endif %}

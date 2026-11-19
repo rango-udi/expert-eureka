@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/django-oscar/django-oscar",
+  "tag": "4.2.1",
+  "commit": "d0a70850abf8e4229d4971aa7e8f4643326ec9f3",
+  "package": "django-oscar",
+  "package_version": "4.2.1",
+  "installation": "Published PyPI package; repository commit is provenance, not a claim that a git checkout is installed."
+}

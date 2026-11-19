@@ -1,0 +1,10 @@
+# Isolated reporting runtime; these versions do not replace Shuup dependencies.
+openpyxl==3.1.5
+seaborn==0.13.2
+matplotlib==3.9.4
+numpy==2.2.2
+pandas==2.2.3
+Pillow==11.1.0
+
+# Shared YAML test specification parser.
+PyYAML==6.0.3

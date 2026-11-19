@@ -1,0 +1,9 @@
+{% extends "oscar/checkout/payment_details.html" %}
+{% block payment_details_content %}
+<section class="card card-body bg-light mb-4">
+  <h2>Cash on delivery</h2>
+  <p>Pay for your order when it is delivered. No card information or online payment is required.</p>
+  <p>Review your items and delivery address before placing the order. Your order will be recorded as pending.</p>
+  <a id="view_preview" href="{% url 'checkout:preview' %}" class="btn btn-primary btn-lg align-self-start">Review order</a>
+</section>
+{% endblock %}

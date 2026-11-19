@@ -1,0 +1,22 @@
+# Registry manifest digests. Regenerate using: sh cmdc lock
+services:
+  gateway:
+    image: nginx:1.27.3-alpine@sha256:814a8e88df978ade80e584cc5b333144b9372a8e3c98872d07137dbf3b44d0e4
+  postgres:
+    image: postgres:16.6-alpine@sha256:1d04b9ba1d4996401f2552b51beda8187f175c0645c091e4781134fc9c9a3eef
+  redis:
+    image: redis:7.4.1-alpine@sha256:c1e88455c85225310bbea54816e9c3f4b5295815e6dbf80c34d40afc6df28275
+  mailpit:
+    image: axllent/mailpit:v1.21.8@sha256:81370195cd4a0eab9604d17c2617a7525b0486f9365555253b6c5376c6350f1a
+  pretix:
+    image: pretix/standalone:2026.9.2@sha256:441c1261721979c03895a1af93b39ac5a5a9805d8e56b68222cf788391525fc3
+  worker:
+    image: pretix/standalone:2026.9.2@sha256:441c1261721979c03895a1af93b39ac5a5a9805d8e56b68222cf788391525fc3
+  periodic:
+    image: pretix/standalone:2026.9.2@sha256:441c1261721979c03895a1af93b39ac5a5a9805d8e56b68222cf788391525fc3
+  robot:
+    image: marketsquare/robotframework-browser:21.0.0@sha256:bcd88c4f8873a6dc625230dcefe34e5abd5cb782f5ac259ebad31f368b1229cd
+  git:
+    image: alpine/git:2.47.2@sha256:062a01ad7a0eb17cff382bc5e26086b4d710e56dfdfdf001109a49b6d9bd378c
+  python:
+    image: python:3.12.8-alpine@sha256:ba13ef990f6e5d13014e9e8d04c02a8fdb0fe53d6dccf6e19147f316e6cc3a84
